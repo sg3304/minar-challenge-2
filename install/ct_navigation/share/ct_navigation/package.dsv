@@ -1,4 +1,0 @@
-source;share/ct_navigation/hook/pythonpath.dsv
-source;share/ct_navigation/hook/pythonpath.sh
-source;share/ct_navigation/hook/ament_prefix_path.dsv
-source;share/ct_navigation/hook/ament_prefix_path.sh
