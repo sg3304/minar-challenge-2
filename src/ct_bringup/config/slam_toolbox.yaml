@@ -1,0 +1,13 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: false          # true if using simulation
+    map_file_name: map_name      # optional, name of saved map
+    scan_topic: /scan           # topic your LiDAR publishes
+    base_frame: base_link    # robot base frame
+    odom_frame: odom          # odometry frame
+    map_frame: map             # global map frame
+    use_odom: false               # set false if you don't have odometry
+    use_laser_scan_only: true   # set true to ignore odometry
+    publish_map_tf: true
+    resolution: 0.05             # map resolution in meters
+    max_laser_range: 10.0        # maximum sensor range

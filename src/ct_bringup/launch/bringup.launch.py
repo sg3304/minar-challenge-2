@@ -4,8 +4,10 @@ from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.parameter_descriptions import ParameterValue
 import os
+from launch.actions import TimerAction
 
 from ament_index_python.packages import get_package_share_directory
+from asyncio.tasks import sleep
 
 
 def generate_launch_description():
@@ -21,6 +23,7 @@ def generate_launch_description():
     teleop_dir = get_package_share_directory('ct_teleop')
     sensors_dir = get_package_share_directory('ct_sensors')
     description_dir = get_package_share_directory('ct_description')
+    slam_params_file = os.path.join(bringup_dir, 'config', 'slam_toolbox.yaml')
 
     # Paths to config files
     # We define the full paths to configuration files and other resources.
@@ -42,7 +45,7 @@ def generate_launch_description():
                 )
             )
         )
-
+    
     # Load URDF into robot_state_publisher
     # The Universal Robot Description Format (URDF) file describes the robot's physical structure,
     # including its joints and links. We read the contents of this file into a variable.
@@ -53,6 +56,13 @@ def generate_launch_description():
     # The LaunchDescription object contains a list of all actions to be performed.
     # These actions can be starting nodes, including other launch files, etc.
     return LaunchDescription([
+        Node(
+            package='slam_toolbox',
+            executable='sync_slam_toolbox_node',
+            name='slam_toolbox',
+            output='screen',
+            parameters=[slam_params_file]
+        ),
         # Robot description publisher
         # The 'robot_state_publisher' node takes the robot's URDF description and
         # joint states and publishes the 3D transforms for all the robot's links.
@@ -74,11 +84,9 @@ def generate_launch_description():
             output='screen',
         ),
 
-
         # Lidar driver
         # We include the launch file we defined earlier to start the RPLIDAR node.
-        rplidar_launch,
-
+        rplidar_launch
         # RViz
         # This commented-out section shows how you would launch RViz, the ROS 2 visualization tool.
         # It's commented out because the 'view_rplidar_a1_launch.py' file already launches RViz.
