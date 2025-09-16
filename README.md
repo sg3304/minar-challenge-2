@@ -1,3 +1,5 @@
+# TODO Reorganize
+# Random Notes:
 ros2 pkg create --build-type ament_python turtlesim_shapes --dependencies rclpy geometry_msgs turtlesim
 
 
@@ -55,12 +57,11 @@ os2 topic echo /scan.
 
 pkg creation:
 
-ros2 pkg create ct_description --build-type ament_cmake
+ros2 pkg create my_robot_description --build-type ament_cmake
 ros2 pkg create ct_bringup --build-type ament_python --dependencies rclpy launch
-ros2 pkg create ct_teleop --build-type ament_python --dependencies rclpy sensor_msgs geometry_msgs
-ros2 pkg create ct_sensors --build-type ament_python --dependencies rclpy sensor_msgs
-ros2 pkg create ct_navigation --build-type ament_python --dependencies rclpy nav2_msgs geometry_msgs
-ros2 pkg create ct_control --build-type ament_python --dependencies rclpy geometry_msgs nav_msgs
+ros2 pkg create my_robot_teleop --build-type ament_python --dependencies rclpy sensor_msgs geometry_msgs
+ros2 pkg create my_robot_sensors --build-type ament_python --dependencies rclpy sensor_msgs
+ros2 pkg create my_robot_navigation --build-type ament_python --dependencies rclpy nav2_msgs geometry_msgs
 
 
 THank you gpt:

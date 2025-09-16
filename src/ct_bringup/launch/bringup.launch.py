@@ -9,16 +9,17 @@ from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
+    
     # Get package paths
-    bringup_dir = get_package_share_directory('my_robot_bringup')
-    teleop_dir = get_package_share_directory('my_robot_teleop')
-    sensors_dir = get_package_share_directory('my_robot_sensors')
-    description_dir = get_package_share_directory('my_robot_description')
+    bringup_dir = get_package_share_directory('ct_bringup')
+    teleop_dir = get_package_share_directory('ct_teleop')
+    sensors_dir = get_package_share_directory('ct_sensors')
+    description_dir = get_package_share_directory('ct_description')
 
     # Paths to config files
     teleop_config = os.path.join(teleop_dir, 'config', 'joystick.yaml')
     rviz_config = os.path.join(bringup_dir, 'config', 'robot.rviz')
-    urdf_file = os.path.join(description_dir, 'urdf', 'my_robot.urdf')
+    urdf_file = os.path.join(description_dir, 'urdf', 'ct.urdf')
 
     # Load URDF into robot_state_publisher
     with open(urdf_file, 'r') as infp:
@@ -41,19 +42,23 @@ def generate_launch_description():
             output='screen',
         ),
 
-        # Teleop (joystick → cmd_vel)
+        # Lidar driver (RPLidar A1)
         Node(
-            package='my_robot_teleop',
-            executable='teleop_node',   # <-- your Python node
-            name='teleop_node',
-            parameters=[teleop_config],
-            output='screen'
+            package='rplidar_ros',
+            executable='rplidarNode',
+            name='rplidar',
+            output='screen',
+            parameters=[os.path.join(
+                get_package_share_directory('rplidar_ros'),
+                'config',
+                'rplidar.yaml'
+            )]
         ),
 
-        # Lidar driver (example node, replace with your lidar driver)
+        # Lidar driver
         Node(
-            package='my_robot_sensors',
-            executable='lidar_node',    # <-- your Python node
+            package='ct_sensors',
+            executable='lidar_node',  # <-- your Python node
             name='lidar_node',
             output='screen'
         ),
