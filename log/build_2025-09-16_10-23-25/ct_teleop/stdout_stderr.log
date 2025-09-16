@@ -1,0 +1,27 @@
+running develop
+Removing /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct-teleop.egg-link (link to .)
+running egg_info
+writing ../../build/ct_teleop/ct_teleop.egg-info/PKG-INFO
+writing dependency_links to ../../build/ct_teleop/ct_teleop.egg-info/dependency_links.txt
+writing requirements to ../../build/ct_teleop/ct_teleop.egg-info/requires.txt
+writing top-level names to ../../build/ct_teleop/ct_teleop.egg-info/top_level.txt
+reading manifest file '../../build/ct_teleop/ct_teleop.egg-info/SOURCES.txt'
+writing manifest file '../../build/ct_teleop/ct_teleop.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build
+creating /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build/lib
+creating /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build/lib/ct_teleop
+copying ct_teleop/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build/lib/ct_teleop
+running install
+running install_lib
+creating /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct_teleop
+copying /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build/lib/ct_teleop/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct_teleop
+byte-compiling /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct_teleop/__init__.py to __init__.cpython-312.pyc
+running install_data
+copying resource/ct_teleop -> /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/share/ament_index/resource_index/packages
+copying package.xml -> /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/share/ct_teleop
+running install_egg_info
+Copying ../../build/ct_teleop/ct_teleop.egg-info to /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct_teleop-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/install.log'

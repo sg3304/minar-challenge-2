@@ -1,0 +1,25 @@
+[2.645s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/build/ct_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/build/ct_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/samuele/dev/minar/minar-challenge-2/build/ct_bringup/build --no-deps symlink_data
+[3.258s] running develop
+[3.780s] running egg_info
+[3.781s] creating ct_bringup.egg-info
+[3.837s] writing ct_bringup.egg-info/PKG-INFO
+[3.837s] writing dependency_links to ct_bringup.egg-info/dependency_links.txt
+[3.840s] writing requirements to ct_bringup.egg-info/requires.txt
+[3.841s] writing top-level names to ct_bringup.egg-info/top_level.txt
+[3.841s] writing manifest file 'ct_bringup.egg-info/SOURCES.txt'
+[3.957s] reading manifest file 'ct_bringup.egg-info/SOURCES.txt'
+[3.959s] writing manifest file 'ct_bringup.egg-info/SOURCES.txt'
+[4.015s] running build_ext
+[4.015s] Creating /home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/lib/python3.12/site-packages/ct-bringup.egg-link (link to .)
+[4.015s] 
+[4.015s] Installed /home/samuele/dev/minar/minar-challenge-2/build/ct_bringup
+[4.015s] running symlink_data
+[4.016s] creating /home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/share/ament_index
+[4.016s] creating /home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/share/ament_index/resource_index
+[4.016s] creating /home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/share/ament_index/resource_index/packages
+[4.016s] symbolically linking /home/samuele/dev/minar/minar-challenge-2/build/ct_bringup/resource/ct_bringup -> /home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/share/ament_index/resource_index/packages
+[4.016s] symbolically linking /home/samuele/dev/minar/minar-challenge-2/build/ct_bringup/package.xml -> /home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/share/ct_bringup
+[4.016s] creating /home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/share/ct_bringup/launch
+[4.016s] symbolically linking /home/samuele/dev/minar/minar-challenge-2/build/ct_bringup/launch/bringup.launch.py -> /home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/share/ct_bringup/launch
+[4.016s] creating /home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/share/ct_bringup/config
+[4.105s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/build/ct_bringup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/build/ct_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/install/ct_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/samuele/dev/minar/minar-challenge-2/build/ct_bringup/build --no-deps symlink_data

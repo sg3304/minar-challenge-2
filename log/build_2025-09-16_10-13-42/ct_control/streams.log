@@ -1,0 +1,22 @@
+[2.735s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/build/ct_control': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/build/ct_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/install/ct_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/samuele/dev/minar/minar-challenge-2/build/ct_control/build --no-deps symlink_data
+[3.425s] running develop
+[3.959s] running egg_info
+[3.959s] creating ct_control.egg-info
+[4.007s] writing ct_control.egg-info/PKG-INFO
+[4.009s] writing dependency_links to ct_control.egg-info/dependency_links.txt
+[4.009s] writing requirements to ct_control.egg-info/requires.txt
+[4.010s] writing top-level names to ct_control.egg-info/top_level.txt
+[4.010s] writing manifest file 'ct_control.egg-info/SOURCES.txt'
+[4.110s] reading manifest file 'ct_control.egg-info/SOURCES.txt'
+[4.112s] writing manifest file 'ct_control.egg-info/SOURCES.txt'
+[4.153s] running build_ext
+[4.153s] Creating /home/samuele/dev/minar/minar-challenge-2/install/ct_control/lib/python3.12/site-packages/ct-control.egg-link (link to .)
+[4.154s] 
+[4.154s] Installed /home/samuele/dev/minar/minar-challenge-2/build/ct_control
+[4.154s] running symlink_data
+[4.154s] creating /home/samuele/dev/minar/minar-challenge-2/install/ct_control/share/ament_index
+[4.155s] creating /home/samuele/dev/minar/minar-challenge-2/install/ct_control/share/ament_index/resource_index
+[4.155s] creating /home/samuele/dev/minar/minar-challenge-2/install/ct_control/share/ament_index/resource_index/packages
+[4.155s] symbolically linking /home/samuele/dev/minar/minar-challenge-2/build/ct_control/resource/ct_control -> /home/samuele/dev/minar/minar-challenge-2/install/ct_control/share/ament_index/resource_index/packages
+[4.155s] symbolically linking /home/samuele/dev/minar/minar-challenge-2/build/ct_control/package.xml -> /home/samuele/dev/minar/minar-challenge-2/install/ct_control/share/ct_control
+[4.233s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/build/ct_control' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/build/ct_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/install/ct_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/samuele/dev/minar/minar-challenge-2/build/ct_control/build --no-deps symlink_data

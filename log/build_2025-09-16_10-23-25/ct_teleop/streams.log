@@ -1,0 +1,31 @@
+[2.982s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/build/ct_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build
+[3.962s] running develop
+[4.581s] Removing /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct-teleop.egg-link (link to .)
+[4.669s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/build/ct_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build
+[4.671s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/src/ct_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_teleop build --build-base /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build install --record /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/install.log --single-version-externally-managed install_data --force
+[5.257s] running egg_info
+[5.303s] writing ../../build/ct_teleop/ct_teleop.egg-info/PKG-INFO
+[5.303s] writing dependency_links to ../../build/ct_teleop/ct_teleop.egg-info/dependency_links.txt
+[5.304s] writing requirements to ../../build/ct_teleop/ct_teleop.egg-info/requires.txt
+[5.304s] writing top-level names to ../../build/ct_teleop/ct_teleop.egg-info/top_level.txt
+[5.400s] reading manifest file '../../build/ct_teleop/ct_teleop.egg-info/SOURCES.txt'
+[5.401s] writing manifest file '../../build/ct_teleop/ct_teleop.egg-info/SOURCES.txt'
+[5.402s] running build
+[5.402s] running build_py
+[5.402s] creating /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build
+[5.403s] creating /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build/lib
+[5.403s] creating /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build/lib/ct_teleop
+[5.403s] copying ct_teleop/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build/lib/ct_teleop
+[5.403s] running install
+[5.414s] running install_lib
+[5.453s] creating /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct_teleop
+[5.454s] copying /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build/lib/ct_teleop/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct_teleop
+[5.455s] byte-compiling /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct_teleop/__init__.py to __init__.cpython-312.pyc
+[5.455s] running install_data
+[5.456s] copying resource/ct_teleop -> /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/share/ament_index/resource_index/packages
+[5.456s] copying package.xml -> /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/share/ct_teleop
+[5.456s] running install_egg_info
+[5.527s] Copying ../../build/ct_teleop/ct_teleop.egg-info to /home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages/ct_teleop-0.0.0-py3.12.egg-info
+[5.530s] running install_scripts
+[5.930s] writing list of installed files to '/home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/install.log'
+[6.014s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/src/ct_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/install/ct_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_teleop build --build-base /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/build install --record /home/samuele/dev/minar/minar-challenge-2/build/ct_teleop/install.log --single-version-externally-managed install_data --force

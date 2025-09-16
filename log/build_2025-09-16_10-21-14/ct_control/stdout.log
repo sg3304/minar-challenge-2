@@ -1,0 +1,13 @@
+running develop
+running egg_info
+writing ct_control.egg-info/PKG-INFO
+writing dependency_links to ct_control.egg-info/dependency_links.txt
+writing requirements to ct_control.egg-info/requires.txt
+writing top-level names to ct_control.egg-info/top_level.txt
+reading manifest file 'ct_control.egg-info/SOURCES.txt'
+writing manifest file 'ct_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/samuele/dev/minar/minar-challenge-2/install/ct_control/lib/python3.12/site-packages/ct-control.egg-link (link to .)
+
+Installed /home/samuele/dev/minar/minar-challenge-2/build/ct_control
+running symlink_data

@@ -1,0 +1,54 @@
+[1.310s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/build/rplidar_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_bringup:/home/samuele/dev/minar/minar-challenge-2/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/samuele/dev/minar/minar-challenge-2/build/rplidar_ros -- -j8 -l8
+[1.477s] [  5%] Built target rplidar_client
+[1.492s] [ 52%] Built target rplidar_composition
+[1.501s] [100%] Built target rplidar_node
+[1.532s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_bringup:/home/samuele/dev/minar/minar-challenge-2/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/samuele/dev/minar/minar-challenge-2/build/rplidar_ros -- -j8 -l8
+[1.535s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/build/rplidar_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_bringup:/home/samuele/dev/minar/minar-challenge-2/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/samuele/dev/minar/minar-challenge-2/build/rplidar_ros
+[1.556s] -- Install configuration: ""
+[1.558s] -- Execute custom install script
+[1.560s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_a1_launch.py
+[1.563s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_a2m12_launch.py
+[1.563s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_a2m7_launch.py
+[1.565s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_a2m8_launch.py
+[1.565s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_a3_launch.py
+[1.565s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_c1_launch.py
+[1.566s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_s1_launch.py
+[1.568s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_s1_tcp_launch.py
+[1.568s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_s2_launch.py
+[1.568s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_s2e_launch.py
+[1.572s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_s3_launch.py
+[1.574s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/rplidar_t1_launch.py
+[1.574s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_a1_launch.py
+[1.575s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_a2m12_launch.py
+[1.577s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_a2m7_launch.py
+[1.577s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_a2m8_launch.py
+[1.578s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_a3_launch.py
+[1.578s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_c1_launch.py
+[1.578s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_s1_launch.py
+[1.578s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_s1_tcp_launch.py
+[1.579s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_s2_launch.py
+[1.579s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_s2e_launch.py
+[1.579s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_s3_launch.py
+[1.579s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/launch/view_rplidar_t1_launch.py
+[1.579s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/rviz/rplidar_ros.rviz
+[1.580s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/lib/rplidar_ros/rplidar_node
+[1.580s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/lib/rplidar_ros/rplidar_composition
+[1.580s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/lib/rplidar_ros/rplidar_client
+[1.580s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/ament_index/resource_index/package_run_dependencies/rplidar_ros
+[1.581s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/ament_index/resource_index/parent_prefix_path/rplidar_ros
+[1.581s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/environment/ament_prefix_path.sh
+[1.581s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/environment/ament_prefix_path.dsv
+[1.581s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/environment/path.sh
+[1.582s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/environment/path.dsv
+[1.582s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/local_setup.bash
+[1.582s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/local_setup.sh
+[1.582s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/local_setup.zsh
+[1.583s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/local_setup.dsv
+[1.583s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/package.dsv
+[1.600s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/ament_index/resource_index/packages/rplidar_ros
+[1.601s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.603s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.605s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/cmake/rplidar_rosConfig.cmake
+[1.605s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/cmake/rplidar_rosConfig-version.cmake
+[1.609s] -- Up-to-date symlink: /home/samuele/dev/minar/minar-challenge-2/install/rplidar_ros/share/rplidar_ros/package.xml
+[1.615s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_bringup:/home/samuele/dev/minar/minar-challenge-2/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/samuele/dev/minar/minar-challenge-2/build/rplidar_ros

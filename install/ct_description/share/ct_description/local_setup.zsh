@@ -1,0 +1,1 @@
+/home/samuele/dev/minar/minar-challenge-2/build/ct_description/ament_cmake_environment_hooks/local_setup.zsh
