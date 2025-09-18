@@ -35,15 +35,7 @@ def generate_launch_description():
         parameters=[{'robot_description': robot_desc}]
     )
 
-    # Static transform: base_link -> lidar_link
-    static_lidar_tf = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='static_lidar_tf',
-        arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'laser']
-    )
-
-    # SLAM lifecycle node
+    # SLAM node
     slam_node = Node(
             package='slam_toolbox',
             executable='async_slam_toolbox_node',
@@ -52,7 +44,10 @@ def generate_launch_description():
             parameters=[slam_params_file, {'use_sim_time': False}]
         )
 
-    # Lifecycle activation (delay to allow lidar and odometry to start)
+    # Lifecycle activation (delay to allow lidar and odometry and stuff to start)
+    #https://index.ros.org/p/lifecycle
+    #https://github.com/ros2/demos/blob/jazzy/lifecycle/README.rst
+
     activate_configure = TimerAction(
         period=2.0,
         actions=[ExecuteProcess(
@@ -69,18 +64,20 @@ def generate_launch_description():
         )]
     
     )
+    # Static transform: odom -> base-link   
+    # These datapoints would come from the read odom node, which would read the instruments coming from the wheels.
+    
     static_odom_tf = Node(
     package='tf2_ros',
     executable='static_transform_publisher',
-    name='static_odom_tf',
+    name='static_odom_tf',  
     arguments=['0', '0', '0', '0', '0', '0', 'odom', 'base_link']
 )
 
     return LaunchDescription([
         rplidar_launch,
         robot_state_node,
-        static_lidar_tf,  # keep lidar transform
-       # slam_node,
+       # static_lidar_tf,  
         activate_configure,
         activate_activate,
         static_odom_tf,

@@ -7,6 +7,7 @@ Project Name: CyberTruck SLAM Robot 🤖
 colcon build 
 source ./install/setup.bash
 ros2 launch ct_bringup bringup.launch.py
+
 ```
 
 # 🚀 Getting Started
