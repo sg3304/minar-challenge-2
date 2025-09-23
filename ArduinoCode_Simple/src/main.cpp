@@ -211,6 +211,11 @@ void loop() {
     updateMotor(motorD, motor2B_pulseCount, lastCountD, motor2B_pwm, MOTOR2B_ENB);
 
     // --- Debug print ---
+
+    // The msgs should be structured as such:
+    // https://docs.ros.org/en/noetic/api/std_msgs/html/msg/MultiArrayLayout.html
+    // 'Publish as Float32MultiArray: [pos0,pos1,pos2,pos3,vel0,vel1,vel2,vel3]'
+    // [wheel1,wheel2,wheel3,wheel4,vel1,vel2,vel3,vel4]
     Serial.print("A: set=");
     Serial.print(motorA.setpoint, 2);
     Serial.print(", meas=");

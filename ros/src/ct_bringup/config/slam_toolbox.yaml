@@ -19,3 +19,5 @@ slam_toolbox:
     provide_odom_frame: true
     use_scan_matching: true
     odom0_config: [false, false, false, false, false, false]
+    autostart: true
+    use_sim_time: false

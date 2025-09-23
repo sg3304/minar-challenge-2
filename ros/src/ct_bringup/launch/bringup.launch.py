@@ -45,14 +45,16 @@ def generate_launch_description():
     )
 
     # SLAM lifecycle node   
-    slam_node = LifecycleNode(
+    slam_node = Node(
         package='slam_toolbox',
         executable='async_slam_toolbox_node',
-        namespace='',
         name='slam_toolbox',
         output='screen',
-        parameters=[slam_params_file, {'use_sim_time': False}]
+        parameters=[slam_params_file, {'use_sim_time': False}],
+        # automatically transition from configure -> activate 
+        # remap or additional parameters here
     )
+
 
     # Lifecycle activation using TimerAction
     activate_configure = TimerAction(
@@ -84,10 +86,12 @@ def generate_launch_description():
         name ='wheel_encoder_node')
 
     return LaunchDescription([
+        activate_configure,
+        activate_activate,
         rplidar_launch,
         robot_state_node,
         static_lidar_tf,
         static_odom_tf,
         slam_node,
-      # wheel_encoder_node
+       wheel_encoder_node
     ])
