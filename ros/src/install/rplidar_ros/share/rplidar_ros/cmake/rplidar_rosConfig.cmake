@@ -1,0 +1,1 @@
+/home/samuele/dev/minar/minar-challenge-2/src/build/rplidar_ros/ament_cmake_core/rplidar_rosConfig.cmake

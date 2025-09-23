@@ -1,0 +1,15 @@
+[2.072s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors/build --no-deps symlink_data
+[2.560s] running develop
+[2.821s] running egg_info
+[2.844s] writing ct_sensors.egg-info/PKG-INFO
+[2.845s] writing dependency_links to ct_sensors.egg-info/dependency_links.txt
+[2.845s] writing requirements to ct_sensors.egg-info/requires.txt
+[2.845s] writing top-level names to ct_sensors.egg-info/top_level.txt
+[2.896s] reading manifest file 'ct_sensors.egg-info/SOURCES.txt'
+[2.897s] writing manifest file 'ct_sensors.egg-info/SOURCES.txt'
+[2.922s] running build_ext
+[2.922s] Creating /home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/lib/python3.12/site-packages/ct-sensors.egg-link (link to .)
+[2.923s] 
+[2.923s] Installed /home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors
+[2.923s] running symlink_data
+[2.971s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors/build --no-deps symlink_data
