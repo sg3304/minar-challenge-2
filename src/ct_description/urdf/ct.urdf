@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="myfirst_square">
+<robot name="cyber_truck">
 
   <!-- Base link (square) -->
   <link name="base_link">

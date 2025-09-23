@@ -1,0 +1,131 @@
+
+@startuml
+title Arduino Motor Control System (OOP with hardware interfaces)
+
+/'
+- Four motor axes, each axis = Motor + Encoder + PID
+- Serial provides setpoints (rad/s) to individual axes
+- Hardware-specific classes implement replaceable interfaces
+'/
+
+interface ISerial {
+  +readLine(): String
+  +writeLine(msg: String): void
+}
+
+class ArduinoSerial implements ISerial {
+  -baud: int
+  -portName: String
+  +ArduinoSerial(portName: String, baud: int)
+  +readLine(): String
+  +writeLine(msg: String): void
+}
+
+interface IMotor {
+  +enable(): void
+  +disable(): void
+  +setVoltage(volts: float): void
+}
+
+class DCMotor implements IMotor {
+  -pwmPin: int
+  -dirPin: int
+  +DCMotor(pwmPin: int, dirPin: int)
+  +enable(): void
+  +disable(): void
+  +setVoltage(volts: float): void
+}
+
+interface IEncoder {
+  +getAngularVelocity(): float ' rad/s
+  +getPosition(): float         ' rad
+  +reset(): void
+}
+
+class QuadratureEncoder implements IEncoder {
+  -pinA: int
+  -pinB: int
+  -ppr: int
+  +QuadratureEncoder(pinA: int, pinB: int, ppr: int)
+  +getAngularVelocity(): float
+  +getPosition(): float
+  +reset(): void
+}
+
+class PIDController {
+  -kp: float
+  -ki: float
+  -kd: float
+  -dt: float
+  -setpoint: float      ' rad/s
+  -integral: float
+  -prevError: float
+  -outMin: float
+  -outMax: float
+  +PIDController(kp: float, ki: float, kd: float, dt: float)
+  +setGains(kp: float, ki: float, kd: float): void
+  +setOutputLimits(min: float, max: float): void
+  +setSetpoint(sp: float): void
+  +reset(): void
+  +compute(measured: float): float ' returns control signal (voltage)
+}
+
+class MotorAxis {
+  -motor: IMotor
+  -encoder: IEncoder
+  -pid: PIDController
+  +MotorAxis(motor: IMotor, encoder: IEncoder, pid: PIDController)
+  +setSetpointRadPerSec(sp: float): void
+  +update(): void ' read encoder, compute PID, command motor
+  +enable(): void
+  +disable(): void
+}
+
+class MotorSystem {
+  -axes: MotorAxis[4]
+  +MotorSystem(a0: MotorAxis, a1: MotorAxis, a2: MotorAxis, a3: MotorAxis)
+  +setSetpoint(axis: int, sp: float): void
+  +getVelocity(axis: int): float
+  +updateAll(): void
+  +enableAll(): void
+  +disableAll(): void
+}
+
+class SerialCommandHandler {
+  -serial: ISerial
+  -system: MotorSystem
+  +SerialCommandHandler(serial: ISerial, system: MotorSystem)
+  +poll(): void ' read line, parse, dispatch
+  +parseAndApply(cmd: String): void
+}
+
+SerialCommandHandler ..> ISerial : uses
+SerialCommandHandler ..> MotorSystem : controls
+MotorSystem "1" o-- "4" MotorAxis
+MotorAxis *-- PIDController
+MotorAxis ..> IMotor : commands
+MotorAxis ..> IEncoder : reads
+DCMotor ..|> IMotor
+QuadratureEncoder ..|> IEncoder
+ArduinoSerial ..|> ISerial
+
+note top of PIDController
+  - Units: setpoint and measured in rad/s
+  - Output: voltage command (clamped to [outMin, outMax])
+  - Provide anti-windup via clamped integral or back-calculation
+end note
+
+note right of SerialCommandHandler
+  Example protocol (text):
+   - SET <axis> <sp_rad_s>
+   - GET <axis> VEL
+   - ENABLE <axis|ALL>
+   - DISABLE <axis|ALL>
+  Replies via writeLine(...)
+end note
+
+note bottom of MotorAxis
+  update() called at fixed sample time dt
+  to match PIDController.dt
+end note
+@enduml
