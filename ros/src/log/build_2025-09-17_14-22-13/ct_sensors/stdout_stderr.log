@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating ct_sensors.egg-info
+writing ct_sensors.egg-info/PKG-INFO
+writing dependency_links to ct_sensors.egg-info/dependency_links.txt
+writing requirements to ct_sensors.egg-info/requires.txt
+writing top-level names to ct_sensors.egg-info/top_level.txt
+writing manifest file 'ct_sensors.egg-info/SOURCES.txt'
+reading manifest file 'ct_sensors.egg-info/SOURCES.txt'
+writing manifest file 'ct_sensors.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/lib/python3.12/site-packages/ct-sensors.egg-link (link to .)
+
+Installed /home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors
+running symlink_data
+creating /home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/share/ament_index
+creating /home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/share/ament_index/resource_index
+creating /home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/share/ament_index/resource_index/packages
+symbolically linking /home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors/resource/ct_sensors -> /home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/share/ament_index/resource_index/packages
+symbolically linking /home/samuele/dev/minar/minar-challenge-2/src/build/ct_sensors/package.xml -> /home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/share/ct_sensors
+creating /home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/share/ct_sensors/config
+creating /home/samuele/dev/minar/minar-challenge-2/src/install/ct_sensors/share/ct_sensors/launch

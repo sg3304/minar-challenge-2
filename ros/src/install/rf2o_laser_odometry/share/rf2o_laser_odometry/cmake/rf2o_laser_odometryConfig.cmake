@@ -1,0 +1,1 @@
+/home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry/ament_cmake_core/rf2o_laser_odometryConfig.cmake

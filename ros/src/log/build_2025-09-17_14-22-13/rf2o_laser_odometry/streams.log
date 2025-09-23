@@ -1,0 +1,69 @@
+[1.269s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/samuele/dev/minar/minar-challenge-2/src/rf2o_laser_odometry -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry
+[1.376s] -- The C compiler identification is GNU 13.3.0
+[1.501s] -- The CXX compiler identification is GNU 13.3.0
+[1.543s] -- Detecting C compiler ABI info
+[1.758s] -- Detecting C compiler ABI info - done
+[1.784s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.785s] -- Detecting C compile features
+[1.786s] -- Detecting C compile features - done
+[1.805s] -- Detecting CXX compiler ABI info
+[1.966s] -- Detecting CXX compiler ABI info - done
+[1.984s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.984s] -- Detecting CXX compile features
+[1.985s] -- Detecting CXX compile features - done
+[1.993s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[2.332s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.486s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.590s] -- Found rclcpp: 28.1.11 (/opt/ros/jazzy/share/rclcpp/cmake)
+[2.726s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[2.787s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[2.847s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.929s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.175s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[3.186s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[3.385s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[3.470s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[3.541s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.895s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[3.996s] -- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[4.074s] -- Found tf2_geometry_msgs: 0.36.14 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[4.168s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[4.176s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[4.176s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[4.887s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[4.969s] -- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+[5.110s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0")  
+[5.375s] -- Configuring done (4.1s)
+[5.426s] -- Generating done (0.0s)
+[5.446s] -- Build files have been written to: /home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry
+[5.483s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/samuele/dev/minar/minar-challenge-2/src/rf2o_laser_odometry -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry
+[5.488s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry -- -j8 -l8
+[5.630s] [ 20%] [32mBuilding CXX object CMakeFiles/rf2o_laser_odometry.dir/src/CLaserOdometry2D.cpp.o[0m
+[5.661s] [ 40%] [32mBuilding CXX object CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2D.cpp.o[0m
+[5.664s] [ 60%] [32mBuilding CXX object CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2DNode.cpp.o[0m
+[43.977s] [ 80%] [32m[1mLinking CXX executable rf2o_laser_odometry_node[0m
+[44.949s] [100%] [32m[1mLinking CXX static library librf2o_laser_odometry.a[0m
+[45.309s] [100%] Built target rf2o_laser_odometry_node
+[45.370s] [100%] Built target rf2o_laser_odometry
+[45.384s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry -- -j8 -l8
+[45.385s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry
+[45.395s] -- Install configuration: ""
+[45.396s] -- Execute custom install script
+[45.396s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/lib/rf2o_laser_odometry/rf2o_laser_odometry_node
+[45.407s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/rf2o_laser_odometry.launch.py
+[45.418s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/ament_index/resource_index/package_run_dependencies/rf2o_laser_odometry
+[45.430s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/ament_index/resource_index/parent_prefix_path/rf2o_laser_odometry
+[45.441s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.sh
+[45.454s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.dsv
+[45.468s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.sh
+[45.487s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.dsv
+[45.506s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.bash
+[45.520s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.sh
+[45.532s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.zsh
+[45.541s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.dsv
+[45.551s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.dsv
+[45.561s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/ament_index/resource_index/packages/rf2o_laser_odometry
+[45.570s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig.cmake
+[45.578s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig-version.cmake
+[45.588s] -- Symlinking: /home/samuele/dev/minar/minar-challenge-2/src/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.xml
+[45.598s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/samuele/dev/minar/minar-challenge-2/src/build/rf2o_laser_odometry
