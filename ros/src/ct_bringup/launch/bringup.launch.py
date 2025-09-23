@@ -76,6 +76,13 @@ def generate_launch_description():
         name='static_odom_tf',
         arguments=['0', '0', '0', '0', '0', '0', 'odom', 'base_link']
     )
+    wheel_encoder_node = Node(
+    package='ct_bringup',
+    executable='wheel_encoder_node',
+    name='wheel_encoder_node',
+    output='screen',
+    parameters=[os.path.join(bringup_dir, 'config', 'encoders.yaml')]
+)
 
     return LaunchDescription([
         rplidar_launch,
@@ -84,5 +91,7 @@ def generate_launch_description():
         activate_configure,
         activate_activate,
         static_odom_tf,
-        slam_node
+        slam_node,
+        wheel_encoder_node
+        
     ])
