@@ -1,0 +1,19 @@
+[2.419s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_navigation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_navigation build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/install.log --single-version-externally-managed install_data
+[2.860s] running egg_info
+[2.901s] writing ../../build/ct_navigation/ct_navigation.egg-info/PKG-INFO
+[2.901s] writing dependency_links to ../../build/ct_navigation/ct_navigation.egg-info/dependency_links.txt
+[2.901s] writing requirements to ../../build/ct_navigation/ct_navigation.egg-info/requires.txt
+[2.902s] writing top-level names to ../../build/ct_navigation/ct_navigation.egg-info/top_level.txt
+[2.978s] reading manifest file '../../build/ct_navigation/ct_navigation.egg-info/SOURCES.txt'
+[2.980s] writing manifest file '../../build/ct_navigation/ct_navigation.egg-info/SOURCES.txt'
+[2.980s] running build
+[2.980s] running build_py
+[2.980s] running install
+[2.992s] running install_lib
+[3.021s] running install_data
+[3.021s] running install_egg_info
+[3.053s] removing '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/lib/python3.12/site-packages/ct_navigation-0.0.0-py3.12.egg-info' (and everything under it)
+[3.054s] Copying ../../build/ct_navigation/ct_navigation.egg-info to /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/lib/python3.12/site-packages/ct_navigation-0.0.0-py3.12.egg-info
+[3.055s] running install_scripts
+[3.363s] writing list of installed files to '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/install.log'
+[3.440s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_navigation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_navigation build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/install.log --single-version-externally-managed install_data

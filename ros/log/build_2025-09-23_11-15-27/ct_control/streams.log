@@ -1,0 +1,32 @@
+[2.326s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_control': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_control build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/install.log --single-version-externally-managed install_data
+[2.676s] running egg_info
+[2.676s] creating ../../build/ct_control/ct_control.egg-info
+[2.707s] writing ../../build/ct_control/ct_control.egg-info/PKG-INFO
+[2.707s] writing dependency_links to ../../build/ct_control/ct_control.egg-info/dependency_links.txt
+[2.708s] writing requirements to ../../build/ct_control/ct_control.egg-info/requires.txt
+[2.708s] writing top-level names to ../../build/ct_control/ct_control.egg-info/top_level.txt
+[2.708s] writing manifest file '../../build/ct_control/ct_control.egg-info/SOURCES.txt'
+[2.761s] reading manifest file '../../build/ct_control/ct_control.egg-info/SOURCES.txt'
+[2.762s] writing manifest file '../../build/ct_control/ct_control.egg-info/SOURCES.txt'
+[2.762s] running build
+[2.762s] running build_py
+[2.763s] creating /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build
+[2.763s] creating /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build/lib
+[2.763s] creating /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build/lib/ct_control
+[2.763s] copying ct_control/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build/lib/ct_control
+[2.763s] running install
+[2.771s] running install_lib
+[2.796s] creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages/ct_control
+[2.796s] copying /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build/lib/ct_control/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages/ct_control
+[2.797s] byte-compiling /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages/ct_control/__init__.py to __init__.cpython-312.pyc
+[2.797s] running install_data
+[2.797s] creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ament_index
+[2.798s] creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ament_index/resource_index
+[2.798s] creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ament_index/resource_index/packages
+[2.798s] copying resource/ct_control -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ament_index/resource_index/packages
+[2.798s] copying package.xml -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ct_control
+[2.798s] running install_egg_info
+[2.828s] Copying ../../build/ct_control/ct_control.egg-info to /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages/ct_control-0.0.0-py3.12.egg-info
+[2.828s] running install_scripts
+[3.010s] writing list of installed files to '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/install.log'
+[3.060s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_control' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_control build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/install.log --single-version-externally-managed install_data

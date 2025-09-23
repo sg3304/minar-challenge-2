@@ -1,0 +1,1 @@
+/home/samuele/dev/minar/minar-challenge-2/ros/src/build/ct_description/ament_cmake_core/ct_descriptionConfig.cmake

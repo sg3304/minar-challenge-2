@@ -1,0 +1,16 @@
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/urdf/ct.urdf
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ament_index/resource_index/package_run_dependencies/ct_description
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ament_index/resource_index/parent_prefix_path/ct_description
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/environment/ament_prefix_path.sh
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/environment/ament_prefix_path.dsv
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/environment/path.sh
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/environment/path.dsv
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/local_setup.bash
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/local_setup.sh
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/local_setup.zsh
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/local_setup.dsv
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/package.dsv
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ament_index/resource_index/packages/ct_description
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/cmake/ct_descriptionConfig.cmake
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/cmake/ct_descriptionConfig-version.cmake
+/home/samuele/dev/minar/minar-challenge-2/ros/src/install/ct_description/share/ct_description/package.xml

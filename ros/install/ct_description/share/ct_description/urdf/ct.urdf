@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="cyber_truck">
+
+  <!-- Base link (square) -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.6 0.6 0.2"/> <!-- X, Y, Z dimensions -->
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <!-- LiDAR link -->
+  <link name="lidar_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.1" radius="0.05"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+  </link>
+
+  <!-- Joint connecting LiDAR to base_link -->
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/> <!-- 0.15 = half of base height + half of lidar height -->
+  </joint>
+        <joint name="base_footprint_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="base_footprint"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </joint>
+
+                
+        <link name="base_footprint">
+        </link>
+</robot>

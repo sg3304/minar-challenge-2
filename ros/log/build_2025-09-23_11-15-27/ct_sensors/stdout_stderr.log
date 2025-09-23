@@ -1,0 +1,32 @@
+running egg_info
+creating ../../build/ct_sensors/ct_sensors.egg-info
+writing ../../build/ct_sensors/ct_sensors.egg-info/PKG-INFO
+writing dependency_links to ../../build/ct_sensors/ct_sensors.egg-info/dependency_links.txt
+writing requirements to ../../build/ct_sensors/ct_sensors.egg-info/requires.txt
+writing top-level names to ../../build/ct_sensors/ct_sensors.egg-info/top_level.txt
+writing manifest file '../../build/ct_sensors/ct_sensors.egg-info/SOURCES.txt'
+reading manifest file '../../build/ct_sensors/ct_sensors.egg-info/SOURCES.txt'
+writing manifest file '../../build/ct_sensors/ct_sensors.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/build
+creating /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/build/lib
+creating /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/build/lib/ct_sensors
+copying ct_sensors/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/build/lib/ct_sensors
+running install
+running install_lib
+creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages/ct_sensors
+copying /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/build/lib/ct_sensors/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages/ct_sensors
+byte-compiling /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages/ct_sensors/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ament_index
+creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ament_index/resource_index
+creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ament_index/resource_index/packages
+copying resource/ct_sensors -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ament_index/resource_index/packages
+copying package.xml -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors
+creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/config
+creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/launch
+running install_egg_info
+Copying ../../build/ct_sensors/ct_sensors.egg-info to /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages/ct_sensors-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/install.log'

@@ -1,0 +1,32 @@
+[2.482s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_teleop build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/install.log --single-version-externally-managed install_data
+[3.039s] running egg_info
+[3.039s] creating ../../build/ct_teleop/ct_teleop.egg-info
+[3.082s] writing ../../build/ct_teleop/ct_teleop.egg-info/PKG-INFO
+[3.082s] writing dependency_links to ../../build/ct_teleop/ct_teleop.egg-info/dependency_links.txt
+[3.082s] writing requirements to ../../build/ct_teleop/ct_teleop.egg-info/requires.txt
+[3.082s] writing top-level names to ../../build/ct_teleop/ct_teleop.egg-info/top_level.txt
+[3.083s] writing manifest file '../../build/ct_teleop/ct_teleop.egg-info/SOURCES.txt'
+[3.132s] reading manifest file '../../build/ct_teleop/ct_teleop.egg-info/SOURCES.txt'
+[3.132s] writing manifest file '../../build/ct_teleop/ct_teleop.egg-info/SOURCES.txt'
+[3.133s] running build
+[3.133s] running build_py
+[3.133s] creating /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/build
+[3.133s] creating /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/build/lib
+[3.133s] creating /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/build/lib/ct_teleop
+[3.133s] copying ct_teleop/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/build/lib/ct_teleop
+[3.133s] running install
+[3.140s] running install_lib
+[3.163s] creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/python3.12/site-packages/ct_teleop
+[3.164s] copying /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/build/lib/ct_teleop/__init__.py -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/python3.12/site-packages/ct_teleop
+[3.165s] byte-compiling /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/python3.12/site-packages/ct_teleop/__init__.py to __init__.cpython-312.pyc
+[3.165s] running install_data
+[3.165s] creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ament_index
+[3.165s] creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ament_index/resource_index
+[3.165s] creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ament_index/resource_index/packages
+[3.166s] copying resource/ct_teleop -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ament_index/resource_index/packages
+[3.166s] copying package.xml -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ct_teleop
+[3.166s] running install_egg_info
+[3.195s] Copying ../../build/ct_teleop/ct_teleop.egg-info to /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/python3.12/site-packages/ct_teleop-0.0.0-py3.12.egg-info
+[3.196s] running install_scripts
+[3.355s] writing list of installed files to '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/install.log'
+[3.391s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_teleop build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/install.log --single-version-externally-managed install_data

@@ -1,0 +1,383 @@
+[0.093s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.093s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_argcomplete.argument_parser.argcomplete.ArgcompleteDecorator object at 0x76617b1aa480>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x76617b1aa330>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x76617b1aa330>>)
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.132s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/samuele/dev/minar/minar-challenge-2/ros'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_bringup) by extension 'ignore'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_bringup) by extension 'ignore_ament_install'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_bringup) by extensions ['ros']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_bringup) by extension 'ros'
+[0.162s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ct_bringup' with type 'ros.ament_python' and name 'ct_bringup'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_control) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_control) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_control) by extension 'ignore_ament_install'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_control) by extensions ['ros']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_control) by extension 'ros'
+[0.163s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ct_control' with type 'ros.ament_python' and name 'ct_control'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_description) by extensions ['ignore', 'ignore_ament_install']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_description) by extension 'ignore'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_description) by extension 'ignore_ament_install'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_description) by extensions ['ros']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_description) by extension 'ros'
+[0.164s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ct_description' with type 'ros.ament_cmake' and name 'ct_description'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_navigation) by extension 'ignore'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_navigation) by extension 'ignore_ament_install'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_navigation) by extensions ['ros']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_navigation) by extension 'ros'
+[0.165s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ct_navigation' with type 'ros.ament_python' and name 'ct_navigation'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_sensors) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_sensors) by extension 'ignore'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_sensors) by extension 'ignore_ament_install'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_sensors) by extensions ['ros']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_sensors) by extension 'ros'
+[0.167s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ct_sensors' with type 'ros.ament_python' and name 'ct_sensors'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_teleop) by extensions ['ignore', 'ignore_ament_install']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_teleop) by extension 'ignore'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_teleop) by extension 'ignore_ament_install'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_teleop) by extensions ['ros']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/ct_teleop) by extension 'ros'
+[0.168s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ct_teleop' with type 'ros.ament_python' and name 'ct_teleop'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros) by extension 'ignore'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros) by extension 'ignore_ament_install'
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros) by extensions ['ros']
+[0.168s] Level 1:colcon.colcon_core.package_identification:_identify(src/rplidar_ros) by extension 'ros'
+[0.169s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rplidar_ros' with type 'ros.ament_cmake' and name 'rplidar_ros'
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'ct_bringup' build argument 'cmake_args' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'ct_bringup' build argument 'cmake_target' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'ct_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'ct_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'ct_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'ct_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'ct_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'ct_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'ct_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.189s] DEBUG:colcon.colcon_core.verb:Building package 'ct_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup', 'merge_install': False, 'path': '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_control' build argument 'cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_control' build argument 'cmake_target' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.189s] DEBUG:colcon.colcon_core.verb:Building package 'ct_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control', 'merge_install': False, 'path': '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_control', 'symlink_install': False, 'test_result_base': None}
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_description' build argument 'cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_description' build argument 'cmake_target' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ct_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.189s] DEBUG:colcon.colcon_core.verb:Building package 'ct_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description', 'merge_install': False, 'path': '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_description', 'symlink_install': False, 'test_result_base': None}
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_navigation' build argument 'cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_navigation' build argument 'cmake_target' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_navigation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_navigation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_navigation' build argument 'cmake_clean_first' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_navigation' build argument 'cmake_force_configure' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_navigation' build argument 'ament_cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_navigation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_navigation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.190s] DEBUG:colcon.colcon_core.verb:Building package 'ct_navigation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation', 'merge_install': False, 'path': '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_navigation', 'symlink_install': False, 'test_result_base': None}
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_sensors' build argument 'cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_sensors' build argument 'cmake_target' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_sensors' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_sensors' build argument 'cmake_clean_cache' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_sensors' build argument 'cmake_clean_first' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_sensors' build argument 'cmake_force_configure' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_sensors' build argument 'ament_cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_sensors' build argument 'catkin_cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_sensors' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.190s] DEBUG:colcon.colcon_core.verb:Building package 'ct_sensors' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors', 'merge_install': False, 'path': '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_sensors', 'symlink_install': False, 'test_result_base': None}
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_teleop' build argument 'cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_teleop' build argument 'cmake_target' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_teleop' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_teleop' build argument 'cmake_clean_cache' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_teleop' build argument 'cmake_clean_first' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_teleop' build argument 'cmake_force_configure' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'ct_teleop' build argument 'ament_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'ct_teleop' build argument 'catkin_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'ct_teleop' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.191s] DEBUG:colcon.colcon_core.verb:Building package 'ct_teleop' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop', 'merge_install': False, 'path': '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_teleop', 'symlink_install': False, 'test_result_base': None}
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_target' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_clean_first' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_force_configure' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'ament_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.191s] DEBUG:colcon.colcon_core.verb:Building package 'rplidar_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samuele/dev/minar/minar-challenge-2/ros/build/rplidar_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros', 'merge_install': False, 'path': '/home/samuele/dev/minar/minar-challenge-2/ros/src/rplidar_ros', 'symlink_install': False, 'test_result_base': None}
+[0.191s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.192s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.192s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_bringup' with build type 'ament_python'
+[0.192s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_bringup', 'ament_prefix_path')
+[0.194s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.194s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/hook/ament_prefix_path.dsv'
+[0.195s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/hook/ament_prefix_path.sh'
+[0.195s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.196s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/samuele/dev/minar/minar-challenge-2/ros/install/rf2o_laser_odometry' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.197s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/samuele/dev/minar/minar-challenge-2/ros/install/rf2o_laser_odometry' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.202s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_control' with build type 'ament_python'
+[0.202s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_control', 'ament_prefix_path')
+[0.202s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ct_control/hook/ament_prefix_path.dsv'
+[0.203s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ct_control/hook/ament_prefix_path.sh'
+[0.203s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.207s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_description' with build type 'ament_cmake'
+[0.207s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_description'
+[0.207s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.211s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_navigation' with build type 'ament_python'
+[0.211s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_navigation', 'ament_prefix_path')
+[0.211s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/share/ct_navigation/hook/ament_prefix_path.dsv'
+[0.211s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/share/ct_navigation/hook/ament_prefix_path.sh'
+[0.212s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.216s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_sensors' with build type 'ament_python'
+[0.216s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_sensors', 'ament_prefix_path')
+[0.216s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/hook/ament_prefix_path.dsv'
+[0.217s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/hook/ament_prefix_path.sh'
+[0.218s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.222s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_teleop' with build type 'ament_python'
+[0.222s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_teleop', 'ament_prefix_path')
+[0.222s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ct_teleop/hook/ament_prefix_path.dsv'
+[0.223s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ct_teleop/hook/ament_prefix_path.sh'
+[0.224s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.227s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/rplidar_ros' with build type 'ament_cmake'
+[0.227s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/rplidar_ros'
+[0.228s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.472s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_bringup'
+[0.473s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.721s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_control'
+[0.721s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.728s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_description -- -j8 -l8
+[0.964s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_navigation'
+[0.964s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.189s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_sensors'
+[1.189s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.429s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_teleop'
+[1.429s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.436s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/build/rplidar_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/samuele/dev/minar/minar-challenge-2/ros/build/rplidar_ros -- -j8 -l8
+[1.437s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_description -- -j8 -l8
+[1.447s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_description
+[1.463s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ct_description)
+[1.464s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_description
+[1.469s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description' for CMake module files
+[1.470s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description' for CMake config files
+[1.470s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_description', 'cmake_prefix_path')
+[1.471s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/hook/cmake_prefix_path.dsv'
+[1.471s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/hook/cmake_prefix_path.sh'
+[1.473s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/bin'
+[1.473s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/lib/pkgconfig/ct_description.pc'
+[1.473s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/lib/python3.12/site-packages'
+[1.474s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/bin'
+[1.474s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/package.dsv'
+[1.475s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/package.sh'
+[1.476s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/package.bash'
+[1.477s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/package.zsh'
+[1.479s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/colcon-core/packages/ct_description)
+[1.480s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ct_description)
+[1.480s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description' for CMake module files
+[1.482s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description' for CMake config files
+[1.482s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_description', 'cmake_prefix_path')
+[1.483s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/hook/cmake_prefix_path.dsv'
+[1.485s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/hook/cmake_prefix_path.sh'
+[1.486s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/bin'
+[1.486s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/lib/pkgconfig/ct_description.pc'
+[1.487s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/lib/python3.12/site-packages'
+[1.487s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/bin'
+[1.488s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/package.dsv'
+[1.489s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/package.sh'
+[1.490s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/package.bash'
+[1.491s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/ct_description/package.zsh'
+[1.492s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_description/share/colcon-core/packages/ct_description)
+[1.584s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/samuele/dev/minar/minar-challenge-2/ros/build/rplidar_ros -- -j8 -l8
+[1.585s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/build/rplidar_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/samuele/dev/minar/minar-challenge-2/ros/build/rplidar_ros
+[1.615s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rplidar_ros)
+[1.615s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros' for CMake module files
+[1.616s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros' for CMake config files
+[1.617s] Level 1:colcon.colcon_core.shell:create_environment_hook('rplidar_ros', 'cmake_prefix_path')
+[1.617s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.dsv'
+[1.622s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.sh'
+[1.626s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/lib'
+[1.628s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/bin'
+[1.628s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/lib/pkgconfig/rplidar_ros.pc'
+[1.629s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/lib/python3.12/site-packages'
+[1.631s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/bin'
+[1.632s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/package.dsv'
+[1.632s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/samuele/dev/minar/minar-challenge-2/ros/build/rplidar_ros
+[1.633s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/package.sh'
+[1.634s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/package.bash'
+[1.635s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/package.zsh'
+[1.636s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/colcon-core/packages/rplidar_ros)
+[1.637s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rplidar_ros)
+[1.637s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros' for CMake module files
+[1.638s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros' for CMake config files
+[1.638s] Level 1:colcon.colcon_core.shell:create_environment_hook('rplidar_ros', 'cmake_prefix_path')
+[1.639s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.dsv'
+[1.639s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.sh'
+[1.640s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/lib'
+[1.641s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/bin'
+[1.641s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/lib/pkgconfig/rplidar_ros.pc'
+[1.641s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/lib/python3.12/site-packages'
+[1.642s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/bin'
+[1.642s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/package.dsv'
+[1.643s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/package.sh'
+[1.644s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/package.bash'
+[1.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/rplidar_ros/package.zsh'
+[1.647s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samuele/dev/minar/minar-challenge-2/ros/install/rplidar_ros/share/colcon-core/packages/rplidar_ros)
+[2.306s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_control': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_control build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/install.log --single-version-externally-managed install_data
+[2.349s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_teleop build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/install.log --single-version-externally-managed install_data
+[2.353s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_navigation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_navigation build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/install.log --single-version-externally-managed install_data
+[2.645s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_bringup build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/install.log --single-version-externally-managed install_data
+[2.670s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_sensors': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_sensors build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/install.log --single-version-externally-managed install_data
+[3.089s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop' for CMake module files
+[3.090s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_teleop build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_teleop/install.log --single-version-externally-managed install_data
+[3.090s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop' for CMake config files
+[3.091s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib'
+[3.091s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/bin'
+[3.091s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/pkgconfig/ct_teleop.pc'
+[3.091s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/lib/python3.12/site-packages'
+[3.092s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_teleop', 'pythonpath')
+[3.092s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ct_teleop/hook/pythonpath.dsv'
+[3.092s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ct_teleop/hook/pythonpath.sh'
+[3.093s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/bin'
+[3.093s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ct_teleop)
+[3.093s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ct_teleop/package.dsv'
+[3.094s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ct_teleop/package.sh'
+[3.095s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ct_teleop/package.bash'
+[3.096s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/ct_teleop/package.zsh'
+[3.096s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_teleop/share/colcon-core/packages/ct_teleop)
+[3.200s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation' for CMake module files
+[3.201s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_navigation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_navigation build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_navigation/install.log --single-version-externally-managed install_data
+[3.201s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation' for CMake config files
+[3.202s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/lib'
+[3.203s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/bin'
+[3.203s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/lib/pkgconfig/ct_navigation.pc'
+[3.204s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/lib/python3.12/site-packages'
+[3.204s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_navigation', 'pythonpath')
+[3.205s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/share/ct_navigation/hook/pythonpath.dsv'
+[3.206s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/share/ct_navigation/hook/pythonpath.sh'
+[3.208s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/bin'
+[3.209s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ct_navigation)
+[3.209s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/share/ct_navigation/package.dsv'
+[3.210s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/share/ct_navigation/package.sh'
+[3.211s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/share/ct_navigation/package.bash'
+[3.211s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/share/ct_navigation/package.zsh'
+[3.212s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_navigation/share/colcon-core/packages/ct_navigation)
+[3.238s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control' for CMake module files
+[3.238s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_control' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_control build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/install.log --single-version-externally-managed install_data
+[3.239s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control' for CMake config files
+[3.240s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib'
+[3.240s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/bin'
+[3.240s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/pkgconfig/ct_control.pc'
+[3.240s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages'
+[3.240s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_control', 'pythonpath')
+[3.241s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ct_control/hook/pythonpath.dsv'
+[3.241s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ct_control/hook/pythonpath.sh'
+[3.242s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/bin'
+[3.242s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ct_control)
+[3.243s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ct_control/package.dsv'
+[3.243s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ct_control/package.sh'
+[3.244s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ct_control/package.bash'
+[3.245s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/ct_control/package.zsh'
+[3.245s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/share/colcon-core/packages/ct_control)
+[3.492s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup' for CMake module files
+[3.492s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_bringup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_bringup build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/install.log --single-version-externally-managed install_data
+[3.493s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup' for CMake config files
+[3.494s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib'
+[3.494s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/bin'
+[3.494s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/pkgconfig/ct_bringup.pc'
+[3.494s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages'
+[3.494s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_bringup', 'pythonpath')
+[3.495s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/hook/pythonpath.dsv'
+[3.495s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/hook/pythonpath.sh'
+[3.496s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/bin'
+[3.496s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ct_bringup)
+[3.496s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/package.dsv'
+[3.497s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/package.sh'
+[3.497s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/package.bash'
+[3.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/package.zsh'
+[3.498s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/colcon-core/packages/ct_bringup)
+[3.584s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors' for CMake module files
+[3.584s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_sensors' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_sensors build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/install.log --single-version-externally-managed install_data
+[3.585s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors' for CMake config files
+[3.585s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib'
+[3.585s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/bin'
+[3.585s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/pkgconfig/ct_sensors.pc'
+[3.586s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages'
+[3.586s] Level 1:colcon.colcon_core.shell:create_environment_hook('ct_sensors', 'pythonpath')
+[3.586s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/hook/pythonpath.dsv'
+[3.587s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/hook/pythonpath.sh'
+[3.587s] Level 1:colcon.colcon_core.environment:checking '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/bin'
+[3.587s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ct_sensors)
+[3.587s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/package.dsv'
+[3.588s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/package.sh'
+[3.588s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/package.bash'
+[3.589s] INFO:colcon.colcon_core.shell:Creating package script '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/ct_sensors/package.zsh'
+[3.589s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/share/colcon-core/packages/ct_sensors)
+[3.589s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.589s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.590s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.590s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.596s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.596s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.597s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.611s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.611s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/samuele/dev/minar/minar-challenge-2/ros/install/local_setup.sh'
+[3.611s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/samuele/dev/minar/minar-challenge-2/ros/install/_local_setup_util_sh.py'
+[3.613s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/samuele/dev/minar/minar-challenge-2/ros/install/setup.sh'
+[3.615s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/samuele/dev/minar/minar-challenge-2/ros/install/local_setup.bash'
+[3.616s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/samuele/dev/minar/minar-challenge-2/ros/install/setup.bash'
+[3.617s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/samuele/dev/minar/minar-challenge-2/ros/install/local_setup.zsh'
+[3.618s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/samuele/dev/minar/minar-challenge-2/ros/install/setup.zsh'

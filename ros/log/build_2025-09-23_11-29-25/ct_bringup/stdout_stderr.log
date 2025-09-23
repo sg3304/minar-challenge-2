@@ -1,0 +1,19 @@
+running develop
+running egg_info
+writing ct_bringup.egg-info/PKG-INFO
+writing dependency_links to ct_bringup.egg-info/dependency_links.txt
+writing entry points to ct_bringup.egg-info/entry_points.txt
+writing requirements to ct_bringup.egg-info/requires.txt
+writing top-level names to ct_bringup.egg-info/top_level.txt
+reading manifest file 'ct_bringup.egg-info/SOURCES.txt'
+writing manifest file 'ct_bringup.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages/ct-bringup.egg-link (link to .)
+Installing wheel_encoder_node script to /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/ct_bringup
+
+Installed /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup
+running symlink_data
+symbolically linking /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/resource/ct_bringup -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ament_index/resource_index/packages
+symbolically linking /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/package.xml -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup
+symbolically linking /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/launch/bringup.launch.py -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/launch
+symbolically linking /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/config/slam_toolbox.yaml -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/config

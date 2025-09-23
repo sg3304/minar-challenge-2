@@ -1,0 +1,19 @@
+[2.005s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_control': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_control build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/install.log --single-version-externally-managed install_data
+[2.357s] running egg_info
+[2.382s] writing ../../build/ct_control/ct_control.egg-info/PKG-INFO
+[2.382s] writing dependency_links to ../../build/ct_control/ct_control.egg-info/dependency_links.txt
+[2.383s] writing requirements to ../../build/ct_control/ct_control.egg-info/requires.txt
+[2.383s] writing top-level names to ../../build/ct_control/ct_control.egg-info/top_level.txt
+[2.433s] reading manifest file '../../build/ct_control/ct_control.egg-info/SOURCES.txt'
+[2.434s] writing manifest file '../../build/ct_control/ct_control.egg-info/SOURCES.txt'
+[2.434s] running build
+[2.435s] running build_py
+[2.435s] running install
+[2.442s] running install_lib
+[2.467s] running install_data
+[2.467s] running install_egg_info
+[2.496s] removing '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages/ct_control-0.0.0-py3.12.egg-info' (and everything under it)
+[2.499s] Copying ../../build/ct_control/ct_control.egg-info to /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages/ct_control-0.0.0-py3.12.egg-info
+[2.500s] running install_scripts
+[2.711s] writing list of installed files to '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/install.log'
+[2.770s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_control' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_control build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_control/install.log --single-version-externally-managed install_data

@@ -1,0 +1,23 @@
+[1.990s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_bringup build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/install.log --single-version-externally-managed install_data
+[2.374s] running egg_info
+[2.411s] writing ../../build/ct_bringup/ct_bringup.egg-info/PKG-INFO
+[2.412s] writing dependency_links to ../../build/ct_bringup/ct_bringup.egg-info/dependency_links.txt
+[2.412s] writing requirements to ../../build/ct_bringup/ct_bringup.egg-info/requires.txt
+[2.413s] writing top-level names to ../../build/ct_bringup/ct_bringup.egg-info/top_level.txt
+[2.489s] reading manifest file '../../build/ct_bringup/ct_bringup.egg-info/SOURCES.txt'
+[2.491s] writing manifest file '../../build/ct_bringup/ct_bringup.egg-info/SOURCES.txt'
+[2.492s] running build
+[2.492s] running build_py
+[2.493s] copying ct_bringup/wheel_encoder_node.py -> /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/build/lib/ct_bringup
+[2.494s] running install
+[2.506s] running install_lib
+[2.551s] copying /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/build/lib/ct_bringup/wheel_encoder_node.py -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages/ct_bringup
+[2.553s] byte-compiling /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages/ct_bringup/wheel_encoder_node.py to wheel_encoder_node.cpython-312.pyc
+[2.555s] running install_data
+[2.558s] copying launch/bringup.launch.py -> /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/share/ct_bringup/launch
+[2.558s] running install_egg_info
+[2.615s] removing '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages/ct_bringup-0.0.0-py3.12.egg-info' (and everything under it)
+[2.617s] Copying ../../build/ct_bringup/ct_bringup.egg-info to /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages/ct_bringup-0.0.0-py3.12.egg-info
+[2.618s] running install_scripts
+[2.991s] writing list of installed files to '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/install.log'
+[3.119s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_bringup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_bringup build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_bringup/install.log --single-version-externally-managed install_data

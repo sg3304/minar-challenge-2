@@ -1,0 +1,19 @@
+[3.384s] Invoking command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_sensors': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_sensors build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/install.log --single-version-externally-managed install_data
+[4.085s] running egg_info
+[4.137s] writing ../../build/ct_sensors/ct_sensors.egg-info/PKG-INFO
+[4.139s] writing dependency_links to ../../build/ct_sensors/ct_sensors.egg-info/dependency_links.txt
+[4.142s] writing requirements to ../../build/ct_sensors/ct_sensors.egg-info/requires.txt
+[4.142s] writing top-level names to ../../build/ct_sensors/ct_sensors.egg-info/top_level.txt
+[4.241s] reading manifest file '../../build/ct_sensors/ct_sensors.egg-info/SOURCES.txt'
+[4.244s] writing manifest file '../../build/ct_sensors/ct_sensors.egg-info/SOURCES.txt'
+[4.244s] running build
+[4.246s] running build_py
+[4.247s] running install
+[4.263s] running install_lib
+[4.313s] running install_data
+[4.314s] running install_egg_info
+[4.362s] removing '/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages/ct_sensors-0.0.0-py3.12.egg-info' (and everything under it)
+[4.363s] Copying ../../build/ct_sensors/ct_sensors.egg-info to /home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages/ct_sensors-0.0.0-py3.12.egg-info
+[4.365s] running install_scripts
+[4.754s] writing list of installed files to '/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/install.log'
+[4.866s] Invoked command in '/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_sensors' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samuele/dev/minar/minar-challenge-2/ros/install/ct_sensors/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ct_sensors build --build-base /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/build install --record /home/samuele/dev/minar/minar-challenge-2/ros/build/ct_sensors/install.log --single-version-externally-managed install_data

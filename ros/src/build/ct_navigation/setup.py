@@ -1,0 +1,1 @@
+/home/samuele/dev/minar/minar-challenge-2/ros/src/ct_navigation/setup.py
