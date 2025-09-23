@@ -1,1 +1,0 @@
-/home/samuele/dev/minar/minar-challenge-2/src/rplidar_ros/launch/rplidar_c1_launch.py

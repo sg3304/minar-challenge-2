@@ -1,1 +1,0 @@
-/home/samuele/dev/minar/minar-challenge-2/src/ct_teleop/setup.py
