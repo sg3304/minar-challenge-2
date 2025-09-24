@@ -12,10 +12,11 @@ class TeleopNode(Node):
         super().__init__('teleop_node')
         self.sub = self.create_subscription(Twist, 'cmd_vel', self.cmd_callback, 10)
         self.ser = serial.Serial(SERIAL_PORT, BAUD_RATE)
-        self.get_logger().info(f"Sent: this is TOWARDS the arduino")
 
 
     def cmd_callback(self, msg):
+        self.get_logger().info(f"Sent: this is TOWARDS the arduino")
+
         # Convert Twist (linear.x, angular.z) into left/right wheel velocities
         wheel_base = 0.3  # distance between wheels (m)
         wheel_radius = 0.05  # wheel radius (m)

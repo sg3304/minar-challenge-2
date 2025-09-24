@@ -14,10 +14,11 @@ class WheelVelocityNode(Node):
         self.pub = self.create_publisher(Float32MultiArray, 'wheel_velocities', 10)
         self.timer = self.create_timer(0.05, self.timer_callback)  # 20 Hz
         self.ser = serial.Serial(SERIAL_PORT, BAUD_RATE)
-        self.get_logger().info(f"REceived: this is FROM the arduino")
 
 
     def timer_callback(self):
+        self.get_logger().info(f"Received: this is FROM the arduino")
+
         try:
             line = self.ser.readline().decode('utf-8').strip()
             if line:
