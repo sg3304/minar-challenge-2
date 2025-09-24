@@ -103,10 +103,10 @@ def generate_launch_description():
         activate_activate,
         rplidar_launch,
         robot_state_node,
-        static_lidar_tf,
+        static_lidar_tf,    
         static_odom_tf,
         slam_node,
-    #    wheel_encoder_node,
+        wheel_encoder_node,
         teleop_node
       #  diff_drive_controller_node
     ])
