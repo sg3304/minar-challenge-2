@@ -11,11 +11,11 @@ def generate_launch_description():
     bringup_dir = get_package_share_directory('ct_bringup')
     description_dir = get_package_share_directory('ct_description')
     rplidar_dir = get_package_share_directory('rplidar_ros')
-
+    ros2_control_dir = get_package_share_directory('ct_control')  
     # Config files
     slam_params_file = os.path.join(bringup_dir, 'config', 'slam_toolbox.yaml')
     urdf_file = os.path.join(description_dir, 'urdf', 'ct.urdf')
-
+  #  diff_drive_params_file = os.path.join(ros2_control_dir, 'config', 'diff_drive_controllers.yaml')
     # URDF robot description
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
@@ -84,7 +84,20 @@ def generate_launch_description():
         package = 'ct_bringup',
         executable = 'wheel_encoder_node',  
         name ='wheel_encoder_node')
-
+    
+    teleop_node = Node(
+        package = 'ct_bringup',
+        executable = 'teleop_node',  
+        name ='teleop_node')
+    
+    # diff_drive_controller_node = Node(
+    #     package='diff_drive_controller',
+    #     executable='diff_drive_controller',
+    #     name='diff_drive_controller',
+    #     output='screen',
+    #     parameters=[diff_drive_params_file, {'use_sim_time': False}],
+    #     remappings=[('/cmd_vel', '/cmd_vel')]
+    # )
     return LaunchDescription([
         activate_configure,
         activate_activate,
@@ -93,5 +106,7 @@ def generate_launch_description():
         static_lidar_tf,
         static_odom_tf,
         slam_node,
-       wheel_encoder_node
+        wheel_encoder_node,
+        teleop_node
+      #  diff_drive_controller_node
     ])

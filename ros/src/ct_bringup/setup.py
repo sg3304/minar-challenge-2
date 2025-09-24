@@ -20,12 +20,13 @@ setup(
     zip_safe=True,
     maintainer='samuele',
     maintainer_email='s.galanti@student.fontys.nl',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='Cybetruck the real thing',
+    license='No license',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
                     'wheel_encoder_node = ct_bringup.wheel_encoder_node:main',
+                    'teleop_node = ct_bringup.wheel_encoder_node:main'
         ],
     },
 )

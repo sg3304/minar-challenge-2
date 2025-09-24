@@ -8,6 +8,8 @@ colcon build
     source ./install/setup.bash
 ros2 launch ct_bringup bringup.launch.py
 
+sudo apt install ros-jazzy-diff-drive-controller
+
 ```
 
 # 🚀 Getting Started

@@ -1,39 +1,38 @@
 <?xml version="1.0"?>
-<robot name="cyber_truck">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_diffdrive_robot">
 
-  <!-- Base link (square) -->
+  <!-- Base Link -->
   <link name="base_link">
     <visual>
-      <geometry>
-        <box size="0.6 0.6 0.2"/> <!-- X, Y, Z dimensions -->
-      </geometry>
-      <material name="blue"/>
+      <geometry><box size="0.5 0.3 0.1"/></geometry>
+      <material><color rgba="0.7 0.7 0.7 1"/></material>
     </visual>
+    <collision><geometry><box size="0.5 0.3 0.1"/></geometry></collision>
+    <inertial><mass value="5.0"/></inertial>
   </link>
 
-  <!-- LiDAR link -->
-  <link name="lidar_link">
-    <visual>
-      <geometry>
-        <cylinder length="0.1" radius="0.05"/>
-      </geometry>
-      <material name="gray"/>
-    </visual>
-  </link>
+  <!-- Wheels -->
+  <xacro:macro name="wheel" params="name x y">
+    <link name="${name}">
+      <visual>
+        <geometry><cylinder length="0.05" radius="0.05"/></geometry>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      </visual>
+      <collision><geometry><cylinder length="0.05" radius="0.05"/></geometry></collision>
+      <inertial><mass value="0.2"/></inertial>
+    </link>
+    <joint name="${name}_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="${name}"/>
+      <origin xyz="${x} ${y} -0.05" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+  </xacro:macro>
 
-  <!-- Joint connecting LiDAR to base_link -->
-  <joint name="lidar_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="lidar_link"/>
-    <origin xyz="0 0 0.15" rpy="0 0 0"/> <!-- 0.15 = half of base height + half of lidar height -->
-  </joint>
-        <joint name="base_footprint_joint" type="fixed">
-            <parent link="base_link"/>
-            <child link="base_footprint"/>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-        </joint>
+  <!-- 4 wheels -->
+  <xacro:wheel name="front_left_wheel"  x="0.2"  y="0.15"/>
+  <xacro:wheel name="rear_left_wheel"   x="-0.2" y="0.15"/>
+  <xacro:wheel name="front_right_wheel" x="0.2"  y="-0.15"/>
+  <xacro:wheel name="rear_right_wheel"  x="-0.2" y="-0.15"/>
 
-                
-        <link name="base_footprint">
-        </link>
 </robot>
