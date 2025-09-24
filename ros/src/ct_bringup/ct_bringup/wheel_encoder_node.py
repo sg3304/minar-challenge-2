@@ -19,30 +19,28 @@ class WheelEncoderNode(Node):
         #self.get_logger().info(f'Reading wheel encoders from {SERIAL_PORT}')
 
     def timer_callback(self):
-        positions = []
-        velocities = []
-
         try:
-            # 4 lines (one per wheel)
-            # TODO this works weird
-            for _ in range(4):
-                line = self.ser.readline().decode('utf-8').strip()
-                if line:
-                    
-                    self.get_logger().info(line)
+            line = self.ser.readline().decode('utf-8').strip()
+            if line:
+                self.get_logger().info(f"Received: {line}")
 
-                    wheel, pos, vel = line.split(',')
-                    positions.append(float(pos))
-                    velocities.append(float(vel))
+                # Remove brackets if present and split by comma
+                line = line.strip("[]")
+                values = [float(x) for x in line.split(',')]
 
-            # Publish as Float32MultiArray: [pos0,pos1,pos2,pos3,vel0,vel1,vel2,vel3]
-            msg = Float32MultiArray()
-            msg.data = positions + velocities
-            self.pub.publish(msg)
+                if len(values) != 4:
+                    self.get_logger().error(f"Unexpected number of values: {len(values)}")
+                    return
+
+                positions = values
+                velocities = [0.0] * 4  # placeholder since your TeleopNode doesn't send velocities
+
+                msg = Float32MultiArray()
+                msg.data = positions + velocities
+                self.pub.publish(msg)
 
         except Exception as e:
             self.get_logger().error(f"Failed to read/parse serial data: {e}")
-
 def main(args=None):
     rclpy.init(args=args)
     node = WheelEncoderNode()
