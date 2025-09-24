@@ -80,10 +80,10 @@ def generate_launch_description():
         arguments=['0', '0', '0', '0', '0', '0', 'odom', 'base_link']
     )
     
-    wheel_encoder_node = Node(
-        package = 'ct_bringup',
-        executable = 'wheel_encoder_node',  
-        name ='wheel_encoder_node')
+    # wheel_encoder_node = Node(
+    #     package = 'ct_bringup',
+    #     executable = 'wheel_encoder_node',  
+    #     name ='wheel_encoder_node')
     
     teleop_node = Node(
         package = 'ct_bringup',
