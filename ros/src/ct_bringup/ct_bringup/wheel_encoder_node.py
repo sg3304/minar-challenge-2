@@ -5,7 +5,7 @@ from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
 import serial
 
-SERIAL_PORT = '/dev/ttyACM0'
+SERIAL_PORT = '/dev'
 BAUD_RATE = 9600  # standard
 
 class WheelVelocityNode(Node):

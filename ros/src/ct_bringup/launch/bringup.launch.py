@@ -106,7 +106,7 @@ def generate_launch_description():
         static_lidar_tf,    
         static_odom_tf,
         slam_node,
-        wheel_encoder_node,
+       # wheel_encoder_node,
         teleop_node
       #  diff_drive_controller_node
     ])
