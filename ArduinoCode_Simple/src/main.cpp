@@ -19,9 +19,9 @@ static constexpr float    pulsesPerWheelRev    = float(PULSES_PER_MOTOR_REV) * G
 
 // ---------- PID controller ----------
 struct PID {
-    float kp = 22.0f;
-    float ki = 5.0f;
-    float kd = 0.1f;
+    float kp = 18.0f;
+    float ki = 7.0f;
+    float kd = 0.2f;
     float integral = 0.0f;
     float prevMeas = 0.0f;
     float dFilt = 0.0f;  // derivative filter state
@@ -37,6 +37,29 @@ struct MotorState {
 };
 
 MotorState motors[4];
+
+// ---------- Helper: parse CSV floats from bracketed list ----------
+// Expected format: [f0,f1,f2,f3,f4,f5,f6,f7]
+static bool parseBracketedFloats(const String& line, float out[8]) {
+    if (line.length() < 3) return false;
+    int lb = line.indexOf('[');
+    int rb = line.lastIndexOf(']');
+    if (lb < 0 || rb <= lb) return false;
+    String body = line.substring(lb + 1, rb);
+    // Split by commas
+    int idx = 0;
+    int start = 0;
+    while (start <= body.length() && idx < 8) {
+        int comma = body.indexOf(',', start);
+        String token = (comma == -1) ? body.substring(start) : body.substring(start, comma);
+        token.trim();
+        if (token.length() == 0) return false;
+        out[idx++] = token.toFloat();
+        if (comma == -1) break;
+        start = comma + 1;
+    }
+    return idx == 8;
+}
 
 // ---------- Encoder counters ----------
 volatile uint32_t pulseCount[4] = {0, 0, 0, 0};
@@ -141,7 +164,7 @@ void setup() {
         attachInterrupt(digitalPinToInterrupt(motorPins[i].enc), isrFuncs[i], RISING);
     }
 
-    Serial.println("Ready. Use 'A 10', 'B -15', 'C 20', 'D -12' to set speeds (rad/s).");
+    Serial.println("Ready. Send: [pos0,pos1,pos2,pos3,vel0,vel1,vel2,vel3]");
 }
 
 // ---------- Loop ----------
@@ -156,13 +179,28 @@ void loop() {
     if (Serial.available()) {
         String input = Serial.readStringUntil('\n');
         input.trim();
-        if (input.length() > 2) {
+
+        // Try new list format first
+        float vals[8];
+        if (parseBracketedFloats(input, vals)) {
+            // vals[0..3] are positions (ignored here), vals[4..7] are velocities
+            for (int i = 0; i < 4; i++) {
+                motors[i].setpoint = vals[4 + i]; // rad/s
+                motors[i].pid.integral = 0;       // reset integral on new command
+            }
+            Serial.print("Setpoints [rad/s]: ");
+            Serial.print(motors[0].setpoint, 3); Serial.print(", ");
+            Serial.print(motors[1].setpoint, 3); Serial.print(", ");
+            Serial.print(motors[2].setpoint, 3); Serial.print(", ");
+            Serial.println(motors[3].setpoint, 3);
+        } else if (input.length() > 2) {
+            // Fallback: legacy "A 10" style
             char motorID = toupper(input.charAt(0));
             float value = input.substring(1).toFloat();
             int idx = motorID - 'A';
             if (idx >= 0 && idx < 4) {
                 motors[idx].setpoint = value;
-                motors[idx].pid.integral = 0; // reset integral on new command
+                motors[idx].pid.integral = 0;
                 Serial.print("Motor ");
                 Serial.print(motorID);
                 Serial.print(" setpoint = ");
