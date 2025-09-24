@@ -4,8 +4,8 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist
 import serial
 
-SERIAL_PORT = '/dev/asd'
-BAUD_RATE = 115200
+SERIAL_PORT = '/dev/ttyACM0'
+BAUD_RATE = 9600
 
 class TeleopNode(Node):
     def __init__(self):
