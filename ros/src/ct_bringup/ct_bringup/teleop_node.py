@@ -24,7 +24,11 @@ class TeleopNode(Node):
         v_left  = (v - omega * wheel_base / 2.0) / wheel_radius
         v_right = (v + omega * wheel_base / 2.0) / wheel_radius
 
-        command = f"{v_left},{v_right}\n"
+        v0 = v_left
+        v1 = v_right
+        v2 = v_left
+        v3 = v_right
+        command = f"[{v0:.6f},{v1:.6f},{v2:.6f},{v3:.6f}]\n"
         self.ser.write(command.encode('utf-8'))
         self.get_logger().info(f"Sent: {command.strip()}")
 
