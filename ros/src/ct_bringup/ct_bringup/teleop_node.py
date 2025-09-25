@@ -23,7 +23,7 @@ class TeleopSerialNode(Node):
         self.pub_odom = self.create_publisher(Odometry, 'odom', 10)
         self.tf_broadcaster = TransformBroadcaster(self)
 
-        # Serial
+        # Serialx
         self.ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=0.1)
         self.timer = self.create_timer(0.05, self.read_arduino)  # 20 Hz
         self.last_time = self.get_clock().now()
