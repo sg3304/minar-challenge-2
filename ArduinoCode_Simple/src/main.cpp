@@ -180,37 +180,43 @@ void loop() {
     static uint32_t lastCount[4] = {0, 0, 0, 0};
 
     const uint32_t nowMs = millis();
-    const uint32_t periodMs = 20; // 50 Hz loop
-
-    // Median buffer: 10 samples per motor
-    static float medBuf[4][10] = {0};
-    static uint8_t medIdx = 0;
-    static uint8_t medCount = 0;
+    const uint32_t periodMs = 20; // 20 ms = 50 Hz loop
 
     // ---- Serial input ----
     if (Serial.available()) {
         String input = Serial.readStringUntil('\n');
+        Serial.println(input);
         input.trim();
 
-        float vals[4];
-        if (parseBracketedFloats(input, vals)) {
+        float vals[4] = {0};
+        bool hasList = parseBracketedFloats(input, vals);
+        if (hasList) {
             for (int i = 0; i < 4; i++) {
                 float newSp = vals[i];
-                // Ramp setpoint
-                motors[i].setpoint = motors[i].setpoint * 0.8f + newSp * 0.2f;
+
+                // Ramp setpoint gradually
+                motors[i].setpoint = newSp;
+
                 // Reset integral if command goes to zero or flips sign
                 if ((newSp == 0.0f) ||
                     ((motors[i].setpoint > 0 && newSp < 0) || (motors[i].setpoint < 0 && newSp > 0))) {
                     motors[i].pid.integral = 0.0f;
                 }
             }
+            //Serial.print("Setpoints [rad/s]: ");
+            Serial.print(motors[0].setpoint, 3);
+            Serial.print(", ");
+            Serial.print(motors[1].setpoint, 3);
+            Serial.print(", ");
+            Serial.print(motors[2].setpoint, 3);
+            Serial.print(", ");
+            Serial.println(motors[3].setpoint, 3);
         }
     }
 
     // ---- Periodic update ----
     if (nowMs - lastMs >= periodMs) {
         float dt = (nowMs - lastMs) / 1000.0f;
-        if (dt <= 0.0f) dt = periodMs / 1000.0f;
 
         for (int i = 0; i < 4; i++) {
             noInterrupts();
@@ -218,8 +224,6 @@ void loop() {
             interrupts();
 
             uint32_t delta = total - lastCount[i];
-            lastCount[i] = total;
-
             float pulsesPerSec = (dt > 0.0f) ? (delta / dt) : 0.0f;
             float wheelRps = pulsesPerSec / pulsesPerWheelRev;
             float raw = wheelRps * 2.0f * PI;
@@ -229,49 +233,37 @@ void loop() {
             motors[i].speedRaw = raw;
 
             float u = runPID(motors[i].pid, motors[i], motors[i].speed, dt);
-            motors[i].pwmOut = (int)fabs(u);
+
+            motors[i].pwmOut = (int) fabs(u);
             applyMotor(u, motorPins[i]);
 
-            // Store into median buffer
-            medBuf[i][medIdx] = motors[i].speed;
+            lastCount[i] = total;
         }
 
-        // Advance buffer index
-        medIdx = (uint8_t)((medIdx + 1) % 10);
-        if (medCount < 10) medCount++;
+        // ---- Debug print ----
+        // for (int i = 0; i < 4; i++) {
+        //     Serial.print((char)('A' + i));
+        //     Serial.print(": set=");
+        //     Serial.print(motors[i].setpoint, 2);
+        //     Serial.print(", meas=");
+        //     Serial.print(motors[i].speed, 2);
+        //     Serial.print(", PWM=");
+        //     Serial.print(motors[i].pwmOut);
+        //     if (i < 3) Serial.print(" | ");
+        // }
+        // Serial.println();
 
-        // ---- Median output every 10 samples ----
-        if (medCount == 10 && medIdx == 0) {
-            float tmp[10];
-
-            auto median10 = [&](int m) -> float {
-                for (int k = 0; k < 10; ++k) tmp[k] = medBuf[m][k];
-                // Insertion sort (n=10)
-                for (int a = 1; a < 10; ++a) {
-                    float key = tmp[a];
-                    int b = a - 1;
-                    while (b >= 0 && tmp[b] > key) {
-                        tmp[b + 1] = tmp[b];
-                        --b;
-                    }
-                    tmp[b + 1] = key;
-                }
-                // Even count: average middle two
-                return 0.5f * (tmp[4] + tmp[5]);
-            };
-
-            float mA = median10(0);
-            float mB = median10(1);
-            float mC = median10(2);
-            float mD = median10(3);
-
-            Serial.print('[');
-            Serial.print(mA, 2); Serial.print(',');
-            Serial.print(mB, 2); Serial.print(',');
-            Serial.print(mC, 2); Serial.print(',');
-            Serial.print(mD, 2);
-            Serial.println(']');
-        }
+        // ---- Reply measured RAD/S ----
+        // Print measured speeds only, as [A,B,C,D] in rad/s
+        Serial.print('[');
+        Serial.print(motors[0].speed, 2);
+        Serial.print(',');
+        Serial.print(motors[1].speed, 2);
+        Serial.print(',');
+        Serial.print(motors[2].speed, 2);
+        Serial.print(',');
+        Serial.print(motors[3].speed, 2);
+        Serial.println(']');
 
         lastMs = nowMs;
     }
