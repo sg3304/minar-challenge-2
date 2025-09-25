@@ -3,7 +3,7 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="ct">
+  name="Odometry FIle">
   <link
     name="base_link">
     <inertial>
@@ -42,7 +42,7 @@
         <mesh
           filename="package://Odometry FIle/meshes/base_link.STL" />
       </geometry>
-    </collision>  
+    </collision>
   </link>
   <link
     name="Wheel1">
@@ -257,7 +257,7 @@
       xyz="0 0 1" />
   </joint>
   <link
-    name="taitc_lidar_link">
+    name="Lidar">
     <inertial>
       <origin
         xyz="0 0.0125000000000001 0"
@@ -278,7 +278,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Odometry FIle/meshes/taitc_lidar_link.STL" />
+          filename="package://Odometry FIle/meshes/Lidar.STL" />
       </geometry>
       <material
         name="">
@@ -292,12 +292,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://Odometry FIle/meshes/taitc_lidar_link.STL" />
+          filename="package://Odometry FIle/meshes/Lidar.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="taitc_lidar_link"
+    name="Lidar"
     type="continuous">
     <origin
       xyz="0.708399374631133 -1.37350613548206 0.854171401767211"
@@ -305,7 +305,7 @@
     <parent
       link="base_link" />
     <child
-      link="taitc_lidar_link" />
+      link="Lidar" />
     <axis
       xyz="0 1 0" />
   </joint>
