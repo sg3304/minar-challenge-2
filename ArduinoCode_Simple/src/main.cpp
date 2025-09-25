@@ -114,8 +114,8 @@ void applyMotor(float u, const MotorPins &p) {
         digitalWrite(p.in2, LOW);
         analogWrite(p.pwm, cmd);
     } else {
-        // Short-brake (for decel on L298N)
-        digitalWrite(p.in1, HIGH);
+        // Reverse
+        digitalWrite(p.in1, LOW);
         digitalWrite(p.in2, HIGH);
         analogWrite(p.pwm, cmd);
     }
@@ -229,7 +229,7 @@ void loop() {
             motors[i].speedRaw = raw;
 
             float u = runPID(motors[i].pid, motors[i], raw, dt);
-            motors[i].pwmOut = (int)fabs(u);
+            motors[i].pwmOut = (int) fabs(u);
             applyMotor(u, motorPins[i]);
 
             // Store filtered value for median serial output
@@ -237,7 +237,7 @@ void loop() {
         }
 
         // Advance buffer index
-        medIdx = (uint8_t)((medIdx + 1) % 10);
+        medIdx = (uint8_t) ((medIdx + 1) % 10);
         if (medCount < 10) medCount++;
 
         // ---- Median output every 10 samples ----
@@ -266,9 +266,12 @@ void loop() {
             float mD = median10(3);
 
             Serial.print('[');
-            Serial.print(mA, 2); Serial.print(',');
-            Serial.print(mB, 2); Serial.print(',');
-            Serial.print(mC, 2); Serial.print(',');
+            Serial.print(mA, 2);
+            Serial.print(',');
+            Serial.print(mB, 2);
+            Serial.print(',');
+            Serial.print(mC, 2);
+            Serial.print(',');
             Serial.print(mD, 2);
             Serial.println(']');
         }
