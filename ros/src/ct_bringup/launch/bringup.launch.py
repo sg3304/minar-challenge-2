@@ -26,7 +26,6 @@ def generate_launch_description():
             os.path.join(rplidar_dir, 'launch', 'view_rplidar_a1_launch.py'),
         ),
         launch_arguments={'frame_id': 'taitc_lidar_link'}.items()
-
     )
 
     # Robot state publisher
@@ -84,9 +83,7 @@ def generate_launch_description():
         activate_configure,
         activate_activate,
         rplidar_launch,
-        robot_state_node,
-        #static_lidar_tf,    
-       
+        robot_state_node,       
         slam_node,
         teleop_node
     ])
