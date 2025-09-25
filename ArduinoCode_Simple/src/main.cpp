@@ -197,7 +197,7 @@ void loop() {
             for (int i = 0; i < 4; i++) {
                 float newSp = vals[i];
                 // Ramp setpoint
-                motors[i].setpoint = motors[i].setpoint * 0.8f + newSp * 0.2f;
+                motors[i].setpoint = newSp;
                 // Reset integral if command goes to zero or flips sign
                 if ((newSp == 0.0f) ||
                     ((motors[i].setpoint > 0 && newSp < 0) || (motors[i].setpoint < 0 && newSp > 0))) {
@@ -224,15 +224,15 @@ void loop() {
             float wheelRps = pulsesPerSec / pulsesPerWheelRev;
             float raw = wheelRps * 2.0f * PI;
 
-            // Low-pass filter on speed
-            motors[i].speed = 0.8f * motors[i].speed + 0.2f * raw;
+            // Direct PID on raw measurement
+            motors[i].speed = 0.8f * motors[i].speed + 0.2f * raw; // filtered for serial/median only
             motors[i].speedRaw = raw;
 
-            float u = runPID(motors[i].pid, motors[i], motors[i].speed, dt);
+            float u = runPID(motors[i].pid, motors[i], raw, dt);
             motors[i].pwmOut = (int)fabs(u);
             applyMotor(u, motorPins[i]);
 
-            // Store into median buffer
+            // Store filtered value for median serial output
             medBuf[i][medIdx] = motors[i].speed;
         }
 
