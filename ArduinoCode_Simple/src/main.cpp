@@ -175,7 +175,6 @@ void setup() {
 }
 
 // ---------- Loop ----------
-// ---------- Loop ----------
 void loop() {
     static uint32_t lastMs = 0;
     static uint32_t lastCount[4] = {0, 0, 0, 0};
