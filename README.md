@@ -78,7 +78,7 @@ The project uses an RPLIDAR sensor for mapping and navigation. You'll need to in
     ```bash
     cd ~/cha2_ws
     colcon build
-    source install/setup.bash
+        source install/setup.bash
     ```
 
 -----
