@@ -296,17 +296,12 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="taitc_lidar_link"
-    type="continuous">
-    <origin
-      xyz="0.708399374631133 -1.37350613548206 0.854171401767211"
-      rpy="1.5707963267949 0 1.90864148584851" />
-    <parent
-      link="base_link" />
-    <child
-      link="taitc_lidar_link" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
+<joint name="taitc_lidar_joint" type="fixed">
+  <origin
+    xyz="0.708399374631133 -1.37350613548206 0.854171401767211"
+    rpy="1.5707963267949 0 1.90864148584851" />
+  <parent link="base_link"/>
+  <child link="taitc_lidar_link"/>
+</joint>
+
 </robot>
