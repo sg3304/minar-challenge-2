@@ -53,7 +53,6 @@ class TeleopSerialNode(Node):
             if self.ser.in_waiting:
                 line = self.ser.readline().decode('utf-8').strip()
                 if line:
-                    # Example: "[1.23,1.23,1.25,1.25]"
                     line = line.strip('[]')
                     velocities = [float(x) for x in line.split(',')]
                     if len(velocities) == 4:

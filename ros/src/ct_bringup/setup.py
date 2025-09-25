@@ -25,7 +25,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-                 #   'wheel_encoder_node = ct_bringup.wheel_encoder_node:main',
                     'teleop_node = ct_bringup.teleop_node:main'
         ],
     },
