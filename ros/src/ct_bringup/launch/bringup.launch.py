@@ -23,8 +23,10 @@ def generate_launch_description():
     # RPLIDAR launch
     rplidar_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(rplidar_dir, 'launch', 'view_rplidar_a1_launch.py')
-        )
+            os.path.join(rplidar_dir, 'launch', 'view_rplidar_a1_launch.py'),
+        ),
+        launch_arguments={'frame_id': 'taitc_lidar_link'}.items()
+
     )
 
     # Robot state publisher
@@ -35,14 +37,14 @@ def generate_launch_description():
         parameters=[{'robot_description': robot_desc}]
     )
 
-    # Static transform: base_link -> lidar_link
-    # https://docs.ros.org/en/jazzy/p/rclcpp/generated/classrclcpp_1_1NodeOptions.html#_CPPv4N6rclcpp11NodeOptionsE
-    static_lidar_tf = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='static_lidar_tf',
-        arguments=['0.04', '0', '0.08', '0', '0', '0', 'base_link', 'laser']
-    )
+    # # Static transform: base_link -> lidar_link
+    # # https://docs.ros.org/en/jazzy/p/rclcpp/generated/classrclcpp_1_1NodeOptions.html#_CPPv4N6rclcpp11NodeOptionsE
+    # static_lidar_tf = Node(
+    #     package='tf2_ros',
+    #     executable='static_transform_publisher',
+    #     name='static_lidar_tf',
+    #     arguments=['0.04', '0', '0.08', '0', '0', '0', 'base_link', 'laser']
+    # )
 
     # SLAM lifecycle node   
     slam_node = Node(
@@ -66,47 +68,25 @@ def generate_launch_description():
     )
 
     activate_activate = TimerAction(
-        period=5.0,
+        period=5.0, 
         actions=[ExecuteProcess(
             cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'activate'],
             output='screen'
         )]
     )
-
-    static_odom_tf = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='static_odom_tf',
-        arguments=['0', '0', '0', '0', '0', '0', 'odom', 'base_link']
-    )
-    
-    # wheel_encoder_node = Node(
-    #     package = 'ct_bringup',
-    #     executable = 'wheel_encoder_node',  
-    #     name ='wheel_encoder_node')
-    
+     
     teleop_node = Node(
         package = 'ct_bringup',
         executable = 'teleop_node',  
         name ='teleop_node')
     
-    # diff_drive_controller_node = Node(
-    #     package='diff_drive_controller',
-    #     executable='diff_drive_controller',
-    #     name='diff_drive_controller',
-    #     output='screen',
-    #     parameters=[diff_drive_params_file, {'use_sim_time': False}],
-    #     remappings=[('/cmd_vel', '/cmd_vel')]
-    # )
     return LaunchDescription([
         activate_configure,
         activate_activate,
         rplidar_launch,
         robot_state_node,
-        static_lidar_tf,    
-        static_odom_tf,
+        #static_lidar_tf,    
+       
         slam_node,
-       # wheel_encoder_node,
         teleop_node
-      #  diff_drive_controller_node
     ])
