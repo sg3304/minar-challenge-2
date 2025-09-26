@@ -90,14 +90,16 @@ def generate_launch_description():
         remappings=[('/cmd_vel', '/cmd_vel')]
     )
 
-    # ROS2 control spawner for mecanum controller
-    mecanum_controller_spawner = Node(
-        package='controller_manager',
-        executable='spawner.py',
-        arguments=['mecanum_drive_controller', '--controller-manager', '/controller_manager', '--param-file', mecanum_controller_yaml],
+    # ROS2 control: load and start mecanum controller using CLI (Jazzy compatible)
+    mecanum_controller_loader = ExecuteProcess(
+        cmd=[
+            'ros2', 'control', 'load_controller',
+            '--param-file', mecanum_controller_yaml,
+            '--set-state', 'start',
+            'mecanum_drive_controller'
+        ],
         output='screen'
     )
-
 
     return LaunchDescription([
         activate_configure,
@@ -108,5 +110,5 @@ def generate_launch_description():
         teleop_serial_node,
         joy_node,
         teleop_twist_joy_node,
-        mecanum_controller_spawner
+        mecanum_controller_loader
     ])
