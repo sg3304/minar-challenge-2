@@ -107,7 +107,7 @@ def generate_launch_description():
         robot_state_node,       
         slam_node,
         teleop_serial_node,
-        joy_node,
-        teleop_twist_joy_node,
+      #  joy_node,
+       # teleop_twist_joy_node,
         mecanum_controller_loader
     ])
