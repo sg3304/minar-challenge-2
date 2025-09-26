@@ -1,10 +1,9 @@
 from launch import LaunchDescription
-from launch_ros.actions import Node, LifecycleNode
+from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription, TimerAction, ExecuteProcess
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 import os
 from ament_index_python.packages import get_package_share_directory
-
 
 def generate_launch_description():
     # Package paths
@@ -12,11 +11,14 @@ def generate_launch_description():
     description_dir = get_package_share_directory('ct_description')
     rplidar_dir = get_package_share_directory('rplidar_ros')
     ros2_control_dir = get_package_share_directory('ct_control')  
+    ps4_teleop_config = os.path.join(bringup_dir, 'config', 'pst4_config.yaml')
+    mecanum_controller_yaml = os.path.join(bringup_dir, 'config', 'mecanum_drive_controllers.yaml')
+
     # Config files
     slam_params_file = os.path.join(bringup_dir, 'config', 'slam_toolbox.yaml')
     urdf_file = os.path.join(description_dir, 'urdf', 'ct.urdf')
-  #  diff_drive_params_file = os.path.join(ros2_control_dir, 'config', 'diff_drive_controllers.yaml')
-    # URDF robot description
+
+    # Read URDF robot description
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
 
@@ -36,15 +38,6 @@ def generate_launch_description():
         parameters=[{'robot_description': robot_desc}]
     )
 
-    # # Static transform: base_link -> lidar_link
-    # # https://docs.ros.org/en/jazzy/p/rclcpp/generated/classrclcpp_1_1NodeOptions.html#_CPPv4N6rclcpp11NodeOptionsE
-    # static_lidar_tf = Node(
-    #     package='tf2_ros',
-    #     executable='static_transform_publisher',
-    #     name='static_lidar_tf',
-    #     arguments=['0.04', '0', '0.08', '0', '0', '0', 'base_link', 'laser']
-    # )
-
     # SLAM lifecycle node   
     slam_node = Node(
         package='slam_toolbox',
@@ -52,12 +45,9 @@ def generate_launch_description():
         name='slam_toolbox',
         output='screen',
         parameters=[slam_params_file, {'use_sim_time': False}],
-        # automatically transition from configure -> activate 
-        # remap or additional parameters here
     )
 
-
-    # Lifecycle activation using TimerAction
+    # Lifecycle activation for SLAM
     activate_configure = TimerAction(
         period=2.0,
         actions=[ExecuteProcess(
@@ -73,24 +63,50 @@ def generate_launch_description():
             output='screen'
         )]
     )
-     
-    teleop_node = Node(
-        package = 'ct_bringup',
-        executable = 'teleop_node',  
-        name ='teleop_node')
+
+    # Teleop serial node (mecanum compatible)
+    teleop_serial_node = Node(
+        package='ct_bringup',
+        executable='teleop_serial_node',  
+        name='teleop_serial_node',
+        output='screen'
+    )
+
+    # Joystick driver
     joy_node = Node(
         package='joy',
         executable='joy_node',
         name='joy_node',
-        parameters=[{'dev': '/dev/input/js0'}],  # adjust if not js0
+        parameters=[{'dev': '/dev/input/js0', 'deadzone': 0.05, 'autorepeat_rate': 20.0}],
         output='screen'
-)
+    )
+
+    # PS4 controller teleop -> cmd_vel
+    teleop_twist_joy_node = Node(
+        package='teleop_twist_joy',
+        executable='teleop_node',
+        name='teleop_twist_joy',
+        parameters=[ps4_teleop_config],
+        remappings=[('/cmd_vel', '/cmd_vel')]
+    )
+
+    # ROS2 control spawner for mecanum controller
+    mecanum_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner.py',
+        arguments=['mecanum_drive_controller', '--controller-manager', '/controller_manager', '--param-file', mecanum_controller_yaml],
+        output='screen'
+    )
+
+
     return LaunchDescription([
         activate_configure,
         activate_activate,
         rplidar_launch,
         robot_state_node,       
         slam_node,
-        teleop_node,
-        joy_node
+        teleop_serial_node,
+        joy_node,
+        teleop_twist_joy_node,
+        mecanum_controller_spawner
     ])
