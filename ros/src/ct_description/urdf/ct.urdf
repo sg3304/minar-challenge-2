@@ -71,4 +71,39 @@
     <axis xyz="0 1 0"/>
   </joint>
 
+  <!-- ROS2 Control -->
+  <ros2_control name="ct" type="system">
+    <hardware>
+      <plugin>ros2_control_demo_hardware/MecanumBotHardware</plugin>
+    </hardware>
+
+    <!-- Right Rear Wheel -->
+    <joint name="right_rear_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- Left Rear Wheel -->
+    <joint name="left_rear_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- Right Front Wheel -->
+    <joint name="right_front_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- Left Front Wheel -->
+    <joint name="left_front_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
 </robot>
