@@ -94,7 +94,7 @@ def generate_launch_description():
         cmd=[
             'ros2', 'control', 'load_controller',
             '--param-file', mecanum_controller_yaml,
-            '--set-state', 'start',
+            '--set-state', 'active',
             'mecanum_drive_controller'
         ],
         output='screen'
