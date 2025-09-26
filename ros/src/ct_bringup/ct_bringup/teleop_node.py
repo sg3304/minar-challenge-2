@@ -57,7 +57,7 @@ class TeleopNode(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = TeleopSerialNode()
+    node = TeleopNode()
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
