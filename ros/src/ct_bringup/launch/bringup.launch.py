@@ -67,8 +67,8 @@ def generate_launch_description():
     # Teleop serial node (mecanum compatible)
     teleop_serial_node = Node(
         package='ct_bringup',
-        executable='teleop_serial_node',  
-        name='teleop_serial_node',
+        executable='teleop_node',  
+        name='teleop_node',
         output='screen'
     )
 
