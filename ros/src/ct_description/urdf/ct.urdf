@@ -1,339 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
-     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
-     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="ct">
-  <link
-    name="base_link">
+<!-- URDF cleaned and wheel names aligned with ros2_control -->
+<robot name="ct">
+  <link name="base_link">
     <inertial>
-      <origin
-        xyz="0.723898474040511 -1.37403577535756 0.970388088854667"
-        rpy="0 0 0" />
-      <mass
-        value="0.249821153529968" />
-      <inertia
-        ixx="0.000871705475246986"
-        ixy="2.76752495563273E-09"
-        ixz="-1.20236732648511E-08"
-        iyy="0.00327890389176736"
-        iyz="-9.15021692461746E-09"
-        izz="0.00408901712005288" />
+      <origin xyz="0.723898474040511 -1.37403577535756 0.970388088854667" rpy="0 0 0" />
+      <mass value="0.249821153529968" />
+      <inertia ixx="0.000871705475246986" ixy="2.76752495563273E-09" ixz="-1.20236732648511E-08"
+               iyy="0.00327890389176736" iyz="-9.15021692461746E-09" izz="0.00408901712005288" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/base_link.STL" />
+        <mesh filename="package://Odometry FIle/meshes/base_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/base_link.STL" />
+        <mesh filename="package://Odometry FIle/meshes/base_link.STL" />
       </geometry>
     </collision>  
   </link>
-  <link
-    name="Wheel1">
+
+  <!-- Front Left Wheel -->
+  <link name="front_left_wheel_link">
     <inertial>
-      <origin
-        xyz="0 2.22044604925031E-16 0.0225"
-        rpy="0 0 0" />
-      <mass
-        value="0.224922326033761" />
-      <inertia
-        ixx="0.000128430648165277"
-        ixy="-7.19978005166155E-21"
-        ixz="-4.91976448104269E-21"
-        iyy="0.000128430648165277"
-        iyz="1.13797979713361E-21"
-        izz="0.000180950011294161" />
+      <origin xyz="0 0 0.0225" rpy="0 0 0" />
+      <mass value="0.224922326033761" />
+      <inertia ixx="0.000128430648165277" ixy="0" ixz="0"
+               iyy="0.000128430648165277" iyz="0" izz="0.000180950011294161" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/Wheel1.STL" />
+        <mesh filename="package://Odometry FIle/meshes/Wheel1.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/Wheel1.STL" />
+        <mesh filename="package://Odometry FIle/meshes/Wheel1.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Wheel1"
-    type="continuous">
-    <origin
-      xyz="0.56391 -1.444 0.99365"
-      rpy="1.5708 0.013855 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Wheel1" />
-    <axis
-      xyz="0 0 1" />
+  <joint name="front_left_wheel_joint" type="continuous">
+    <origin xyz="0.56391 -1.444 0.99365" rpy="1.5708 0.013855 0" />
+    <parent link="base_link" />
+    <child link="front_left_wheel_link" />
+    <axis xyz="0 0 1" />
   </joint>
-  <link
-    name="Wheel2">
+
+  <!-- Front Right Wheel -->
+  <link name="front_right_wheel_link">
     <inertial>
-      <origin
-        xyz="0 -5.55111512312578E-16 0.0225"
-        rpy="0 0 0" />
-      <mass
-        value="0.224922326033761" />
-      <inertia
-        ixx="0.000128430648165277"
-        ixy="-1.01643953670516E-20"
-        ixz="6.63848753944458E-23"
-        iyy="0.000128430648165277"
-        iyz="5.18114284126182E-24"
-        izz="0.000180950011294161" />
+      <origin xyz="0 0 0.0225" rpy="0 0 0" />
+      <mass value="0.224922326033761" />
+      <inertia ixx="0.000128430648165277" ixy="0" ixz="0"
+               iyy="0.000128430648165277" iyz="0" izz="0.000180950011294161" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/Wheel2.STL" />
+        <mesh filename="package://Odometry FIle/meshes/Wheel2.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/Wheel2.STL" />
+        <mesh filename="package://Odometry FIle/meshes/Wheel2.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Wheel2"
-    type="continuous">
-    <origin
-      xyz="0.56391 -1.259 0.99365"
-      rpy="-1.5708 0.38576 -3.1416" />
-    <parent
-      link="base_link" />
-    <child
-      link="Wheel2" />
-    <axis
-      xyz="0 0 1" />
+  <joint name="front_right_wheel_joint" type="continuous">
+    <origin xyz="0.56391 -1.259 0.99365" rpy="-1.5708 0.38576 -3.1416" />
+    <parent link="base_link" />
+    <child link="front_right_wheel_link" />
+    <axis xyz="0 0 1" />
   </joint>
-  <link
-    name="Wheel3">
+
+  <!-- Rear Left Wheel -->
+  <link name="rear_left_wheel_link">
     <inertial>
-      <origin
-        xyz="0 0 0.0225"
-        rpy="0 0 0" />
-      <mass
-        value="0.224922326033761" />
-      <inertia
-        ixx="0.000128430648165277"
-        ixy="-8.470329472543E-21"
-        ixz="-4.40375578913079E-22"
-        iyy="0.000128430648165277"
-        iyz="-1.24801518412018E-21"
-        izz="0.000180950011294161" />
+      <origin xyz="0 0 0.0225" rpy="0 0 0" />
+      <mass value="0.224922326033761" />
+      <inertia ixx="0.000128430648165277" ixy="0" ixz="0"
+               iyy="0.000128430648165277" iyz="0" izz="0.000180950011294161" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/Wheel3.STL" />
+        <mesh filename="package://Odometry FIle/meshes/Wheel3.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/Wheel3.STL" />
+        <mesh filename="package://Odometry FIle/meshes/Wheel3.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Wheel3"
-    type="continuous">
-    <origin
-      xyz="0.88391 -1.444 0.99365"
-      rpy="1.5708 -0.17346 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Wheel3" />
-    <axis
-      xyz="0 0 1" />
+  <joint name="rear_left_wheel_joint" type="continuous">
+    <origin xyz="0.88391 -1.444 0.99365" rpy="1.5708 -0.17346 0" />
+    <parent link="base_link" />
+    <child link="rear_left_wheel_link" />
+    <axis xyz="0 0 1" />
   </joint>
-  <link
-    name="Wheel4">
+
+  <!-- Rear Right Wheel -->
+  <link name="rear_right_wheel_link">
     <inertial>
-      <origin
-        xyz="4.44089209850063E-16 0 0.0225"
-        rpy="0 0 0" />
-      <mass
-        value="0.224922326033761" />
-      <inertia
-        ixx="0.000128430648165277"
-        ixy="0"
-        ixz="-4.93257375537654E-21"
-        iyy="0.000128430648165277"
-        iyz="5.74552010457787E-23"
-        izz="0.000180950011294161" />
+      <origin xyz="0 0 0.0225" rpy="0 0 0" />
+      <mass value="0.224922326033761" />
+      <inertia ixx="0.000128430648165277" ixy="0" ixz="0"
+               iyy="0.000128430648165277" iyz="0" izz="0.000180950011294161" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/Wheel4.STL" />
+        <mesh filename="package://Odometry FIle/meshes/Wheel4.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/Wheel4.STL" />
+        <mesh filename="package://Odometry FIle/meshes/Wheel4.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Wheel4"
-    type="continuous">
-    <origin
-      xyz="0.88391 -1.259 0.99365"
-      rpy="1.5708 -0.073815 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Wheel4" />
-    <axis
-      xyz="0 0 1" />
+  <joint name="rear_right_wheel_joint" type="continuous">
+    <origin xyz="0.88391 -1.259 0.99365" rpy="1.5708 -0.073815 0" />
+    <parent link="base_link" />
+    <child link="rear_right_wheel_link" />
+    <axis xyz="0 0 1" />
   </joint>
-  <link
-    name="taitc_lidar_link">
+
+  <!-- Lidar -->
+  <link name="taitc_lidar_link">
     <inertial>
-      <origin
-        xyz="0 0.0125000000000001 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.0962112750161875" />
-      <inertia
-        ixx="3.44757068808006E-05"
-        ixy="-9.90186532697345E-23"
-        ixz="1.6940658945086E-21"
-        iyy="5.89294059474149E-05"
-        iyz="-7.82939731896614E-22"
-        izz="3.44757068808006E-05" />
+      <origin xyz="0 0.0125 0" rpy="0 0 0" />
+      <mass value="0.0962112750161875" />
+      <inertia ixx="3.44757068808006E-05" ixy="0" ixz="0"
+               iyy="5.89294059474149E-05" iyz="0" izz="3.44757068808006E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/taitc_lidar_link.STL" />
+        <mesh filename="package://Odometry FIle/meshes/taitc_lidar_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://Odometry FIle/meshes/taitc_lidar_link.STL" />
+        <mesh filename="package://Odometry FIle/meshes/taitc_lidar_link.STL" />
       </geometry>
     </collision>
   </link>
-<joint name="taitc_lidar_joint" type="fixed">
-  <origin
-    xyz="0.708399374631133 -1.37350613548206 0.854171401767211"
-    rpy="0 0 0" />
-  <parent link="base_link"/>
-  <child link="taitc_lidar_link"/>
-</joint>
-<!-- ros2_control block — add this inside your robot URDF (use xacro for cleaner maintenance) -->
-<ros2_control name="ct_robot" type="system">
-  <hardware>
-    <!-- For testing, use a mock/demo hardware plugin. For a real robot you will replace this with your HW plugin. -->
-    <plugin>mock_components/GenericSystem</plugin>
-  </hardware>
-
-  <!-- Define each wheel joint interfaces the controllers will claim -->
-  <joint name="front_left_wheel_joint">
-    <command_interface name="velocity"/>
-    <state_interface name="position"/>
-    <state_interface name="velocity"/>
+  <joint name="taitc_lidar_joint" type="fixed">
+    <origin xyz="0.708399374631133 -1.37350613548206 0.854171401767211" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="taitc_lidar_link"/>
   </joint>
 
-  <joint name="front_right_wheel_joint">
-    <command_interface name="velocity"/>
-    <state_interface name="position"/>
-    <state_interface name="velocity"/>
-  </joint>
-
-  <joint name="rear_left_wheel_joint">
-    <command_interface name="velocity"/>
-    <state_interface name="position"/>
-    <state_interface name="velocity"/>
-  </joint>
-
-  <joint name="rear_right_wheel_joint">
-    <command_interface name="velocity"/>
-    <state_interface name="position"/>
-    <state_interface name="velocity"/>
-  </joint>
-</ros2_control>
-
+  <!-- ros2_control interfaces already aligned -->
+  <ros2_control name="ct_robot" type="system">
+    <hardware>
+      <plugin>mock_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="front_left_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="front_right_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_left_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_right_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
 </robot>
