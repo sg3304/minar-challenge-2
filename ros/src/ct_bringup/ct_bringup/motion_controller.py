@@ -13,7 +13,7 @@ LY = (92.5)/1000
 
 class MotionController(Node):
     def __init__(self):
-        super().__init__("Motion_controller_node")
+        super().__init__("motion_controller_node")
         self.motorPublisher = self.create_publisher(MotorMsg, '/controlspeed', 10)
         self.joySubscriber = self.create_subscription(Joy, '/joy', self.joycallback, 10)
         self.cmdSubscriber = self.create_subscription(Twist, '/cmd_vel', self.cmdcallback, 10)

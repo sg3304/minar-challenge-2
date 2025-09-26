@@ -10,19 +10,13 @@ def generate_launch_description():
     bringup_dir = get_package_share_directory('ct_bringup')
     description_dir = get_package_share_directory('ct_description')
     rplidar_dir = get_package_share_directory('rplidar_ros')
-    ros2_control_dir = get_package_share_directory('ct_control')  
-    ps4_teleop_config = os.path.join(bringup_dir, 'config', 'ps4_config.yaml')
-    mecanum_controller_yaml = os.path.join(bringup_dir, 'config', 'mecanum_drive_controllers.yaml')
 
-    # Config files
     slam_params_file = os.path.join(bringup_dir, 'config', 'slam_toolbox.yaml')
     urdf_file = os.path.join(description_dir, 'urdf', 'ct.urdf')
 
-    # Read URDF robot description
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
 
-    # RPLIDAR launch
     rplidar_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(rplidar_dir, 'launch', 'view_rplidar_a1_launch.py'),
@@ -30,7 +24,6 @@ def generate_launch_description():
         launch_arguments={'frame_id': 'taitc_lidar_link'}.items()
     )
 
-    # Robot state publisher
     robot_state_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -38,7 +31,6 @@ def generate_launch_description():
         parameters=[{'robot_description': robot_desc}]
     )
 
-    # SLAM lifecycle node   
     slam_node = Node(
         package='slam_toolbox',
         executable='async_slam_toolbox_node',
@@ -47,7 +39,6 @@ def generate_launch_description():
         parameters=[slam_params_file, {'use_sim_time': False}],
     )
 
-    # Lifecycle activation for SLAM
     activate_configure = TimerAction(
         period=10.0,
         actions=[ExecuteProcess(
@@ -64,46 +55,20 @@ def generate_launch_description():
         )]
     )
 
-    # Teleop + Odometry combined node
-    teleop_odom_node = Node(
+    
+    odom_node = Node(
         package='ct_bringup',
-        executable='teleop_odom_node',  
-        name='teleop_odom_node',
+        executable='odometry_node',  
+        name='odometry_node',
         output='screen'
     )
 
-    # Joystick driver
-    joy_node = Node(
-        package='joy',
-        executable='joy_node',
-        name='joy_node',
-        parameters=[{'dev': '/dev/input/js0', 'deadzone': 0.05, 'autorepeat_rate': 20.0}],
-        output='screen'
-    )
-
-    # PS4 controller teleop -> cmd_vel
-    teleop_twist_joy_node = Node(
-        package='teleop_twist_joy',
-        executable='teleop_node',
-        name='teleop_twist_joy',
-        parameters=[ps4_teleop_config], 
-        remappings=[('/cmd_vel', '/cmd_vel')]
-    )
-
-    mecanum_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["mecanum_drive_controller"], 
-        output="screen",
-    )
-
-    controller_manager = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[{'robot_description': robot_desc},
-                    mecanum_controller_yaml],
-        output="screen"
-    )
+    motion_controller_node = Node(
+            package='ct_bringup',
+            executable='motion_controller_node',  
+            name='motion_controller_node',
+            output='screen'
+        )
 
     return LaunchDescription([
         activate_configure,
@@ -111,7 +76,7 @@ def generate_launch_description():
         rplidar_launch,
         robot_state_node,       
         slam_node,
-        teleop_odom_node,   # ✅ combined teleop + odom node
-        controller_manager,
-        mecanum_controller_spawner
+        motion_controller_node,
+        odom_node
+
     ])
