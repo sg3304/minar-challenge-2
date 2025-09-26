@@ -2,7 +2,6 @@
 <robot name="ct">
 
   <!-- Dummy link to avoid KDL warning -->
-  <link name="dummy_root_link"/>
 
   <link name="base_link">
     <inertial>
@@ -23,11 +22,14 @@
     </collision>
   </link>
   <joint name="base_joint" type="fixed">
-    <parent link="dummy_root_link"/>
     <child link="base_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
-
+<joint name="base_footprint_to_base_link" type="fixed">
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+</joint>
   <!-- Wheel links and joints (same as your previous ones) -->
   <!-- ... keep your four wheel links and joints as-is ... -->
 
