@@ -62,7 +62,7 @@ class TeleopSerialNode(Node):
 
         command = f"[{w1:.4f},{w2:.4f},{w3:.4f},{w4:.4f}]\n"
         try:
-            self.ser.write(command.encode('utf-8'))
+            self.ser.write(command.encode('utf-8')) 
             self.get_logger().info(f"Sent to Arduino: {command.strip()}")
         except Exception as e:
             self.get_logger().error(f"Failed sending to serial: {e}")
