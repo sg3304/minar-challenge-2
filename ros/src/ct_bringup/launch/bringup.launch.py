@@ -11,7 +11,7 @@ def generate_launch_description():
     description_dir = get_package_share_directory('ct_description')
     rplidar_dir = get_package_share_directory('rplidar_ros')
     ros2_control_dir = get_package_share_directory('ct_control')  
-    ps4_teleop_config = os.path.join(bringup_dir, 'config', 'pst4_config.yaml')
+    ps4_teleop_config = os.path.join(bringup_dir, 'config', 'ps4_config.yaml')
     mecanum_controller_yaml = os.path.join(bringup_dir, 'config', 'mecanum_drive_controllers.yaml')
 
     # Config files
