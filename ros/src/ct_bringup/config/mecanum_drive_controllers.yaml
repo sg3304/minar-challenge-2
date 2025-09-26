@@ -1,13 +1,14 @@
 mecanum_drive_controller:
-  type: "mecanum_drive_controller/MecanumDriveController"
-  left_front_wheel: "left_front_wheel_joint"
-  right_front_wheel: "right_front_wheel_joint"
-  left_rear_wheel: "left_rear_wheel_joint"
-  right_rear_wheel: "right_rear_wheel_joint"
-  wheel_radius: 0.05
-  wheel_separation_x: 0.3
-  wheel_separation_y: 0.25
-  cmd_vel_timeout: 0.5
-  odom_frame: "odom"
-  base_frame: "base_link"
-  enable_odom_tf: true
+  ros__parameters:
+    type: "mecanum_drive_controller/MecanumDriveController"
+    left_front_wheel: "left_front_wheel_joint"
+    right_front_wheel: "right_front_wheel_joint"
+    left_rear_wheel: "left_rear_wheel_joint"
+    right_rear_wheel: "right_rear_wheel_joint"
+    wheel_radius: 0.05
+    wheel_separation_x: 0.3
+    wheel_separation_y: 0.25
+    cmd_vel_timeout: 0.5
+    odom_frame: "odom"
+    base_frame: "base_link"
+    enable_odom_tf: true

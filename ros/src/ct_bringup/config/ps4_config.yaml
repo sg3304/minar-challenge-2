@@ -1,11 +1,11 @@
-
 joy_node:
-  deadzone: 0.05
-  autorepeat_rate: 20.0
-axis_linear: 1        
-axis_angular: 0       
-axis_deadzone: 0.05   
-button_deadzone: 0.05
-enable_button: 0       
-disable_button: 1     
-turbo_axis: 5         
+  ros__parameters:
+    deadzone: 0.05
+    autorepeat_rate: 20.0
+    axis_linear: 1        
+    axis_angular: 0       
+    axis_deadzone: 0.05   
+    button_deadzone: 0.05
+    enable_button: 0       
+    disable_button: 1     
+    turbo_axis: 5         
