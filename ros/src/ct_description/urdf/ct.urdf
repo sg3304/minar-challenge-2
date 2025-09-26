@@ -303,5 +303,37 @@
   <parent link="base_link"/>
   <child link="taitc_lidar_link"/>
 </joint>
+<!-- ros2_control block — add this inside your robot URDF (use xacro for cleaner maintenance) -->
+<ros2_control name="ct_robot" type="system">
+  <hardware>
+    <!-- For testing, use a mock/demo hardware plugin. For a real robot you will replace this with your HW plugin. -->
+    <plugin>mock_components/GenericSystem</plugin>
+  </hardware>
+
+  <!-- Define each wheel joint interfaces the controllers will claim -->
+  <joint name="front_left_wheel_joint">
+    <command_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="front_right_wheel_joint">
+    <command_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="rear_left_wheel_joint">
+    <command_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="rear_right_wheel_joint">
+    <command_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+</ros2_control>
 
 </robot>
