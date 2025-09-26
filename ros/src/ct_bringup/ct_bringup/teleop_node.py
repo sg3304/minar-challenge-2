@@ -18,7 +18,7 @@ BAUD_RATE = 115200
 # ------------------------
 # Teleop Node: cmd_vel → Arduino (wheel speeds)
 # ------------------------
-class TeleopNode(Node):
+class TeleopOdomNode(Node):
     def __init__(self):
         super().__init__('teleop_serial_node')
         
@@ -146,7 +146,7 @@ class OdomNode(Node):
 # ------------------------
 def main(args=None):
     rclpy.init(args=args)
-    teleop_node = TeleopNode()
+    teleop_node = TeleopOdomNode()
     odom_node = OdomNode()
 
     try:
