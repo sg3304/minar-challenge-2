@@ -1,0 +1,21 @@
+# ps4_config.yaml
+# This file maps PS4 DualShock buttons and axes to ROS2 joystick messages
+
+joy_node:
+  # Optional: deadzone for analog sticks
+  deadzone: 0.05
+  autorepeat_rate: 20.0
+
+# Axis mappings (based on sensor_msgs/Joy axes)
+axis_linear: 1         # left stick vertical (forward/back)
+axis_angular: 0        # left stick horizontal (left/right)
+axis_deadzone: 0.05    # deadzone for sticks
+
+# Button mappings (based on sensor_msgs/Joy buttons)
+button_deadzone: 0.05
+
+# Example for teleop_twist_joy
+# button_a -> enable turbo, button_b -> stop, etc.
+enable_button: 0       # Cross button
+disable_button: 1      # Circle button
+turbo_axis: 5          # R2 trigger axis

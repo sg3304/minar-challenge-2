@@ -86,11 +86,10 @@ def generate_launch_description():
         package='teleop_twist_joy',
         executable='teleop_node',
         name='teleop_twist_joy',
-        parameters=[ps4_teleop_config],
+        parameters=[ps4_teleop_config], 
         remappings=[('/cmd_vel', '/cmd_vel')]
     )
 
-    # ROS2 control: load and start mecanum controller using CLI (Jazzy compatible)
     mecanum_controller_loader = ExecuteProcess(
         cmd=[
             'ros2', 'control', 'load_controller',
