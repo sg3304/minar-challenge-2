@@ -64,11 +64,11 @@ def generate_launch_description():
         )]
     )
 
-    # Teleop serial node (mecanum compatible)
-    teleop_serial_node = Node(
+    # Teleop + Odometry combined node
+    teleop_odom_node = Node(
         package='ct_bringup',
-        executable='teleop_node',  
-        name='teleop_node',
+        executable='teleop_odom_node',  
+        name='teleop_odom_node',
         output='screen'
     )
 
@@ -91,11 +91,12 @@ def generate_launch_description():
     )
 
     mecanum_controller_spawner = Node(
-    package="controller_manager",
-    executable="spawner",
-    arguments=["mecanum_drive_controller"],
-    output="screen",
+        package="controller_manager",
+        executable="spawner",
+        arguments=["mecanum_drive_controller"],
+        output="screen",
     )
+
     controller_manager = Node(
         package="controller_manager",
         executable="ros2_control_node",
@@ -104,14 +105,13 @@ def generate_launch_description():
         output="screen"
     )
 
-
     return LaunchDescription([
         activate_configure,
         activate_activate,
         rplidar_launch,
         robot_state_node,       
         slam_node,
-        teleop_serial_node,
+        teleop_odom_node,   # ✅ combined teleop + odom node
         controller_manager,
         mecanum_controller_spawner
     ])

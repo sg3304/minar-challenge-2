@@ -25,7 +25,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-                    'teleop_node = ct_bringup.teleop_node:main'
-        ],
+          'teleop_odom_node = ct_bringup.teleop_odom_node:main',        ],
+      
     },
 )
