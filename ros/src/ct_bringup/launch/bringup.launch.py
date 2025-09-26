@@ -49,7 +49,7 @@ def generate_launch_description():
 
     # Lifecycle activation for SLAM
     activate_configure = TimerAction(
-        period=2.0,
+        period=10.0,
         actions=[ExecuteProcess(
             cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'configure'],
             output='screen'
@@ -90,15 +90,20 @@ def generate_launch_description():
         remappings=[('/cmd_vel', '/cmd_vel')]
     )
 
-    mecanum_controller_loader = ExecuteProcess(
-        cmd=[
-            'ros2', 'control', 'load_controller',
-            '--param-file', mecanum_controller_yaml,
-            '--set-state', 'active',
-            'mecanum_drive_controller'
-        ],
-        output='screen'
+    mecanum_controller_spawner = Node(
+    package="controller_manager",
+    executable="spawner",
+    arguments=["mecanum_drive_controller"],
+    output="screen",
     )
+    controller_manager = Node(
+        package="controller_manager",
+        executable="ros2_control_node",
+        parameters=[{'robot_description': robot_desc},
+                    mecanum_controller_yaml],
+        output="screen"
+    )
+
 
     return LaunchDescription([
         activate_configure,
@@ -107,5 +112,6 @@ def generate_launch_description():
         robot_state_node,       
         slam_node,
         teleop_serial_node,
-        mecanum_controller_loader
+        controller_manager,
+        mecanum_controller_spawner
     ])
