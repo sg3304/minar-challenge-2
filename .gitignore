@@ -20,3 +20,6 @@ ros/src/build
 ros/src/install
 ros/src/log
 /ArduinoCode_Simple/.idea
+/ArduinoCode_Simple/src/.idea
+ArduinoCode_Simple/include/README
+/ArduinoCode_Simple/lib
