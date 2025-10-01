@@ -46,6 +46,13 @@ def generate_launch_description():
             output='screen'
         )]
     )
+    static_tf_base_to_laser = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='static_base_to_laser',
+        output='screen',
+        arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'laser']
+    )
 
     activate_activate = TimerAction(
         period=5.0, 
@@ -77,6 +84,6 @@ def generate_launch_description():
         robot_state_node,       
         slam_node,
         motion_controller_node,
-        odom_node
-
+        odom_node,
+        static_tf_base_to_laser
     ])
