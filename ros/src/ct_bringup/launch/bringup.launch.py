@@ -52,7 +52,7 @@ def generate_launch_description():
         executable='static_transform_publisher',
         name='static_base_to_laser',
         output='screen',
-        arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'laser']
+        arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'lidar_link']
     )
     
 
@@ -92,11 +92,12 @@ def generate_launch_description():
     # )
 
     return LaunchDescription([
-       activate_configure,
-       activate_activate,
+  
         rplidar_launch,
         robot_state_node,       
         slam_node,
+        activate_configure,
+        activate_activate,
         motion_controller_node,
         odom_node,
      #  joy2twist
