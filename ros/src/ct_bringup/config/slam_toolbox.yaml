@@ -3,7 +3,7 @@ slam_toolbox:
     map_frame: map
     odom_frame: odom
     base_frame: base_link
-    laser_frame: taitc_lidar_link   
+    laser_frame: lidar_link   
     scan_topic: /scan
     odom_topic: /odom
     mode: mapping
