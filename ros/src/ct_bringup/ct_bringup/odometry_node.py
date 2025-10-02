@@ -18,8 +18,8 @@ class OdomNode(Node):
     def __init__(self):
         super().__init__('odometry_node')
         # Pub, sub, bc
-        self.speedSub = self.create_subscription(Twist, '/fb_speed', self.fb_speed_callback, 20)
-        self.odomPub = self.create_publisher(Odometry, '/odom', 20)
+        self.speedSub = self.create_subscription(Twist, '/fb_speed', self.fb_speed_callback, 50)
+        self.odomPub = self.create_publisher(Odometry, '/odom', 50)
         self.tf_broadcast = TransformBroadcaster(self)
         self.timer1 = self.create_timer(0.1, self.odom_update)
 
