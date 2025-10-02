@@ -89,7 +89,9 @@ class MotionController(Node):
         try:
             if self.ser.in_waiting > 0:
                 line = self.ser.readline().decode('utf-8').strip()
-                if line.startswith('[') and line.endswith(']'):
+                #if line.startswith('[') and line.endswith(']'):
+                if line.endswith(']'):
+
                     parts = line.strip('[]').split(',')
                     if len(parts) == 4:
                         fl, fr, rl, rr = [float(x) for x in parts]
