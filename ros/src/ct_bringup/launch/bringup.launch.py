@@ -95,6 +95,6 @@ def generate_launch_description():
         slam_node,
         motion_controller_node,
         odom_node,
-        joy2twist
+      #  joy2twist
         # static_tf_base_to_laser
     ])
