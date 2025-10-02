@@ -1,0 +1,17 @@
+joy_to_twist:
+  ros__parameters:
+    axis_linear.x: 1
+    axis_linear_dpad.x: 7
+    axis_linear.y: 0
+    axis_linear_dpad.y: 6
+    axis_angular.yaw: 3
+
+    scale_linear.x: 0.3
+    scale_linear.y: -0.3
+    scale_angular.yaw: 0.5
+
+    enable_button: 5
+    enable_turbo_button: 4
+    turbo_scale: 2.5
+
+    deadzone: 0.05

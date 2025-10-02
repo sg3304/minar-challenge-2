@@ -10,6 +10,7 @@ def generate_launch_description():
     bringup_dir = get_package_share_directory('ct_bringup')
     description_dir = get_package_share_directory('ct_description')
     rplidar_dir = get_package_share_directory('rplidar_ros')
+    joy2twist_share = get_package_share_directory('ros2_joy_twist')
 
     slam_params_file = os.path.join(bringup_dir, 'config', 'slam_toolbox.yaml')
     urdf_file = os.path.join(description_dir, 'urdf', 'ct.urdf')
@@ -21,7 +22,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(rplidar_dir, 'launch', 'view_rplidar_a1_launch.py'),
         ),
-        launch_arguments={'frame_id': 'taitc_lidar_link'}.items()
+        launch_arguments={'frame_id': 'lidar_link'}.items()
     )
 
     robot_state_node = Node(
@@ -77,6 +78,14 @@ def generate_launch_description():
             name='motion_controller_node',
             output='screen'
         )
+    mappings = os.path.join(joy2twist_share, 'mappings.yaml')
+    joy2twist = Node(
+        package='ros2_joy_twist',
+        executable='joy_to_twist',
+        name='joy_to_twist',
+        output='screen',
+        parameters=[mappings],
+    )
 
     return LaunchDescription([
         activate_configure,
@@ -86,5 +95,6 @@ def generate_launch_description():
         slam_node,
         motion_controller_node,
         odom_node,
+        joy2twist
         # static_tf_base_to_laser
     ])

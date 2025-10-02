@@ -62,10 +62,10 @@
   </joint>
 
   <!-- LiDAR -->
-  <link name="taitc_lidar_link"/>
-  <joint name="taitc_lidar_joint" type="fixed">
+  <link name="lidar_link"/>
+  <joint name="lidar_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="taitc_lidar_link"/>
+    <child link="lidar_link"/>
     <origin xyz="0.708399374631133 -1.37350613548206 0.854171401767211"
             rpy="1.5707963267949 0 1.90864148584851"/>
     <axis xyz="0 1 0"/>
