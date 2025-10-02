@@ -93,8 +93,8 @@ def generate_launch_description():
     # )
 
     return LaunchDescription([
-        activate_configure,
-        activate_activate,
+      #  activate_configure,
+       # activate_activate,
         rplidar_launch,
         robot_state_node,       
         slam_node,
