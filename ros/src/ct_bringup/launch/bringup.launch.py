@@ -73,11 +73,16 @@ def generate_launch_description():
     )
 
     motion_controller_node = Node(
-            package='ct_bringup',
-            executable='motion_controller_node',  
-            name='motion_controller_node',
-            output='screen'
-        )
+        package='ct_bringup',
+        executable='motion_controller_node',  
+        name='motion_controller_node',
+        output='screen',
+        parameters=[{
+            'port': '/dev/ttyACM0',  # Arduino serial port
+            'baud_rate': 115200      # Match Arduino sketch
+        }]
+    )
+
     # mappings = os.path.join(joy2twist_share, 'mappings.yaml')
     # joy2twist = Node(
     #     package='ros2_joy_twist',
@@ -88,8 +93,8 @@ def generate_launch_description():
     # )
 
     return LaunchDescription([
-        activate_configure,
-        activate_activate,
+      #  activate_configure,
+       # activate_activate,
         rplidar_launch,
         robot_state_node,       
         slam_node,
