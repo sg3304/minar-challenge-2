@@ -42,7 +42,6 @@ class MotionController(Node):
             [1, 1, -(LX+LY)],
             [1,-1,  (LX+LY)]
         ])
-
     def joycallback(self, msg: Joy):
         x_vel = 0.8 * msg.axes[1]  # m/s
         y_vel = 0.8 * msg.axes[0]
@@ -80,14 +79,31 @@ class MotionController(Node):
         motor_msg.data = w_speeds.flatten().tolist()
         self.motorPublisher.publish(motor_msg)
 
-        # Send to Arduino via serial
         command = f"[{w_speeds[0,0]:.4f},{w_speeds[1,0]:.4f},{w_speeds[2,0]:.4f},{w_speeds[3,0]:.4f}]\n"
         try:
             self.ser.write(command.encode('utf-8'))
             self.get_logger().info(f"Sent to Arduino: {command.strip()}")
         except Exception as e:
             self.get_logger().error(f"Failed to send command: {e}")
+    def read_serial_feedback(self):
+        try:
+            if self.ser.in_waiting > 0:
+                line = self.ser.readline().decode('utf-8').strip()
+                if line.startswith('[') and line.endswith(']'):
+                    parts = line.strip('[]').split(',')
+                    if len(parts) == 4:
+                        fl, fr, rl, rr = [float(x) for x in parts]
 
+                        msg = Twist()
+                        msg.linear.x = (fl + fr + rl + rr) * (RADIUS / 4)
+                        msg.linear.y = (-fl + fr + rl - rr) * (RADIUS / 4)
+                        msg.angular.z = (-fl + fr - rl + rr) * (RADIUS / (4*(LX+LY)))
+
+                        self.feedbackPub.publish(msg)
+                        self.get_logger().info(f"Published /fb_speed: {msg.linear.x:.2f}, {msg.angular.z:.2f}")
+
+        except Exception as e:
+            self.get_logger().error(f"Error reading Arduino serial: {e}")
 def main(args=None):
     rclpy.init(args=args)
     motion_controller = MotionController()
