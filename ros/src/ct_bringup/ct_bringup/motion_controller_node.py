@@ -5,7 +5,7 @@ from sensor_msgs.msg import Joy
 from std_msgs.msg import Float32MultiArray
 import numpy as np
 import serial
-
+import time
 # Serial parameters
 SERIAL_PORT = '/dev/ttyACM0'
 BAUD_RATE = 115200
@@ -84,6 +84,7 @@ class MotionController(Node):
         command = f"[{w_speeds[0,0]:.4f},{w_speeds[1,0]:.4f},{w_speeds[2,0]:.4f},{w_speeds[3,0]:.4f}]\n"
         try:
             self.ser.write(command.encode('utf-8'))
+            time.sleep(0.5)
             self.get_logger().info(f"Sent to Arduino: {command.strip()}")
         except Exception as e:
             self.get_logger().error(f"Failed to send command: {e}")
