@@ -78,14 +78,14 @@ def generate_launch_description():
             name='motion_controller_node',
             output='screen'
         )
-    mappings = os.path.join(joy2twist_share, 'mappings.yaml')
-    joy2twist = Node(
-        package='ros2_joy_twist',
-        executable='joy_to_twist',
-        name='joy_to_twist',
-        output='screen',
-        parameters=[mappings],
-    )
+    # mappings = os.path.join(joy2twist_share, 'mappings.yaml')
+    # joy2twist = Node(
+    #     package='ros2_joy_twist',
+    #     executable='joy_to_twist',
+    #     name='joy_to_twist',
+    #     output='screen',
+    #     parameters=[mappings],
+    # )
 
     return LaunchDescription([
         activate_configure,
