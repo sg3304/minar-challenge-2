@@ -20,7 +20,7 @@ class MotionController(Node):
         super().__init__("motion_controller_node")
         # Serial connection
         try:
-            self.ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=0.1)
+            self.ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
             self.get_logger().info(f"Opened serial port {SERIAL_PORT}")
         except Exception as e:
             self.get_logger().error(f"Failed to open serial port: {e}")
@@ -84,7 +84,6 @@ class MotionController(Node):
         command = f"[{w_speeds[0,0]:.4f},{w_speeds[1,0]:.4f},{w_speeds[2,0]:.4f},{w_speeds[3,0]:.4f}]\n"
         try:
             self.ser.write(command.encode('utf-8'))
-            time.sleep(0.5)
             self.get_logger().info(f"Sent to Arduino: {command.strip()}")
         except Exception as e:
             self.get_logger().error(f"Failed to send command: {e}")
