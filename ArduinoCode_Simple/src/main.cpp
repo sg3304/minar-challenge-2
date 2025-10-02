@@ -165,7 +165,7 @@ void loop() {
     const uint32_t nowMs = millis();
     const uint32_t periodMs = 20; // 50 Hz
 
-    static float medBuf[4][10] = {0};
+    static float medBuf[4][25] = {0};
     static uint8_t medIdx = 0;
     static uint8_t medCount = 0;
 
@@ -224,14 +224,14 @@ void loop() {
             medBuf[i][medIdx] = motors[i].speed;
         }
 
-        medIdx = (uint8_t)((medIdx + 1) % 10);
-        if (medCount < 10) medCount++;
+        medIdx = (uint8_t)((medIdx + 1) % 25);
+        if (medCount < 25) medCount++;
 
-        if (medCount == 10 && medIdx == 0) {
-            float tmp[10];
-            auto median10 = [&](int m) -> float {
-                for (int k = 0; k < 10; ++k) tmp[k] = medBuf[m][k];
-                for (int a = 1; a < 10; ++a) {
+        if (medCount == 25 && medIdx == 0) {
+            float tmp[25];
+            auto median25 = [&](int m) -> float {
+                for (int k = 0; k < 25; ++k) tmp[k] = medBuf[m][k];
+                for (int a = 1; a < 25; ++a) {
                     float key = tmp[a];
                     int b = a - 1;
                     while (b >= 0 && tmp[b] > key) {
@@ -240,17 +240,17 @@ void loop() {
                     }
                     tmp[b + 1] = key;
                 }
-                return 0.5f * (tmp[4] + tmp[5]);
+                return tmp[12];  // middle element (0-based)
             };
 
             Serial.print('[');
-            Serial.print(median10(0), 2);
+            Serial.print(median25(0), 2);
             Serial.print(',');
-            Serial.print(median10(1), 2);
+            Serial.print(median25(1), 2);
             Serial.print(',');
-            Serial.print(median10(2), 2);
+            Serial.print(median25(2), 2);
             Serial.print(',');
-            Serial.print(median10(3), 2);
+            Serial.print(median25(3), 2);
             Serial.println(']');
         }
 
