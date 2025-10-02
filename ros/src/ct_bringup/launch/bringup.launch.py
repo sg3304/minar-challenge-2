@@ -41,7 +41,7 @@ def generate_launch_description():
     )
 
     activate_configure = TimerAction(
-        period=10.0,
+        period=5.0,
         actions=[ExecuteProcess(
             cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'configure'],
             output='screen'
@@ -57,7 +57,7 @@ def generate_launch_description():
     
 
     activate_activate = TimerAction(
-        period=5.0, 
+        period=10.0, 
         actions=[ExecuteProcess(
             cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'activate'],
             output='screen'
@@ -94,7 +94,7 @@ def generate_launch_description():
     return LaunchDescription([
   
         rplidar_launch,
-        robot_state_node,       
+        robot_state_node,           
         slam_node,
         activate_configure,
         activate_activate,
