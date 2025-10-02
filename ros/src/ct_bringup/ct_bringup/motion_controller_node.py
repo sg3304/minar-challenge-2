@@ -99,7 +99,8 @@ class MotionController(Node):
                         msg.linear.y = (-fl + fr + rl - rr) * (RADIUS / 4)
                         msg.angular.z = (-fl + fr - rl + rr) * (RADIUS / (4*(LX+LY)))
 
-                        self.feedbackPub.publish(msg)
+                        self.publish_speeds(msg)
+                        # Uncomment to debug:
                         self.get_logger().info(f"Published /fb_speed: {msg.linear.x:.2f}, {msg.angular.z:.2f}")
 
         except Exception as e:
