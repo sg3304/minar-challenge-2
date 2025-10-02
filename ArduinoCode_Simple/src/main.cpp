@@ -138,6 +138,9 @@ float runPID(PID &c, MotorState &m, float meas, float dt) {
 void setup() {
     Serial.begin(115200);
 
+    pinMode(13, OUTPUT);
+    digitalWrite(13, LOW);
+
     for (int i = 0; i < 4; i++) {
         pinMode(motorPins[i].in1, OUTPUT);
         pinMode(motorPins[i].in2, OUTPUT);
@@ -157,6 +160,7 @@ void setup() {
 void loop() {
     static uint32_t lastMs = 0;
     static int32_t lastCount[4] = {0, 0, 0, 0};
+    static uint32_t ledOffTime = 0;
 
     const uint32_t nowMs = millis();
     const uint32_t periodMs = 20; // 50 Hz
@@ -164,6 +168,12 @@ void loop() {
     static float medBuf[4][10] = {0};
     static uint8_t medIdx = 0;
     static uint8_t medCount = 0;
+
+    // ---- LED error handling ----
+    if (ledOffTime > 0 && nowMs >= ledOffTime) {
+        digitalWrite(13, LOW);
+        ledOffTime = 0;
+    }
 
     // ---- Serial input ----
     if (Serial.available()) {
@@ -179,6 +189,9 @@ void loop() {
                     motors[i].pid.integral = 0.0f;
                 }
             }
+        } else {
+            digitalWrite(13, HIGH);
+            ledOffTime = nowMs + 500;
         }
     }
 
