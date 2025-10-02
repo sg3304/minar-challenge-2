@@ -34,6 +34,8 @@ class MotionController(Node):
         self.feedbackPub = self.create_publisher(Twist, '/fb_speed', 10)
         self.serialRead = self.create_timer(0.1, self.read_serial_feedback)
         self.get_logger().info("Motion controller node has started!")
+        self.get_logger().info(f"Reading: {self.serialRead}")
+
 
         self.feedbackMsg = Twist()
         self.invKinMatrix = np.array([
