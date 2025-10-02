@@ -36,13 +36,13 @@ def generate_launch_description():
     )
 
     # Static TF from base_link to lidar_link
-    static_tf_base_to_laser = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='static_base_to_laser',
-        output='screen',
-        arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'lidar_link']
-    )
+    # static_tf_base_to_laser = Node(
+    #     package='tf2_ros',
+    #     executable='static_transform_publisher',
+    #     name='static_base_to_laser',
+    #     output='screen',
+    #     arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'lidar_link']
+    # )
 
     # SLAM node (lifecycle)
     slam_node = Node(
@@ -55,7 +55,7 @@ def generate_launch_description():
 
     # Activate SLAM only after LIDAR + TF are ready
     activate_slam = TimerAction(
-        period=10.0,  # wait 8 seconds for sensors/TF
+        period=10.0,  # wait 10 seconds for sensors/TF
         actions=[
             ExecuteProcess(
                 cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'configure'],
@@ -91,7 +91,7 @@ def generate_launch_description():
     return LaunchDescription([
         rplidar_launch,
         robot_state_node,
-        static_tf_base_to_laser,
+       # static_tf_base_to_laser,
         odom_node,
         motion_controller_node,
         slam_node,
