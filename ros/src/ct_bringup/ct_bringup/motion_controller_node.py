@@ -10,15 +10,14 @@ RADIUS = (79/2)/1000
 LX = (84.1)/1000
 LY = (92.5)/1000
 
-from std_msgs.msg import String
-
 class MotionController(Node):
     def __init__(self):
         super().__init__("motion_controller_node")
-        # String publisher for Arduino
-        self.motorPublisher = self.create_publisher(String, '/controlspeed', 10)
+        # Publish wheel speeds as a Float32MultiArray
+        self.motorPublisher = self.create_publisher(Float32MultiArray, '/controlspeed', 10)
         self.joySubscriber = self.create_subscription(Joy, '/joy', self.joycallback, 10)
         self.cmdSubscriber = self.create_subscription(Twist, '/cmd_vel', self.cmdcallback, 10)
+        # Subscribe to feedback speeds as Float32MultiArray
         self.feedbackSub = self.create_subscription(Float32MultiArray, '/fb_rot', self.fbCallback, 10)
         self.feedbackPub = self.create_publisher(Twist, '/fb_speed', 10)
         self.get_logger().info("Motion controller node has started!")
@@ -35,23 +34,26 @@ class MotionController(Node):
         x_vel = 0.8 * msg.axes[1]  # m/s
         y_vel = 0.8 * msg.axes[0]
         w_z = 2 * msg.axes[3]      # rad/s
-        self.send_to_arduino(x_vel, y_vel, w_z)
+        smoothOpVel = np.array([[x_vel],[y_vel],[w_z]])
+        w_speeds = self.inv_kin(smoothOpVel)
+
+        motor_msg = Float32MultiArray()
+        motor_msg.data = w_speeds.flatten().tolist()
+        self.motorPublisher.publish(motor_msg)
 
     def cmdcallback(self, msg: Twist):
         x_vel = msg.linear.x
         y_vel = msg.linear.y
         w_z = msg.angular.z
-        self.send_to_arduino(x_vel, y_vel, w_z)
-
-    def send_to_arduino(self, x_vel, y_vel, w_z):
         smoothOpVel = np.array([[x_vel],[y_vel],[w_z]])
         w_speeds = self.inv_kin(smoothOpVel)
-        # Format as Arduino-readable string
-        arduino_msg = String()
-        arduino_msg.data = f"[{w_speeds[0,0]:.2f},{w_speeds[1,0]:.2f},{w_speeds[2,0]:.2f},{w_speeds[3,0]:.2f}]"
-        self.motorPublisher.publish(arduino_msg)
+
+        motor_msg = Float32MultiArray()
+        motor_msg.data = w_speeds.flatten().tolist()
+        self.motorPublisher.publish(motor_msg)
 
     def fbCallback(self, msg: Float32MultiArray):
+        # Expecting msg.data = [fl, fr, rl, rr]
         fl, fr, rl, rr = msg.data
         self.feedbackMsg.linear.x = (fl + fr + rl + rr) * (RADIUS / 4)
         self.feedbackMsg.linear.y = (-fl + fr + rl - rr) * (RADIUS / 4)
@@ -65,7 +67,6 @@ class MotionController(Node):
             speedFactor = 30 / maxOmega
             w_speeds = w_speeds * speedFactor
         return w_speeds
-
 
 def main(args=None):
     rclpy.init(args=args)
