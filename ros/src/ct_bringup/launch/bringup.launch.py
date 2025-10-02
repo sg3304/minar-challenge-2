@@ -1,9 +1,10 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import IncludeLaunchDescription, TimerAction, ExecuteProcess
+from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 import os
 from ament_index_python.packages import get_package_share_directory
+from launch.actions import ExecuteProcess
 
 def generate_launch_description():
     # Package paths
@@ -18,13 +19,15 @@ def generate_launch_description():
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
 
+    # Launch RPLIDAR
     rplidar_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(rplidar_dir, 'launch', 'view_rplidar_a1_launch.py'),
+            os.path.join(rplidar_dir, 'launch', 'view_rplidar_a1_launch.py')
         ),
         launch_arguments={'frame_id': 'lidar_link'}.items()
     )
 
+    # Robot state publisher
     robot_state_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -32,6 +35,16 @@ def generate_launch_description():
         parameters=[{'robot_description': robot_desc}]
     )
 
+    # Static TF from base_link to lidar_link
+    static_tf_base_to_laser = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='static_base_to_laser',
+        output='screen',
+        arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'lidar_link']
+    )
+
+    # SLAM node (lifecycle)
     slam_node = Node(
         package='slam_toolbox',
         executable='async_slam_toolbox_node',
@@ -40,31 +53,22 @@ def generate_launch_description():
         parameters=[slam_params_file, {'use_sim_time': False}],
     )
 
-    activate_configure = TimerAction(
-        period=5.0,
-        actions=[ExecuteProcess(
-            cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'configure'],
-            output='screen'
-        )]
-    )
-    static_tf_base_to_laser = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='static_base_to_laser',
-        output='screen',
-        arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'lidar_link']
-    )
-    
-
-    activate_activate = TimerAction(
-        period=10.0, 
-        actions=[ExecuteProcess(
-            cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'activate'],
-            output='screen'
-        )]
+    # Activate SLAM only after LIDAR + TF are ready
+    activate_slam = TimerAction(
+        period=10.0,  # wait 8 seconds for sensors/TF
+        actions=[
+            ExecuteProcess(
+                cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'configure'],
+                output='screen'
+            ),
+            ExecuteProcess(
+                cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'activate'],
+                output='screen'
+            )
+        ]
     )
 
-    
+    # Odometry node
     odom_node = Node(
         package='ct_bringup',
         executable='odometry_node',  
@@ -72,16 +76,28 @@ def generate_launch_description():
         output='screen'
     )
 
+    # Motion controller
     motion_controller_node = Node(
         package='ct_bringup',
         executable='motion_controller_node',  
         name='motion_controller_node',
         output='screen',
         parameters=[{
-            'port': '/dev/ttyACM0',  # Arduino serial port
-            'baud_rate': 115200      # Match Arduino sketch
+            'port': '/dev/ttyACM0',
+            'baud_rate': 115200
         }]
     )
+
+    return LaunchDescription([
+        rplidar_launch,
+        robot_state_node,
+        static_tf_base_to_laser,
+        odom_node,
+        motion_controller_node,
+        slam_node,
+        activate_slam
+    ])
+
     # mappings = os.path.join(joy2twist_share, 'mappings.yaml')
     # joy2twist = Node(
     #     package='ros2_joy_twist',
@@ -90,16 +106,3 @@ def generate_launch_description():
     #     output='screen',
     #     parameters=[mappings],
     # )
-
-    return LaunchDescription([
-  
-        rplidar_launch,
-        robot_state_node,           
-        slam_node,
-        activate_configure,
-        activate_activate,
-        motion_controller_node,
-        odom_node,
-     #  joy2twist
-        static_tf_base_to_laser
-    ])
