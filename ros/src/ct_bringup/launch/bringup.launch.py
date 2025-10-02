@@ -46,15 +46,15 @@ def generate_launch_description():
             cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'configure'],
             output='screen'
         )]
-    # )
-    # static_tf_base_to_laser = Node(
-    #     package='tf2_ros',
-    #     executable='static_transform_publisher',
-    #     name='static_base_to_laser',
-    #     output='screen',
-    #     arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'laser']
-    # )
     )
+    static_tf_base_to_laser = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='static_base_to_laser',
+        output='screen',
+        arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'laser']
+    )
+    
 
     activate_activate = TimerAction(
         period=5.0, 
@@ -82,7 +82,6 @@ def generate_launch_description():
             'baud_rate': 115200      # Match Arduino sketch
         }]
     )
-
     # mappings = os.path.join(joy2twist_share, 'mappings.yaml')
     # joy2twist = Node(
     #     package='ros2_joy_twist',
@@ -93,13 +92,13 @@ def generate_launch_description():
     # )
 
     return LaunchDescription([
-      #  activate_configure,
-       # activate_activate,
+       activate_configure,
+       activate_activate,
         rplidar_launch,
         robot_state_node,       
         slam_node,
         motion_controller_node,
         odom_node,
-      #  joy2twist
-        # static_tf_base_to_laser
+     #  joy2twist
+        static_tf_base_to_laser
     ])
