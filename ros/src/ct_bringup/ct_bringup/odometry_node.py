@@ -38,7 +38,7 @@ class OdomNode(Node):
     def fb_speed_callback(self, msg: Twist):
         self.vel_x = msg.linear.x 
         self.vel_y = msg.linear.y 
-        self.omega_z = msg.angular.z * self.ANGULAR_SCALE_FACTOR
+        self.omega_z = msg.angular.z 
 
 
     def odom_update(self):
