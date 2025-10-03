@@ -12,8 +12,8 @@ BAUD_RATE = 115200
 
 # IN MM
 RADIUS = (79/2)/1000
-LX = (84.1)/1000
-LY = (92.5)/1000
+LX = (92.48)/1000
+LY = (160)/1000
 
 class MotionController(Node):
     def __init__(self):
