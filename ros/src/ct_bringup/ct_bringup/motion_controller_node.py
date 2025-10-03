@@ -81,7 +81,7 @@ class MotionController(Node):
         command = f"[{w_speeds[0,0]:.4f},{w_speeds[1,0]:.4f},{w_speeds[2,0]:.4f},{w_speeds[3,0]:.4f}]\n"
         try:
             self.ser.write(command.encode('utf-8'))
-            self.get_logger().info(f"Sent to Arduino: {command.strip()}")
+          #  self.get_logger().info(f"Sent to Arduino: {command.strip()}")
         except Exception as e:
             self.get_logger().error(f"Failed to send command: {e}")
             
@@ -91,8 +91,8 @@ class MotionController(Node):
       #  self.get_logger().info(line)
 
         parts = line.strip('[]').split(',')
-        self.get_logger().info(f"Received from Arduino: {parts}")
-        self.get_logger().info(f"Parts length: {len(parts)}")
+        #self.get_logger().info(f"Received from Arduino: {parts}")
+        #self.get_logger().info(f"Parts length: {len(parts)}")
         if len(parts) == 4:     
             fl, fr, rl, rr = [float(x) for x in parts]
 

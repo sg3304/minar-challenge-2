@@ -65,7 +65,7 @@ class OdomNode(Node):
         odom_msg.twist.twist.linear.x = self.vel_x
         odom_msg.twist.twist.linear.y = self.vel_y
 
-        print("Publishing odom:", self.x, self.y, self.theta)
+       # print("Publishing odom:", self.x, self.y, self.theta)
         self.odomPub.publish(odom_msg)
 
         # from code 
