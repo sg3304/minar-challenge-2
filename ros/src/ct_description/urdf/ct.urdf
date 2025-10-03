@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="Odometry_File">
 
-  <!-- Base Link -->
   <link name="base_link">
     <inertial>
-      <origin xyz="0.723898474040511 -1.37403577535756 0.970388088854667" rpy="0 0 0"/>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/> 
       <mass value="0.249821153529968"/>
       <inertia ixx="0.000871705475246986" ixy="2.76752495563273E-09" ixz="-1.20236732648511E-08"
                iyy="0.00327890389176736" iyz="-9.15021692461746E-09" izz="0.00408901712005288"/>
@@ -26,85 +25,76 @@
     </collision>
   </link>
 
-  <!-- Wheels -->
   <link name="right_rear_wheel"/>
   <link name="left_rear_wheel"/>
   <link name="right_front_wheel"/>
   <link name="left_front_wheel"/>
 
-  <!-- Wheel Joints -->
   <joint name="right_rear_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="right_rear_wheel"/>
-    <origin xyz="0.56391 -1.444 0.99365" rpy="1.5708 0.013855 0"/>
+    <origin xyz="-0.165 -0.105 0.1" rpy="-1.5708 0 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
   <joint name="left_rear_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_rear_wheel"/>
-    <origin xyz="0.56391 -1.259 0.99365" rpy="-1.5708 0.38576 -3.1416"/>
+    <origin xyz="-0.165 0.105 0.1" rpy="-1.5708 0 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
   <joint name="right_front_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="right_front_wheel"/>
-    <origin xyz="0.88391 -1.444 0.99365" rpy="1.5708 -0.17346 0"/>
+    <origin xyz="0.165 -0.105 0.1" rpy="-1.5708 0 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
   <joint name="left_front_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_front_wheel"/>
-    <origin xyz="0.88391 -1.259 0.99365" rpy="1.5708 -0.073815 0"/>
+    <origin xyz="0.165 0.105 0.1" rpy="-1.5708 0 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
-  <!-- LiDAR -->
   <link name="lidar_link"/>
   <joint name="lidar_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lidar_link"/>
-    <origin xyz="0.708  -1.374  1.2" rpy="0 0 0"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
   </joint>
 
-    <!-- Base Footprint -->
-  <link name="base_footprint"/>
+    <link name="base_footprint"/>
   <joint name="base_footprint_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
   </joint>
 
-  <!-- ROS2 Control -->
   <ros2_control name="ct" type="system">
     <hardware>
       <plugin>ros2_control_demo_hardware/MecanumBotHardware</plugin>
     </hardware>
 
-    <!-- Right Rear Wheel -->
     <joint name="right_rear_wheel_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
-    <!-- Left Rear Wheel -->
     <joint name="left_rear_wheel_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
-    <!-- Right Front Wheel -->
     <joint name="right_front_wheel_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
 
-    <!-- Left Front Wheel -->
     <joint name="left_front_wheel_joint">
       <command_interface name="velocity"/>
       <state_interface name="position"/>
