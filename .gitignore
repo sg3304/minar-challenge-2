@@ -23,3 +23,4 @@ ros/src/log
 /ArduinoCode_Simple/src/.idea
 ArduinoCode_Simple/include/README
 /ArduinoCode_Simple/lib
+/ros/.idea
