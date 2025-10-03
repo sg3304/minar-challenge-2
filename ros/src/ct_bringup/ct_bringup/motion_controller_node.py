@@ -18,7 +18,6 @@ LY = (92.5)/1000
 class MotionController(Node):
     def __init__(self):
         super().__init__("motion_controller_node")
-        # Serial connection
         try:
             self.ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
             self.get_logger().info(f"Opened serial port {SERIAL_PORT}")
