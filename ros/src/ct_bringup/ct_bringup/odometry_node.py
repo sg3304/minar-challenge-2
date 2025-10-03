@@ -36,8 +36,8 @@ class OdomNode(Node):
         self.ANGULAR_SCALE_FACTOR = 0.85
         
     def fb_speed_callback(self, msg: Twist):
-        self.vel_x = msg.linear.x * self.LINEAR_SCALE_FACTOR
-        self.vel_y = msg.linear.y * self.LINEAR_SCALE_FACTOR
+        self.vel_x = msg.linear.x 
+        self.vel_y = msg.linear.y 
         self.omega_z = msg.angular.z * self.ANGULAR_SCALE_FACTOR
 
 
