@@ -5,7 +5,7 @@ from sensor_msgs.msg import Joy
 from std_msgs.msg import Float32MultiArray
 import numpy as np
 import serial
-import time
+
 # Serial parameters
 SERIAL_PORT = '/dev/ttyACM0'
 BAUD_RATE = 115200
@@ -25,8 +25,6 @@ class MotionController(Node):
         except Exception as e:
             self.get_logger().error(f"Failed to open serial port: {e}")
             raise e
-
-        # Publishers and subscribers
         self.motorPublisher = self.create_publisher(Float32MultiArray, '/controlspeed', 10)
         self.joySubscriber = self.create_subscription(Joy, '/joy', self.joycallback, 10)
         self.cmdSubscriber = self.create_subscription(Twist, '/cmd_vel', self.cmdcallback, 10)
@@ -34,8 +32,6 @@ class MotionController(Node):
         self.feedbackPub = self.create_publisher(Twist, '/fb_speed', 10)
         self.serialRead = self.create_timer(0.1, self.read_serial_feedback)
         self.get_logger().info("Motion controller node has started!")
-        self.get_logger().info(f"Reading: {self.serialRead}")
-
 
         self.feedbackMsg = Twist()
         self.invKinMatrix = np.array([
@@ -44,6 +40,7 @@ class MotionController(Node):
             [1, 1, -(LX+LY)],
             [1,-1,  (LX+LY)]
         ])
+        
     def joycallback(self, msg: Joy):
         x_vel = 0.8 * msg.axes[1]  # m/s
         y_vel = 0.8 * msg.axes[0]
@@ -89,6 +86,7 @@ class MotionController(Node):
             self.get_logger().error(f"Failed to send command: {e}")
             
     def read_serial_feedback(self):
+        self.get_logger().info("Timer fired: checking serial buffer...")
         try:
             if self.ser.in_waiting > 0:
                 line = self.ser.readline().decode('utf-8').strip()
