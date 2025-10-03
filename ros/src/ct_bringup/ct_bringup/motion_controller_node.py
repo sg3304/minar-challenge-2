@@ -87,24 +87,20 @@ class MotionController(Node):
             
     def read_serial_feedback(self):
         self.get_logger().info("Timer fired: checking serial buffer...")
-        try:
-            if self.ser.in_waiting > 0:
-                line = self.ser.readline().decode('utf-8').strip()
-                if line.startswith('[') and line.endswith(']'):
-                    parts = line.strip('[]').split(',')
-                    if len(parts) == 4:
-                        fl, fr, rl, rr = [float(x) for x in parts]
+        line = self.ser.readline().decode('utf-8').strip()
+        parts = line.strip('[]').split(',')
+        if len(parts) == 4:
+            fl, fr, rl, rr = [float(x) for x in parts]
 
-                        msg = Twist()
-                        msg.linear.x = (fl + fr + rl + rr) * (RADIUS / 4)
-                        msg.linear.y = (-fl + fr + rl - rr) * (RADIUS / 4)
-                        msg.angular.z = (-fl + fr - rl + rr) * (RADIUS / (4*(LX+LY)))
+            msg = Twist()
+            msg.linear.x = (fl + fr + rl + rr) * (RADIUS / 4)
+            msg.linear.y = (-fl + fr + rl - rr) * (RADIUS / 4)
+            msg.angular.z = (-fl + fr - rl + rr) * (RADIUS / (4*(LX+LY)))
 
-                        self.feedbackPub.publish(msg)
-                        self.get_logger().info(f"Published /fb_speed: {msg.linear.x:.2f}, {msg.angular.z:.2f}")
+            self.feedbackPub.publish(msg)
+            self.get_logger().info(f"Published /fb_speed: {msg.linear.x:.2f}, {msg.angular.z:.2f}")
 
-        except Exception as e:
-            self.get_logger().error(f"Error reading Arduino serial: {e}")
+
 def main(args=None):
     rclpy.init(args=args)
     motion_controller = MotionController()
