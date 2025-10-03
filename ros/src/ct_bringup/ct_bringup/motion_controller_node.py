@@ -102,7 +102,7 @@ class MotionController(Node):
             msg.angular.z = (-fl + fr - rl + rr) * (RADIUS / (4*(LX+LY)))
 
             self.feedbackPub.publish(msg)
-            self.get_logger().info(f"Published /fb_speed: {msg.linear.x:.2f}, {msg.angular.z:.2f}")
+           # self.get_logger().info(f"Published /fb_speed: {msg.linear.x:.2f}, {msg.angular.z:.2f}")
 
 
 def main(args=None):
