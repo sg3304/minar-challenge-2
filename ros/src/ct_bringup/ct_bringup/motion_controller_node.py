@@ -86,8 +86,10 @@ class MotionController(Node):
             self.get_logger().error(f"Failed to send command: {e}")
             
     def read_serial_feedback(self):
-        self.get_logger().info("Timer fired: checking serial buffer...")
+       # self.get_logger().info("Timer fired: checking serial buffer...")
         line = self.ser.readline().decode('utf-8').strip()
+        self.get_logger().info(line)
+
         parts = line.strip('[]').split(',')
         if len(parts) == 4:
             fl, fr, rl, rr = [float(x) for x in parts]
