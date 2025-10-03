@@ -250,7 +250,7 @@ void loop() {
                 Serial.print(median10(1), 2);
                 Serial.print(",");
                 Serial.print(median10(2), 2);
-                Serial.print(".");
+                Serial.print(",");
                 Serial.print(median10(3), 2);
                 Serial.println("]");
             }
