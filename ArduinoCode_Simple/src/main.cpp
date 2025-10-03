@@ -243,15 +243,17 @@ void loop() {
                 return 0.5f * (tmp[4] + tmp[5]);
             };
 
-            Serial.print('[');
-            Serial.print(median10(0), 2);
-            Serial.print(',');
-            Serial.print(median10(1), 2);
-            Serial.print(',');
-            Serial.print(median10(2), 2);
-            Serial.print(',');
-            Serial.print(median10(3), 2);
-            Serial.println(']');
+            if (Serial.availableForWrite() > 32) {
+                Serial.print("[");
+                Serial.print(median10(0), 2);
+                Serial.print(",");
+                Serial.print(median10(1), 2);
+                Serial.print(",");
+                Serial.print(median10(2), 2);
+                Serial.print(".");
+                Serial.print(median10(3), 2);
+                Serial.println("]");
+            }
         }
 
         lastMs = nowMs;
