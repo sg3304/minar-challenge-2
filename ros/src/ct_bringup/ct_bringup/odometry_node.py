@@ -31,11 +31,14 @@ class OdomNode(Node):
         self.vel_y = 0.0
         self.omega_z = 0.0
         self.get_logger().info("Odometry node running (and broadcast TF)")
-
+#CORRECTION PARAMETERS!
+        self.LINEAR_SCALE_FACTOR = 2.0
+        self.ANGULAR_SCALE_FACTOR = 0.75
+        
     def fb_speed_callback(self, msg: Twist):
-        self.vel_x = msg.linear.x
-        self.vel_y = msg.linear.y
-        self.omega_z = msg.angular.z
+        self.vel_x = msg.linear.x * self.LINEAR_SCALE_FACTOR
+        self.vel_y = msg.linear.y * self.LINEAR_SCALE_FACTOR
+        self.omega_z = msg.angular.z * self.ANGULAR_SCALE_FACTOR
 
 
     def odom_update(self):
