@@ -91,7 +91,9 @@ class MotionController(Node):
         self.get_logger().info(line)
 
         parts = line.strip('[]').split(',')
-        if len(parts) == 4:
+        self.get_logger().info(f"Received from Arduino: {parts}")
+        self.get_logger().info(f"Parts length: {len(parts)}")
+        if len(parts) == 4:     
             fl, fr, rl, rr = [float(x) for x in parts]
 
             msg = Twist()
