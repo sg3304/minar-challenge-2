@@ -57,7 +57,9 @@ class MotionController(Node):
         self.publish_speeds(w_speeds)
 
     def fbCallback(self, msg: Float32MultiArray):
+        
         fl, fr, rl, rr = msg.data
+        self.get_logger().info(f"Sent to Arduino: {fl} + {fr} + {rl} + {rr}")
         self.feedbackMsg.linear.x = (fl + fr + rl + rr) * (RADIUS / 4)
         self.feedbackMsg.linear.y = (-fl + fr + rl - rr) * (RADIUS / 4)
         self.feedbackMsg.angular.z = (-fl + fr - rl + rr) * (RADIUS / (4*(LX+LY)))
