@@ -88,7 +88,7 @@ class MotionController(Node):
     def read_serial_feedback(self):
        # self.get_logger().info("Timer fired: checking serial buffer...")
         line = self.ser.readline().decode('utf-8').strip()
-        self.get_logger().info(line)
+      #  self.get_logger().info(line)
 
         parts = line.strip('[]').split(',')
         self.get_logger().info(f"Received from Arduino: {parts}")
