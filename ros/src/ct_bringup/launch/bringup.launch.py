@@ -32,7 +32,7 @@ def generate_launch_description():
         package='robot_state_publisher',
         executable='robot_state_publisher',
         output='screen',
-        parameters=[{'robot_description': robot_desc}]
+        parameters=[{'robot_description': robot_desc, 'publish_frequency': 50.0}]
     )
 
     # Static TF from base_link to lidar_link
@@ -87,7 +87,13 @@ def generate_launch_description():
             'baud_rate': 115200
         }]
     )
-
+    rl_nav_node = Node(
+        package='ct_navigation',   # your RL package
+        executable='ppo_inference.py',
+        name='navigation_node',
+        output='screen',
+        parameters=[{'use_sim_time': False}]
+    )
     return LaunchDescription([
         rplidar_launch,
         robot_state_node,
