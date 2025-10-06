@@ -87,13 +87,13 @@ def generate_launch_description():
             'baud_rate': 115200
         }]
     )
-    rl_nav_node = Node(
-        package='ct_navigation',   # your RL package
-        executable='ppo_inference.py',
-        name='navigation_node',
-        output='screen',
-        parameters=[{'use_sim_time': False}]
-    )
+    # rl_nav_node = Node(
+    #     package='ct_navigation',   # your RL package
+    #     executable='ppo_inference.py',
+    #     name='navigation_node',
+    #     output='screen',
+    #     parameters=[{'use_sim_time': False}]
+    #)
     return LaunchDescription([
         rplidar_launch,
         robot_state_node,
