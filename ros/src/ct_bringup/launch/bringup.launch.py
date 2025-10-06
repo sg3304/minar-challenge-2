@@ -44,28 +44,35 @@ def generate_launch_description():
     #     arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'lidar_link']
     # )
 
-    # SLAM node (lifecycle)
+    # # SLAM node (lifecycle)
+    # slam_node = Node(
+    #     package='slam_toolbox',
+    #     executable='async_slam_toolbox_node',
+    #     name='slam_toolbox',
+    #     output='screen',
+    #     parameters=[slam_params_file, {'use_sim_time': False}],
+    # )
+
+    # # Activate SLAM only after LIDAR + TF are ready
+    # activate_slam = TimerAction(
+    #     period=10.0,  # wait 10 seconds for sensors/TF
+    #     actions=[
+    #         ExecuteProcess(
+    #             cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'configure'],
+    #             output='screen'
+    #         ),
+    #         ExecuteProcess(
+    #             cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'activate'],
+    #             output='screen'
+    #         )
+    #     ]
+    # )
     slam_node = Node(
         package='slam_toolbox',
         executable='async_slam_toolbox_node',
         name='slam_toolbox',
         output='screen',
-        parameters=[slam_params_file, {'use_sim_time': False}],
-    )
-
-    # Activate SLAM only after LIDAR + TF are ready
-    activate_slam = TimerAction(
-        period=10.0,  # wait 10 seconds for sensors/TF
-        actions=[
-            ExecuteProcess(
-                cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'configure'],
-                output='screen'
-            ),
-            ExecuteProcess(
-                cmd=['ros2', 'lifecycle', 'set', 'slam_toolbox', 'activate'],
-                output='screen'
-            )
-        ]
+        parameters=[slam_params_file, {'use_sim_time': False, 'autostart': True}],
     )
 
     # Odometry node

@@ -92,6 +92,9 @@ From the root of your workspace (`~/cha2_ws`), run:
 ```bash
     ros2 launch ct_bringup bringup.launch.py
 ```
+ros2 launch foxglove_bridge foxglove_bridge_launch.xml
+
+
 
 This command will bring up the robot and its systems, allowing you to control it and begin SLAM.
 
