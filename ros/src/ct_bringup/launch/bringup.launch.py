@@ -124,7 +124,6 @@ def generate_launch_description():
         odom_node,
         motion_controller_node,
         slam_node,
-        activate_slam,
         planner_server_node,
         controller_server_node
     ])
