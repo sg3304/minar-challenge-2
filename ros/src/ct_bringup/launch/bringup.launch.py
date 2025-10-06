@@ -94,15 +94,22 @@ def generate_launch_description():
     #     output='screen',
     #     parameters=[{'use_sim_time': False}]
     #)
-    nav2_bringup = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(bringup_dir, 'launch', 'bringup.launch.py')
-        ),
-        launch_arguments={
-            'params_file': nav2_params_file,
-            'use_sim_time': 'false'
-        }.items()
+    planner_server_node = Node(
+        package='nav2_planner',
+        executable='planner_server',
+        name='planner_server',
+        output='screen',
+        parameters=[nav2_params_file]
     )
+
+    controller_server_node = Node(
+        package='nav2_controller',
+        executable='controller_server',
+        name='controller_server',
+        output='screen',
+        parameters=[nav2_params_file]
+    )
+
     return LaunchDescription([
         rplidar_launch,
         robot_state_node,
@@ -111,7 +118,8 @@ def generate_launch_description():
         motion_controller_node,
         slam_node,
         activate_slam,
-        nav2_bringup
+        planner_server_node,
+        controller_server_node
     ])
 
     # mappings = os.path.join(joy2twist_share, 'mappings.yaml')
