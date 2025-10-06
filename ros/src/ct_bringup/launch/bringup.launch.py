@@ -96,7 +96,7 @@ def generate_launch_description():
     #)
     nav2_bringup = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(bringup_dir, 'launch', 'bringup_launch.py')
+            os.path.join(bringup_dir, 'launch', 'bringup.launch.py')
         ),
         launch_arguments={
             'params_file': nav2_params_file,
