@@ -15,7 +15,7 @@ def generate_launch_description():
 
     slam_params_file = os.path.join(bringup_dir, 'config', 'slam_toolbox.yaml')
     urdf_file = os.path.join(description_dir, 'urdf', 'ct.urdf')
-
+    nav2_params_file = os.path.join(bringup_dir, 'config', 'nav_conf.yaml')
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
 
@@ -94,6 +94,15 @@ def generate_launch_description():
     #     output='screen',
     #     parameters=[{'use_sim_time': False}]
     #)
+    nav2_bringup = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(bringup_dir, 'launch', 'bringup_launch.py')
+        ),
+        launch_arguments={
+            'params_file': nav2_params_file,
+            'use_sim_time': 'false'
+        }.items()
+    )
     return LaunchDescription([
         rplidar_launch,
         robot_state_node,
@@ -101,7 +110,8 @@ def generate_launch_description():
         odom_node,
         motion_controller_node,
         slam_node,
-        activate_slam
+        activate_slam,
+        nav2_bringup
     ])
 
     # mappings = os.path.join(joy2twist_share, 'mappings.yaml')
