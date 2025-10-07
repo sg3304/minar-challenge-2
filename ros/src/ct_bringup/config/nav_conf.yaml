@@ -1,19 +1,33 @@
+# =========================
+# Planner Server
+# =========================
 planner_server:
   ros__parameters:
     planner_plugins: ["NavfnPlanner"]
     NavfnPlanner:
       plugin: "nav2_navfn_planner::NavfnPlanner"
+
+# =========================
+# Behavior Tree Navigator
+# =========================
 bt_navigator:
   ros__parameters:
     planner_id: "NavfnPlanner"
+    # Make sure this XML exists in your nav2_bt_navigator package
     default_bt_xml_filename: "navigate_to_pose_w_replanning_and_recovery.xml"
 
+# =========================
+# Controller Server
+# =========================
 controller_server:
   ros__parameters:
     controller_plugins: ["DWBLocalPlanner"]
     DWBLocalPlanner:
       plugin: "dwb_core::DWBLocalPlanner"
       debug_trajectory_details: false
+      # Essential: avoid DWB crash by specifying goal/progress checkers
+      goal_checker_plugin: "nav2_controller::SimpleGoalChecker"
+      progress_checker_plugin: "nav2_controller::SimpleProgressChecker"
       critics:
         - "RotateToGoal"
         - "PathAlign"
@@ -37,6 +51,9 @@ controller_server:
         critic_name: "dwb_critics::GoalDistCritic"
         scale: 24.0
 
+# =========================
+# Behavior Server
+# =========================
 behavior_server:
   ros__parameters:
     use_sim_time: False
@@ -46,10 +63,13 @@ behavior_server:
     spin:
       action_name: "spin"
 
+# =========================
+# Local Costmap
+# =========================
 local_costmap:
   ros__parameters:
     use_sim_time: False
-    global_frame: map 
+    global_frame: odom   # Important: DWB expects odom here
     robot_base_frame: base_link
     update_frequency: 5.0
     publish_frequency: 2.0
@@ -58,6 +78,33 @@ local_costmap:
     height: 3.0
     resolution: 0.05
     plugins: ["obstacle_layer", "inflation_layer"]
+    obstacle_layer:
+      observation_sources: scan
+      scan:
+        topic: /scan
+        max_obstacle_height: 2.0
+        clearing: true
+        marking: true
+    inflation_layer:
+      inflation_radius: 0.55
+
+# =========================
+# Global Costmap
+# =========================
+global_costmap:
+  ros__parameters:
+    use_sim_time: False
+    global_frame: map
+    robot_base_frame: base_link
+    update_frequency: 1.0
+    publish_frequency: 0.5
+    width: 10.0
+    height: 10.0
+    resolution: 0.05
+    rolling_window: false
+    plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+    static_layer:
+      map_topic: /map
     obstacle_layer:
       observation_sources: scan
       scan:
