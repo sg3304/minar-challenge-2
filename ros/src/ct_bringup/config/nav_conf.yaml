@@ -24,7 +24,7 @@ controller_server:
         scale: 32.0
       GoalAlign:
         critic_name: "dwb_critics::GoalAlignCritic"
-        scale: 24.0
+        scale: 24.0 
       PathDist:
         critic_name: "dwb_critics::PathDistCritic"
         scale: 32.0

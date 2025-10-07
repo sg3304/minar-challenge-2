@@ -3,6 +3,8 @@ from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
+from launch.actions import TimerAction
+
 import os
 
 
@@ -115,6 +117,24 @@ def generate_launch_description():
             ]
         }]
     )
+    recoveries_server_node = Node(
+        package='nav2_recoveries',
+        executable='recoveries_server',
+        name='recoveries_server',
+        output='screen',
+        parameters=[nav2_params]
+    )
+
+    nav2_nodes = [
+        planner_server,
+        controller_server,
+        bt_navigator,
+        lifecycle_manager,
+        recoveries_server_node
+    ]
+
+# Delay Nav2 bringup until SLAM publishes TF
+    delayed_nav2 = TimerAction(period=10.0, actions=nav2_nodes)
 
     # -------------------------------
     # Launch all components
@@ -125,9 +145,6 @@ def generate_launch_description():
         motion_controller,
         odom_node,
         slam_toolbox,
-        planner_server,
-        controller_server,
-        bt_navigator,
-        lifecycle_manager
+        delayed_nav2
     ])
 
