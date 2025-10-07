@@ -139,7 +139,7 @@ def generate_launch_description():
         planner_server,
         controller_server,
         bt_navigator,
-        lifecycle_manager,
+       # lifecycle_manager,
         recoveries_server_node
 
     ])
