@@ -53,7 +53,7 @@ class OdomNode(Node):
         odom_msg = Odometry()
         odom_msg.header.stamp = self.get_clock().now().to_msg()
         odom_msg.header.frame_id = 'odom'
-        odom_msg.child_frame_id = 'base_footprint'
+        odom_msg.child_frame_id = 'base_link'
 
         odom_msg.pose.pose.position.x = self.x
         odom_msg.pose.pose.position.y = self.y
@@ -74,7 +74,7 @@ class OdomNode(Node):
         transform = TransformStamped()
         transform.header.stamp = self.get_clock().now().to_msg()
         transform.header.frame_id = 'odom'
-        transform.child_frame_id = 'base_footprint'
+        transform.child_frame_id = 'base_link'
         transform.transform.translation.x = self.x
         transform.transform.translation.y = self.y
         # Check this !!!
