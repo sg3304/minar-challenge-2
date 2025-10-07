@@ -56,13 +56,13 @@ def generate_launch_description():
     )
 
     # Static transform base_link -> laser (adjust translation/rotation as needed)
-    static_tf_base_to_laser = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='static_base_to_laser',
-        output='screen',
-        arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'laser']
-    )
+    # static_tf_base_to_laser = Node(
+    #     package='tf2_ros',
+    #     executable='static_transform_publisher',
+    #     name='static_base_to_laser',
+    #     output='screen',
+    #     arguments=['0', '0', '0.15', '0', '0', '0', 'base_link', 'laser']
+    # )
 
     # nav2
     nav2 = IncludeLaunchDescription(
