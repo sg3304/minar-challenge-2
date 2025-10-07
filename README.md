@@ -95,6 +95,16 @@ From the root of your workspace (`~/cha2_ws`), run:
 ros2 launch foxglove_bridge foxglove_bridge_launch.xml
 
 
+ros2 lifecycle set /slam_toolbox configure
+ros2 lifecycle set /slam_toolbox activate
+ros2 lifecycle set /planner_server configure
+ros2 lifecycle set /planner_server activate
+ros2 lifecycle set /controller_server configure
+ros2 lifecycle set /controller_server activate
+ros2 lifecycle set /behavior_server configure
+ros2 lifecycle set /behavior_server activate
+ros2 lifecycle set /bt_navigator configure
+ros2 lifecycle set /bt_navigator activate
 
 This command will bring up the robot and its systems, allowing you to control it and begin SLAM.
 
