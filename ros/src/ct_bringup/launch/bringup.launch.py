@@ -125,16 +125,7 @@ def generate_launch_description():
         parameters=[nav2_params]
     )
 
-    nav2_nodes = [
-        planner_server,
-        controller_server,
-        bt_navigator,
-        lifecycle_manager,
-        recoveries_server_node
-    ]
-
-# Delay Nav2 bringup until SLAM publishes TF
-    delayed_nav2 = TimerAction(period=10.0, actions=nav2_nodes)
+   
 
     # -------------------------------
     # Launch all components
@@ -145,6 +136,11 @@ def generate_launch_description():
         motion_controller,
         odom_node,
         slam_toolbox,
-        delayed_nav2
+        planner_server,
+        controller_server,
+        bt_navigator,
+        lifecycle_manager,
+        recoveries_server_node
+
     ])
 
