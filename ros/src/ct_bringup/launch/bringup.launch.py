@@ -101,26 +101,11 @@ def generate_launch_description():
         parameters=[nav2_params]
     )
 
-    # Nav2 Lifecycle Manager
-    lifecycle_manager = Node(
-        package='nav2_lifecycle_manager',
-        executable='lifecycle_manager',
-        name='lifecycle_manager_navigation',
-        output='screen',
-        parameters=[{
-            'use_sim_time': False,
-            'autostart': True,
-            'node_names': [
-                'planner_server',
-                'controller_server',
-                'bt_navigator'
-            ]
-        }]
-    )
-    recoveries_server_node = Node(
+
+    behavior_server_node = Node(
         package='nav2_behaviors',
         executable='behavior_server',
-        name='recoveries_server',
+        name='behavior_server',
         output='screen',
         parameters=[nav2_params]
     )
@@ -139,8 +124,7 @@ def generate_launch_description():
         planner_server,
         controller_server,
         bt_navigator,
-       # lifecycle_manager,
-        recoveries_server_node
+        behavior_server_node
 
     ])
 
