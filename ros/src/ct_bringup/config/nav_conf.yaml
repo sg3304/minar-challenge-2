@@ -8,6 +8,26 @@ controller_server:
     controller_plugins: ["DWBLocalPlanner"]
     DWBLocalPlanner:
       plugin: "dwb_core::DWBLocalPlanner"
-      critics: ["TrajectoryCritic"]
-      TrajectoryCritic:
-        scale: 1.0
+      debug_trajectory_details: false
+      critics:
+        - "RotateToGoal"
+        - "PathAlign"
+        - "GoalAlign"
+        - "PathDist"
+        - "GoalDist"
+      RotateToGoal:
+        critic_name: "dwb_critics::RotateToGoalCritic"
+        xy_goal_tolerance: 0.25
+        yaw_goal_tolerance: 0.25
+      PathAlign:
+        critic_name: "dwb_critics::PathAlignCritic"
+        scale: 32.0
+      GoalAlign:
+        critic_name: "dwb_critics::GoalAlignCritic"
+        scale: 24.0
+      PathDist:
+        critic_name: "dwb_critics::PathDistCritic"
+        scale: 32.0
+      GoalDist:
+        critic_name: "dwb_critics::GoalDistCritic"
+        scale: 24.0
