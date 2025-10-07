@@ -25,9 +25,6 @@ controller_server:
     DWBLocalPlanner:
       plugin: "dwb_core::DWBLocalPlanner"
       debug_trajectory_details: false
-      # Essential: avoid DWB crash by specifying goal/progress checkers
-      goal_checker_plugin: "nav2_controller::SimpleGoalChecker"
-      progress_checker_plugin: "nav2_controller::SimpleProgressChecker"
       critics:
         - "RotateToGoal"
         - "PathAlign"
@@ -43,14 +40,16 @@ controller_server:
         scale: 32.0
       GoalAlign:
         critic_name: "dwb_critics::GoalAlignCritic"
-        scale: 24.0 
+        scale: 24.0
       PathDist:
         critic_name: "dwb_critics::PathDistCritic"
         scale: 32.0
       GoalDist:
         critic_name: "dwb_critics::GoalDistCritic"
         scale: 24.0
-
+    current_goal_checker: "goal_checker"
+    current_progress_checker: "progress_checker"
+      
 # =========================
 # Behavior Server
 # =========================
