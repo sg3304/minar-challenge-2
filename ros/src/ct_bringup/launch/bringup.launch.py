@@ -118,8 +118,8 @@ def generate_launch_description():
         }]
     )
     recoveries_server_node = Node(
-        package='nav2_recoveries',
-        executable='recoveries_server',
+        package='nav2_behaviors',
+        executable='behaviors_server',
         name='recoveries_server',
         output='screen',
         parameters=[nav2_params]
