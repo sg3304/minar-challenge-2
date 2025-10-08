@@ -13,19 +13,19 @@ def generate_launch_description():
 
     # Custom Python nodes
     motor_controller = Node(
-        package='robot',
+        package='ct_bringup',
         executable='motor_controller',
         name='motor_controller',
         output='screen',
     )
     odom_pub = Node(
-        package='robot',
+        package='ct_bringup',
         executable='odometry_publisher',
         name='odometry_publisher',
         output='screen',
     )
     encoder_pub = Node(
-        package='robot',
+        package='ct_bringup',
         executable='encoder_publisher',
         name='encoder_publisher',
         output='screen',
@@ -33,9 +33,9 @@ def generate_launch_description():
 
     # Navigator
     navigator = Node(
-        package='robot',
-        executable='navigate_to_pose_client',
-        name='navigate_to_pose_client',
+        package='ct_bringup',
+        executable='click_to_nav_goal',
+        name='click_to_nav_goal',
         output='screen'
     )
 
