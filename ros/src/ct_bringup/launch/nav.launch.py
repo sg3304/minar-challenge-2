@@ -28,8 +28,8 @@ def generate_launch_description():
     # Navigator
     navigator = Node(
         package='ct_bringup',
-        executable='click_to_nav_goal',
-        name='click_to_nav_goal',
+        executable='click_to_nav_goal_node',
+        name='click_to_nav_goal_node',
         output='screen'
     )
 
