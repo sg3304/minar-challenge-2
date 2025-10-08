@@ -6,10 +6,10 @@ struct MotorPins {
 };
 
 MotorPins motorPins[4] = {
-    {6, 7, 2, 18, 22},   // Motor A
-    {8, 9, 3, 19, 23},   // Motor B
+    {6, 7, 2, 18, 22}, // Motor A
+    {8, 9, 3, 19, 23}, // Motor B
     {36, 34, 4, 20, 48}, // Motor C
-    {32, 30, 5, 21, 49}  // Motor D
+    {32, 30, 5, 21, 49} // Motor D
 };
 
 // ---------- Direction config ----------
