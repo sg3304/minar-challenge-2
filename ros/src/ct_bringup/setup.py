@@ -28,7 +28,6 @@ setup(
          # 'teleop_serial_node = ct_bringup.teleop_serial_node:main', 
           'motion_controller_node = ct_bringup.motion_controller_node:main',  
           'odometry_node = ct_bringup.odometry_node:main',
-          'click_to_nav_goal_node = ct_bringup.click_to_nav_goal:main',],
-      
+          'click_to_nav_goal_node = ct_bringup.click_to_nav_goal:main'     ] 
     },
 )
