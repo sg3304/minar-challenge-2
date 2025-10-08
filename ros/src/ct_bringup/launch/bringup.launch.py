@@ -73,21 +73,7 @@ def generate_launch_description():
         name='click_to_nav_goal_node',
         output='screen'
     )
-    maps_folder = '/home/admin/minar-challenge-2/ros/ct_bringup/maps'
-    os.makedirs(maps_folder, exist_ok=True)
 
-    map_saver_server = Node(
-        package='nav2_map_server',
-        executable='map_saver_server',
-        name='map_saver_server',
-        output='screen',
-        parameters=[{
-            'save_map_timeout': 5.0,
-            'free_thresh_default': 0.25,
-            'occupied_thresh_default': 0.65,
-            'map_subscribe_transient_local': True
-        }]
-    )
 
     return LaunchDescription([
         rplidar_launch,
@@ -97,6 +83,6 @@ def generate_launch_description():
         slam_toolbox,
         nav2,
         navigator,
-        map_saver_server
+       # map_saver_server
         # encoder_pub, --- IGNORE ---
     ])
