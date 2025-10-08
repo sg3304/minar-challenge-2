@@ -14,20 +14,14 @@ def generate_launch_description():
     # Custom Python nodes
     motor_controller = Node(
         package='ct_bringup',
-        executable='motor_controller',
-        name='motor_controller',
+        executable='motion_controller_node',
+        name='motion_controller_node',
         output='screen',
     )
     odom_pub = Node(
         package='ct_bringup',
-        executable='odometry_publisher',
-        name='odometry_publisher',
-        output='screen',
-    )
-    encoder_pub = Node(
-        package='ct_bringup',
-        executable='encoder_publisher',
-        name='encoder_publisher',
+        executable='odometry_node',
+        name='odometry_node',
         output='screen',
     )
 
@@ -75,7 +69,7 @@ def generate_launch_description():
     return LaunchDescription([
         motor_controller,
         odom_pub,
-        encoder_pub,
+       # encoder_pub,
         rplidar,
         navigator,
     #    static_tf_base_to_laser,
