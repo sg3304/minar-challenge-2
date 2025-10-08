@@ -49,6 +49,8 @@ def generate_launch_description():
         parameters=[slam_params, {'use_sim_time': False}],
         output='screen'
     )
+    if not os.path.exists(map_file):
+            map_file = ''
 
     nav2 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -57,10 +59,12 @@ def generate_launch_description():
         launch_arguments={
             'use_sim_time': 'False',
             'use_localization': 'True',
-            'map': os.path.join(bringup_dir, 'map', 'map.yaml'),
+            'map': map_file,
             'params_file': nav2_params
         }.items()
     )
+
+    return LaunchDescription([nav2])
 
         # Navigator
     navigator = Node(
