@@ -78,6 +78,6 @@ def generate_launch_description():
         encoder_pub,
         rplidar,
         navigator,
-        static_tf_base_to_laser,
+    #    static_tf_base_to_laser,
         nav2,
     ])
