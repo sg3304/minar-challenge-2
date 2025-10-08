@@ -51,22 +51,27 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Nav2 Bringup
-    nav2_bringup = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'bringup_launch.py')
-        ),
-        launch_arguments={
-            'use_sim_time': 'False',
-            'params-file': nav2_params
-        }.items()
-    )
+    nav2 = IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'bringup_launch.py')
+            ),
+        #  launch_arguments={'use_sim_time': 'False', 'use_localization': 'True', 'map': f'{bringup_dir}/map/map.yaml', 'params-file': f'{bringup_dir}/config/nav2_params.yaml'}.items()
+        )
 
+        # Navigator
+    navigator = Node(
+        package='ct_bringup',
+        executable='click_to_nav_goal_node',
+        name='click_to_nav_goal_node',
+        output='screen'
+    )
     return LaunchDescription([
         rplidar_launch,
         robot_state_publisher,
         motion_controller,
         odom_node,
         slam_toolbox,
-        nav2_bringup
+        nav2,
+        navigator,
+        # encoder_pub, --- IGNORE ---
     ])
