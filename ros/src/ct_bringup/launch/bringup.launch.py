@@ -49,6 +49,7 @@ def generate_launch_description():
         parameters=[slam_params, {'use_sim_time': False}],
         output='screen'
     )
+    map_file = os.path.join(bringup_dir, 'map', 'map.yaml')
     if not os.path.exists(map_file):
             map_file = ''
 
