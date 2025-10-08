@@ -16,7 +16,7 @@ MotorPins motorPins[4] = {
 // Set to +1 or -1 for each motor
 // A and C are mirrored -> -1
 int8_t encoderDir[4] = {-1, +1, -1, +1};
-int8_t motorDir[4]   = {-1, +1, -1, +1};
+int8_t motorDir[4] = {-1, +1, -1, +1};
 
 // ---------- Encoder parameters ----------
 static constexpr uint16_t PULSES_PER_MOTOR_REV = 11;
@@ -25,18 +25,22 @@ static constexpr float pulsesPerWheelRev = float(PULSES_PER_MOTOR_REV) * GEAR_RA
 
 // ---------- PID controller ----------
 struct PID {
-    float kp = 18.0f;
-    float ki = 7.0f;
-    float kd = 0.2f;
+    float kp = 0.0f;
+    float ki = 0.0f;
+    float kd = 0.0f;
     float integral = 0.0f;
     float prevMeas = 0.0f;
     float dFilt = 0.0f;
     float iMin = -200, iMax = 200;
 };
 
+constexpr float KP[4] = {12.0f, 12.0f, 12.0f, 12.0f};
+constexpr float KI[4] = {5.0f, 5.0f, 5.0f, 5.0f};
+constexpr float KD[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+
 struct MotorState {
     float setpoint = 0.0f; // rad/s
-    float speed = 0.0f;    // filtered rad/s
+    float speed = 0.0f; // filtered rad/s
     float speedRaw = 0.0f;
     PID pid;
     int pwmOut = 0;
@@ -46,20 +50,24 @@ MotorState motors[4];
 
 // ---------- Helper: parse CSV floats ----------
 static inline bool parseBracketedFloats(const String &line, float out[4]) {
-    if (line.length() < 3) return false;
+    if (line.length() < 3)
+        return false;
     int lb = line.indexOf('[');
     int rb = line.lastIndexOf(']');
-    if (lb < 0 || rb <= lb) return false;
+    if (lb < 0 || rb <= lb)
+        return false;
     String body = line.substring(lb + 1, rb);
     int idx = 0;
-    int start = 0;
+    size_t start = 0;
     while (start <= body.length() && idx < 4) {
         int comma = body.indexOf(',', start);
         String token = (comma == -1) ? body.substring(start) : body.substring(start, comma);
         token.trim();
-        if (token.length() == 0) return false;
+        if (token.length() == 0)
+            return false;
         out[idx++] = token.toFloat();
-        if (comma == -1) break;
+        if (comma == -1)
+            break;
         start = comma + 1;
     }
     return idx == 4;
@@ -70,24 +78,28 @@ volatile int32_t pulseCount[4] = {0, 0, 0, 0};
 volatile uint32_t lastEdgeUs[4] = {0, 0, 0, 0};
 
 static constexpr bool DIR_FLIP = false;
+
 static inline int8_t dirFromB(int bLevel) {
     int8_t dir = (bLevel ? -1 : +1);
-    return DIR_FLIP ? (int8_t)-dir : dir;
+    return DIR_FLIP ? (int8_t) -dir : dir;
 }
 
 // ---------- ISRs ----------
 void encoderISR_generic(uint8_t idx) {
     uint32_t now = micros();
-    if ((now - lastEdgeUs[idx]) > 100) { // denoise
+    if ((now - lastEdgeUs[idx]) > 100) {
+        // denoise
         int b = digitalRead(motorPins[idx].encB);
         pulseCount[idx] += dirFromB(b);
         lastEdgeUs[idx] = now;
     }
 }
+
 void encoderISR0() { encoderISR_generic(0); }
 void encoderISR1() { encoderISR_generic(1); }
 void encoderISR2() { encoderISR_generic(2); }
 void encoderISR3() { encoderISR_generic(3); }
+
 void (*isrFuncs[4])() = {encoderISR0, encoderISR1, encoderISR2, encoderISR3};
 
 // ---------- Apply motor command ----------
@@ -111,7 +123,8 @@ void applyMotor(float u, const MotorPins &p) {
 
 // ---------- PID runner ----------
 float runPID(PID &c, MotorState &m, float meas, float dt) {
-    if (dt <= 0.0f) dt = 1e-3f;
+    if (dt <= 0.0f)
+        dt = 1e-3f;
 
     float e = m.setpoint - meas;
     float de = -(meas - c.prevMeas) / dt;
@@ -152,7 +165,12 @@ void setup() {
         pinMode(motorPins[i].encA, INPUT_PULLUP);
         pinMode(motorPins[i].encB, INPUT_PULLUP);
 
-        attachInterrupt(digitalPinToInterrupt(motorPins[i].encA), isrFuncs[i], RISING);
+        motors[i].pid.kp = KP[i];
+        motors[i].pid.ki = KI[i];
+        motors[i].pid.kd = KD[i];
+
+        attachInterrupt(digitalPinToInterrupt(motorPins[i].encA), isrFuncs[i],
+                        RISING);
     }
 }
 
@@ -198,7 +216,8 @@ void loop() {
     // ---- Periodic update ----
     if (nowMs - lastMs >= periodMs) {
         float dt = (nowMs - lastMs) / 1000.0f;
-        if (dt <= 0.0f) dt = periodMs / 1000.0f;
+        if (dt <= 0.0f)
+            dt = periodMs / 1000.0f;
 
         for (int i = 0; i < 4; i++) {
             noInterrupts();
@@ -216,7 +235,7 @@ void loop() {
             motors[i].speedRaw = raw;
 
             float u = runPID(motors[i].pid, motors[i], raw, dt);
-            motors[i].pwmOut = (int)u;
+            motors[i].pwmOut = (int) u;
 
             // Apply motor direction correction
             applyMotor(u * motorDir[i], motorPins[i]);
@@ -224,13 +243,15 @@ void loop() {
             medBuf[i][medIdx] = motors[i].speed;
         }
 
-        medIdx = (uint8_t)((medIdx + 1) % 10);
-        if (medCount < 10) medCount++;
+        medIdx = (uint8_t) ((medIdx + 1) % 10);
+        if (medCount < 10)
+            medCount++;
 
         if (medCount == 10 && medIdx == 0) {
             float tmp[10];
             auto median10 = [&](int m) -> float {
-                for (int k = 0; k < 10; ++k) tmp[k] = medBuf[m][k];
+                for (int k = 0; k < 10; ++k)
+                    tmp[k] = medBuf[m][k];
                 for (int a = 1; a < 10; ++a) {
                     float key = tmp[a];
                     int b = a - 1;
