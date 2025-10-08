@@ -65,7 +65,6 @@ def generate_launch_description():
         }.items()
     )
 
-    return LaunchDescription([nav2])
 
         # Navigator
     navigator = Node(
