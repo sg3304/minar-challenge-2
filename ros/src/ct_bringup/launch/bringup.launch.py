@@ -58,7 +58,7 @@ def generate_launch_description():
     launch_arguments = {
         'use_sim_time': 'False',
         'use_localization': 'True',
-        'params_file': params_file
+        'params_file': nav2_params
     }
 
     # Only include the map argument if the map file exists
