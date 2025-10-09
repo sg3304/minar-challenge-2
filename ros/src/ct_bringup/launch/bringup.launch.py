@@ -58,7 +58,7 @@ def generate_launch_description():
     launch_arguments = {
         'use_sim_time': 'False',
         'use_localization': 'True',
-        'params_file': os.path.join(bringup_dir, 'config', 'nav2_params.yaml')
+        'params_file': os.path.join(bringup_dir, 'config', 'nav_conf.yaml')
     }
 
     # Add map argument only if map.yaml exists
