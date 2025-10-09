@@ -34,9 +34,9 @@ struct PID {
     float iMin = -200, iMax = 200;
 };
 
-constexpr float KP[4] = {12.0f, 12.0f, 12.0f, 12.0f};
-constexpr float KI[4] = {5.0f, 5.0f, 5.0f, 5.0f};
-constexpr float KD[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+constexpr float KP[4] = {5.0f, 5.0f, 8.5f, 5.0f};
+constexpr float KI[4] = {2.8f, 2.8f, 5.0f, 2.8f};
+constexpr float KD[4] = {0.6f, 0.6f, 0.4f, 0.6f};
 
 struct MotorState {
     float setpoint = 0.0f; // rad/s
