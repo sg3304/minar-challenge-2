@@ -93,19 +93,19 @@ controller_server:
       time_steps: 10
       model_dt: 0.15
       batch_size: 1000
-      ax_max: 1.5
-      ax_min: -1.5
-      ay_max: 1.5
-      ay_min: -1.5
-      az_max: 2.0
+      ax_max: 2.0  # Increased from 1.5
+      ax_min: -2.0  # Adjusted to match
+      ay_max: 2.0  # Increased from 1.5
+      ay_min: -2.0  # Adjusted to match
+      az_max: 3.0  # Increased from 2.0
       vx_std: 0.1
       vy_std: 0.1
       wz_std: 0.2
-      vx_max: 0.5
+      vx_max: 1.8  # Increased from 0.5
       vx_min: 0.0
-      vy_max: 0.5
-      vy_min: -0.5
-      wz_max: 1.5
+      vy_max: 1.8  # Increased from 0.5
+      vy_min: -1.8  # Adjusted to match
+      wz_max: 2.0  # Increased from 1.5
       iteration_count: 1
       prune_distance: 1.7
       transform_tolerance: 0.1
@@ -319,10 +319,10 @@ velocity_smoother:
     smoothing_frequency: 10.0
     scale_velocities: False
     feedback: "OPEN_LOOP"
-    max_velocity: [0.5, 0.5, 2.5]
-    min_velocity: [-0.5, -0.5, -2.5]
-    max_accel: [0.3, 0.3, 3.2]
-    max_decel: [-0.5, -0.5, -3.2]
+    max_velocity: [1.8, 1.8, 2.5]  # Increased x, y from 0.5 to 1.8
+    min_velocity: [-1.8, -1.8, -2.5]  # Adjusted to match
+    max_accel: [1, 1, 4.0]  # Increased x, y from 0.3 to 0.5, angular from 3.2 to 4.0
+    max_decel: [-1, -1, -4.0]  # Increased x,
     odom_topic: "odom"
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]
