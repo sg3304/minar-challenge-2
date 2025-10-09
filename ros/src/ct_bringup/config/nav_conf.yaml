@@ -251,6 +251,7 @@ global_costmap:
 
 map_saver:
   ros__parameters:
+    yaml_filename: ""
     save_map_timeout: 5.0
     free_thresh_default: 0.25
     occupied_thresh_default: 0.65
