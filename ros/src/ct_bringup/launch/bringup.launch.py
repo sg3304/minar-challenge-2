@@ -22,7 +22,8 @@ def generate_launch_description():
 
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
-    map_path = os.path.join(bringup_dir, 'map', 'map.yaml')
+    #map_path = os.path.join(bringup_dir, 'map', 'map.yaml')
+    map_path = os.path.join(get_package_share_directory('ct_bringup'), 'map', 'map.yaml')
 
     # -----------------------------
     # Launch arguments
