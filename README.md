@@ -90,14 +90,15 @@ Once everything is installed and built, you can launch the entire robot system w
 From the root of your workspace (`~/cha2_ws`), run:
 
 ```bash
-            ros2 launch ct_bringup bringup.launch.py
+                ros2 launch ct_bringup bringup.launch.py
 ```
 ros2 launch foxglove_bridge foxglove_bridge_launch.xml
 
 ros2 service call /save_map nav2_msgs/srv/SaveMap "{name: 'my_map', map_url: '/home/admin/minar-challenge-2/ros/ct_bringup/maps/my_map.yaml'}"
 
-ros2 lifecycle set /slam_toolbox configure
-ros2 lifecycle set /slam_toolbox activate
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+    ros2 lifecycle set /slam_toolbox configure
+    ros2 lifecycle set /slam_toolbox activate
 ros2 lifecycle set /planner_server configure
 ros2 lifecycle set /planner_server activate
 ros2 lifecycle set /controller_server configure
