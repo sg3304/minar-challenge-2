@@ -86,7 +86,13 @@ def generate_launch_description():
         parameters=[slam_params, {'use_sim_time': False}],
         output='screen'
     )
-
+    amcl_node = Node(
+        package='nav2_amcl',
+        executable='amcl',
+        name='amcl',
+        output='screen',
+        parameters=[nav2_params]
+)
     # -----------------------------
     # Nav2 launch (always included)
     # -----------------------------
@@ -106,7 +112,8 @@ def generate_launch_description():
         motion_controller,
         odom_node,
         navigator,
-        nav2
+        nav2,
+        amcl_node
     ]
 
     # Only include SLAM if NOT localizing

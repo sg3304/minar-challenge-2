@@ -93,6 +93,9 @@ ros2 launch foxglove_bridge foxglove_bridge_launch.xml
 ros2 run nav2_map_server map_saver_cli
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
+ros2 lifecycle set /map_server configure
+ros2 lifecycle set /map_server activate
+
 ros2 lifecycle set /slam_toolbox configure
 ros2 lifecycle set /slam_toolbox activate
 
