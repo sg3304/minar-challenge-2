@@ -88,6 +88,7 @@ From the root of your workspace (`~/cha2_ws`), run:
 ```bash
                 ros2 launch ct_bringup bringup.launch.py
 ```
+ros2 launch ct_bringup bringup_launch.py use_localization:=True
 ros2 launch foxglove_bridge foxglove_bridge_launch.xml
 ros2 run nav2_map_server map_saver_cli
 ros2 run teleop_twist_keyboard teleop_twist_keyboard

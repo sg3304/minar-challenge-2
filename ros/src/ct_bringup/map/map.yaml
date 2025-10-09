@@ -1,4 +1,4 @@
-image: map_1760017494.pgm
+image: map.pgm
 mode: trinary
 resolution: 0.050
 origin: [-9.721, -11.488, 0]
