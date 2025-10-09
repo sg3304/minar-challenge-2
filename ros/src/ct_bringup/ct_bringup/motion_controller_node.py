@@ -95,7 +95,6 @@ class MotionController(Node):
         #self.get_logger().info(f"Parts length: {len(parts)}")
         if len(parts) == 4:     
             fl, fr, rl, rr = [float(x) for x in parts]
-
             msg = Twist()
             msg.linear.x = (fl + fr + rl + rr) * (RADIUS / 4)
             msg.linear.y = (-fl + fr + rl - rr) * (RADIUS / 4)   
@@ -103,7 +102,6 @@ class MotionController(Node):
 
             self.feedbackPub.publish(msg)
            # self.get_logger().info(f"Published /fb_speed: {msg.linear.x:.2f}, {msg.angular.z:.2f}")
-
 
 def main(args=None):
     rclpy.init(args=args)
