@@ -90,7 +90,7 @@ Once everything is installed and built, you can launch the entire robot system w
 From the root of your workspace (`~/cha2_ws`), run:
 
 ```bash
-        ros2 launch ct_bringup bringup.launch.py
+            ros2 launch ct_bringup bringup.launch.py
 ```
 ros2 launch foxglove_bridge foxglove_bridge_launch.xml
 

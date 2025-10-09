@@ -51,12 +51,27 @@ def generate_launch_description():
         output='screen'
     )
 
+    map_path = os.path.join(bringup_dir, 'map', 'map.yaml')
+    use_map = os.path.exists(map_path)
+
+    # Configure launch arguments
+    launch_arguments = {
+        'use_sim_time': 'False',
+        'use_localization': 'True',
+        'params_file': os.path.join(bringup_dir, 'config', 'nav2_params.yaml')
+    }
+
+    # Add map argument only if map.yaml exists
+    if use_map:
+        launch_arguments['map'] = map_path
+
+    # Create the nav2 launch description
     nav2 = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'bringup_launch.py')
-            ),
-     launch_arguments={'use_sim_time': 'False', 'use_localization': 'True', 'map': f'{bringup_dir}/map/map.yaml', 'params-file': f'{bringup_dir}/config/nav2_params.yaml'}.items()
-        )
+        PythonLaunchDescriptionSource(
+            os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'bringup_launch.py')
+        ),
+        launch_arguments=launch_arguments.items()
+    )
 
         # Navigator
     navigator = Node(
