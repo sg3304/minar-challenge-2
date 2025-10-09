@@ -54,18 +54,15 @@ def generate_launch_description():
     map_path = os.path.join(bringup_dir, 'map', 'map.yaml')
     use_map = os.path.exists(map_path)
 
-    # Base launch arguments for Nav2
     launch_arguments = {
         'use_sim_time': 'False',
         'use_localization': 'False',
         'params_file': nav2_params
     }
 
-    # Only include the map argument if the map file exists
     if use_map:
         launch_arguments['map'] = map_path
 
-    # Nav2 bringup
     nav2 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'bringup_launch.py')

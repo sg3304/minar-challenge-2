@@ -1,12 +1,8 @@
-# CyberTruck SLAM Robot 🤖
-
-This document provides a comprehensive guide to setting up and running your **CyberTruck SLAM Robot** project. The project leverages ROS 2 to enable autonomous navigation and mapping (SLAM) for a differential-drive robot.
-
------
+# Challenge 2 SLAM Robot 🤖
 
 ## 🚀 Getting Started
 
-This section outlines the step-by-step process for setting up your development environment, installing dependencies, and building the project.
+This section outlines the step-by-step process for setting up the development environment, installing dependencies, and building the project.
 
 ### 1\. Workspace Setup
 
@@ -15,12 +11,12 @@ A **ROS 2 workspace** is where you'll store all your project packages. It's best
 1.  **Create the workspace directory**:
 
     ```bash
-    mkdir -p ~/cha2_ws/ros/src
+    mkdir -p ~/{YOUR_WORKSPACE}/ros/src
     ```
 
     This command creates the `cha2_ws` directory, the `ros` directory and a `src` folder inside it, which is where you'll place your ROS 2 packages.
 
-2.  **Navigate into the workspace**:
+2.  **Navigate into the workspace**:    
 
     ```bash
     cd ~/cha2_ws
@@ -93,20 +89,14 @@ From the root of your workspace (`~/cha2_ws`), run:
                 ros2 launch ct_bringup bringup.launch.py
 ```
 ros2 launch foxglove_bridge foxglove_bridge_launch.xml
-
-ros2 service call /save_map nav2_msgs/srv/SaveMap "{name: 'my_map', map_url: '/home/admin/minar-challenge-2/ros/ct_bringup/maps/my_map.yaml'}"
-
+ros2 run nav2_map_server map_saver_cli
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
-        ros2 lifecycle set /slam_toolbox configure
-        ros2 lifecycle set /slam_toolbox activate
-ros2 lifecycle set /planner_server configure
-ros2 lifecycle set /planner_server activate
-ros2 lifecycle set /controller_server configure
-ros2 lifecycle set /controller_server activate
-ros2 lifecycle set /behavior_server configure
-ros2 lifecycle set /behavior_server activate
-ros2 lifecycle set /bt_navigator configure
-ros2 lifecycle set /bt_navigator activate
+
+ros2 lifecycle set /slam_toolbox configure
+ros2 lifecycle set /slam_toolbox activate
+
+
+
 
 This command will bring up the robot and its systems, allowing you to control it and begin SLAM.
 
