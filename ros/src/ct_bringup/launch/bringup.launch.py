@@ -22,21 +22,18 @@ def generate_launch_description():
 
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
+    map_path = os.path.join(bringup_dir, 'map', 'map.yaml')
 
     # -----------------------------
     # Launch arguments
     # -----------------------------
     launch_arguments = {
         'use_sim_time': 'False',
-        'use_localization': 'False',  # Change to True to enable localization
-        'params_file': nav2_params
+        'use_localization': 'True',  # Change to True to enable localization
+        'params_file': nav2_params,
+        'map': map_path
     }
 
-    map_path = os.path.join(bringup_dir, 'map', 'map.yaml')
-    map_exists = os.path.exists(map_path)
-
-    if map_exists:
-        launch_arguments['map'] = map_path
 
     # -----------------------------
     # RPLIDAR launch
