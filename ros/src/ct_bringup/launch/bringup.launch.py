@@ -13,7 +13,6 @@ def generate_launch_description():
     nav2_params = os.path.join(bringup_dir, 'config', 'nav_conf.yaml')
     slam_params = os.path.join(bringup_dir, 'config', 'slam_toolbox.yaml')
     urdf_file = os.path.join(description_dir, 'urdf', 'ct.urdf')
-
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
 
@@ -50,13 +49,22 @@ def generate_launch_description():
         parameters=[slam_params, {'use_sim_time': False}],
         output='screen'
     )
+    # map_file = os.path.join(bringup_dir, 'map', 'map.yaml')
+    # if not os.path.exists(map_file):
+    #         map_file = ''
 
     nav2 = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'bringup_launch.py')
-            ),
-        #  launch_arguments={'use_sim_time': 'False', 'use_localization': 'True', 'map': f'{bringup_dir}/map/map.yaml', 'params-file': f'{bringup_dir}/config/nav2_params.yaml'}.items()
-        )
+        PythonLaunchDescriptionSource(
+            os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'bringup_launch.py')
+        ),
+        launch_arguments={
+            'use_sim_time': 'False',
+            'use_localization': 'True',
+            #'map': map_file,
+            'params_file': nav2_params
+        }.items()
+    )
+
 
         # Navigator
     navigator = Node(
@@ -65,6 +73,8 @@ def generate_launch_description():
         name='click_to_nav_goal_node',
         output='screen'
     )
+
+
     return LaunchDescription([
         rplidar_launch,
         robot_state_publisher,
@@ -73,5 +83,6 @@ def generate_launch_description():
         slam_toolbox,
         nav2,
         navigator,
+       # map_saver_server
         # encoder_pub, --- IGNORE ---
     ])
