@@ -201,7 +201,7 @@ local_costmap:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: True
         always_send_full_costmap: False
-      observation_sources: ["scan"]
+      observation_sources: "scan"
       scan:
         topic: /scan
         max_obstacle_height: 2.0
@@ -228,7 +228,7 @@ global_costmap:
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
-        observation_sources: ["scan"]
+        observation_sources: "scan"
         scan:
           topic: /scan
           max_obstacle_height: 2.0
@@ -349,7 +349,7 @@ collision_monitor:
       min_points: 6
       visualize: False
       enabled: True
-      observation_sources: ["scan"]
+      observation_sources: "scan"
       scan:
         type: scan
         topic: scan
