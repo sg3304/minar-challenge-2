@@ -57,7 +57,7 @@ def generate_launch_description():
     # Base launch arguments for Nav2
     launch_arguments = {
         'use_sim_time': 'False',
-        'use_localization': 'True',
+        'use_localization': 'False',
         'params_file': nav2_params
     }
 
