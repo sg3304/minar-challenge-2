@@ -55,7 +55,7 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(
                 os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'bringup_launch.py')
             ),
-        #  launch_arguments={'use_sim_time': 'False', 'use_localization': 'True', 'map': f'{bringup_dir}/map/map.yaml', 'params-file': f'{bringup_dir}/config/nav2_params.yaml'}.items()
+     launch_arguments={'use_sim_time': 'False', 'use_localization': 'True', 'map': f'{bringup_dir}/map/map.yaml', 'params-file': f'{bringup_dir}/config/nav2_params.yaml'}.items()
         )
 
         # Navigator
